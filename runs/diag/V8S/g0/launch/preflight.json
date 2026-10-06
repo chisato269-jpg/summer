@@ -1,0 +1,29 @@
+{
+  "time": "2026-10-03T17:55:54.430825",
+  "pid": 14380,
+  "slots": [
+    12
+  ],
+  "log_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\runs\\diag\\V8S\\g0\\launch",
+  "slot_limit": {
+    "n_slots": 1,
+    "limit": 13,
+    "slots": [
+      12
+    ]
+  },
+  "memory": {
+    "free_gb": 7.920188903808594,
+    "min_free_gb": 3.0
+  },
+  "cleanup": [
+    {
+      "slot": 12,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

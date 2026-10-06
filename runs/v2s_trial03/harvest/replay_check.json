@@ -1,0 +1,19 @@
+{
+  "time": "2026-09-19T14:05:15.217715",
+  "harvested_at_update": 15,
+  "slot_harvested": 0,
+  "replay_slot": 6,
+  "stage_converted_1_to_2": false,
+  "saved_E": 5.71629296875,
+  "saved_DR": 0.24135446548461914,
+  "saved_E_hex": "0x1.6dd7be76c8b44p+2",
+  "saved_DR_hex": "0x1.ee4b400000000p-3",
+  "replay_E": 5.71629296875,
+  "replay_DR": 0.24135446548461914,
+  "replay_E_hex": "0x1.6dd7be76c8b44p+2",
+  "replay_DR_hex": "0x1.ee4b400000000p-3",
+  "replay_eci_official": 0.0,
+  "replay_eci_smooth": 0.2107281492747322,
+  "E_hex_match": true,
+  "DR_hex_match": true
+}

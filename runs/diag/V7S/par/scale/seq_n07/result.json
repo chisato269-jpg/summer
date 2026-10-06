@@ -1,0 +1,26 @@
+{
+  "n": 7,
+  "rpm": false,
+  "label": "seq_n07",
+  "time": "2026-10-01T11:42:50",
+  "boot_s": 5.9,
+  "episode_s": 194.1,
+  "step_wait_s": {
+    "mean": 0.5135682883597602,
+    "median": 0.5140990499999134,
+    "p90": 0.5570042499996817,
+    "p99": 0.7125218210002461,
+    "max": 2.5104157000005216
+  },
+  "all_hex_match": true,
+  "n_hex_match": 7,
+  "cpu_total_mean_pct": 40.33065789473684,
+  "cpu_busiest_core_mean_pct": 82.52105263157895,
+  "avail_gb_start": 7.419624328613281,
+  "avail_gb_min": 6.832309722900391,
+  "rss_python_children_gb_max": 0.7785835266113281,
+  "rss_emulators_gb_max": 0.8551216125488281,
+  "n_emulators_seen_max": 7,
+  "episodes_per_hour": 129.8,
+  "rss_per_pair_gb": 0.2333864484514509
+}

@@ -1,0 +1,95 @@
+{
+  "harvest_meta": {
+    "update": 15,
+    "slot": 0,
+    "step_in_collection": 755,
+    "stage": 1,
+    "E": 5.71629296875,
+    "DR": 0.24135446548461914,
+    "eci_official": 0.0,
+    "eci_smooth": 0.2107281492747322,
+    "E_hex": "0x1.6dd7be76c8b44p+2",
+    "DR_hex": "0x1.ee4b400000000p-3"
+  },
+  "vent_steps_changed": 132,
+  "tenant_idle_steps": {
+    "South": 70,
+    "North": 72
+  },
+  "baseline_reproduces_saved": true,
+  "conditions": {
+    "baseline": {
+      "E": 5.71629296875,
+      "DR": 0.24135446548461914,
+      "E_hex": "0x1.6dd7be76c8b44p+2",
+      "DR_hex": "0x1.ee4b400000000p-3",
+      "eci_official": 0.0,
+      "eci_smooth": 0.2107281492747322,
+      "dE": 0.0,
+      "dDR": 0.0,
+      "hex_energy_gj": 1.242744,
+      "outdoor_energy_gj": 4.049258060382678,
+      "indoor_energy_gj": 0.35383581231059036,
+      "dr_weighted_with_co2": 0.24319925968314343,
+      "dr_weighted_without_co2": 0.23789842638284403,
+      "dr_co2_component": 0.005300833300299401
+    },
+    "a_vent_stop": {
+      "E": 5.267890625,
+      "DR": 0.24578171968460083,
+      "E_hex": "0x1.51251eb851eb8p+2",
+      "DR_hex": "0x1.f75c680000000p-3",
+      "eci_official": 0.0,
+      "eci_smooth": 0.21062176264210578,
+      "dE": -0.44840234375000065,
+      "dDR": 0.0044272541999816895,
+      "hex_energy_gj": 0.7649909999999999,
+      "outdoor_energy_gj": 4.089146637217104,
+      "indoor_energy_gj": 0.3542217273101536,
+      "dr_weighted_with_co2": 0.24760553818086364,
+      "dr_weighted_without_co2": 0.24234337342754195,
+      "dr_co2_component": 0.005262164753321696
+    },
+    "b_hex_low": {
+      "E": 4.697353515625,
+      "DR": 0.5966698527336121,
+      "E_hex": "0x1.2ca170a3d70a4p+2",
+      "DR_hex": "0x1.317eb60000000p-1",
+      "eci_official": 0.0,
+      "eci_smooth": 0.00012376727567286035,
+      "dE": -1.0189394531250002,
+      "dDR": 0.3553153872489929,
+      "hex_energy_gj": 0.21748020000000004,
+      "outdoor_energy_gj": 4.058162455685436,
+      "indoor_energy_gj": 0.35432675481372045,
+      "dr_weighted_with_co2": 0.5948856642089246,
+      "dr_weighted_without_co2": 0.24025535115412608,
+      "dr_co2_component": 0.35463031305479853
+    },
+    "c_both": {
+      "E": 4.62037353515625,
+      "DR": 0.5976370573043823,
+      "E_hex": "0x1.27b4333333333p+2",
+      "DR_hex": "0x1.31fd7c0000000p-1",
+      "eci_official": 0.0,
+      "eci_smooth": 0.00012297612248613135,
+      "dE": -1.0959194335937505,
+      "dDR": 0.3562825918197632,
+      "hex_energy_gj": 0.13387342500000002,
+      "outdoor_energy_gj": 4.062658500247821,
+      "indoor_energy_gj": 0.35445864981714165,
+      "dr_weighted_with_co2": 0.5957707039696287,
+      "dr_weighted_without_co2": 0.24190530965467988,
+      "dr_co2_component": 0.35386539431494884
+    }
+  },
+  "M9_adopt": false,
+  "M9_thresholds": {
+    "dE_max": -0.3,
+    "dDR_max": 0.002
+  },
+  "hex_fan_report_candidate": {
+    "b_hex_low": false,
+    "c_both": false
+  }
+}

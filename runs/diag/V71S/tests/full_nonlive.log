@@ -1,0 +1,20 @@
+........................................................................ [ 48%]
+............................sssssss..................................... [ 96%]
+.....s                                                                   [100%]
+============================= slowest 5 durations =============================
+175.07s call     rlkit/tests/test_learner_mock.py::test_ut14_trainer_wiring_interim_sil_and_guard
+140.69s call     rlkit/tests/test_learner_mock.py::test_reference_follows_best_harvest
+140.30s call     rlkit/tests/test_v7.py::test_ut40_trainer_checkpoints_and_collapse_stop
+112.93s call     rlkit/tests/test_learner_mock.py::test_trainer_resume_keeps_state
+112.25s call     rlkit/tests/test_learner_mock.py::test_harvest_best_action_sequence
+=========================== short test summary info ===========================
+SKIPPED [1] rlkit\tests\test_v64_live.py:83: エミュレータを使う試験（RLKIT_LIVE=1 で実行）
+SKIPPED [1] rlkit\tests\test_v64_live.py:102: エミュレータを使う試験（RLKIT_LIVE=1 で実行）
+SKIPPED [1] rlkit\tests\test_v64_live.py:122: エミュレータを使う試験（RLKIT_LIVE=1 で実行）
+SKIPPED [1] rlkit\tests\test_v6_live.py:58: エミュレータを使う試験（RLKIT_LIVE=1 で実行）
+SKIPPED [1] rlkit\tests\test_v6_live.py:73: エミュレータを使う試験（RLKIT_LIVE=1 で実行）
+SKIPPED [1] rlkit\tests\test_v6_live.py:82: エミュレータを使う試験（RLKIT_LIVE=1 で実行）
+SKIPPED [1] rlkit\tests\test_v6_live.py:92: エミュレータを使う試験（RLKIT_LIVE=1 で実行）
+SKIPPED [1] rlkit\tests\test_v7_live.py:17: エミュレータを使う試験（RLKIT_LIVE=1 で実行）
+142 passed, 8 skipped in 2045.91s (0:34:05)
+EXIT 0

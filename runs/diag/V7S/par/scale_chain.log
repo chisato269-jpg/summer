@@ -1,0 +1,11 @@
+=== N=7 seq 11:39:24
+RESULT 7 seq episode_s 194.1 ep/h 129.8 cpu 40/83 avail_min 6.83 p99 0.71 hex True rss/pair 0.233
+leftover emulators: 0 rc=0
+=== N=7 rpm 11:43:11
+RESULT 7 rpm episode_s 112.6 ep/h 223.7 cpu 33/79 avail_min 6.92 p99 0.47 hex True rss/pair 0.210
+leftover emulators: 0 rc=0
+=== N=13 rpm 11:45:33
+RESULT 13 rpm episode_s 149.9 ep/h 312.3 cpu 73/87 avail_min 5.76 p99 0.64 hex True rss/pair 0.223
+leftover emulators: 0 rc=0
+=== N=16 rpm 11:48:38
+RESULT 16 rpm episode_s 169.0 ep/h 340.9 cpu 82/92 avail_min 5.15 p99 0.71 hex True rss/pair 0.239

@@ -1,0 +1,156 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit
+collecting ... collected 7 items
+
+rlkit/tests/test_v6_live.py::test_ut1_ventilation_levels_written_and_read_back PASSED
+rlkit/tests/test_v6_live.py::test_ut16_remote_permission_fixed_permit PASSED
+rlkit/tests/test_v6_live.py::test_ut15_setpoint_20c_accepted PASSED
+rlkit/tests/test_v6_live.py::test_ut25_k13_tools PASSED
+rlkit/tests/test_v64_live.py::test_ut29_ut32p_live_baseline_replay FAILED
+rlkit/tests/test_v64_live.py::test_ut31_live_counterfactual_identity FAILED
+rlkit/tests/test_v64_live.py::test_ut34_live_seven_slots_read_own_output FAILED
+
+================================== FAILURES ===================================
+____________________ test_ut29_ut32p_live_baseline_replay _____________________
+
+    def test_ut29_ut32p_live_baseline_replay():
+        """UT-29（リモコンが許可に固定され、1114 の読み戻しが毎ステップ全台許可）と UT-32'（R-8' の (1)～(4)）。
+        基準の軌跡は C-5 の後の 60 次元の行動で再生し、E・DR が 16 進で一致する。"""
+>       rec = _baseline()
+              ^^^^^^^^^^^
+
+rlkit\tests\test_v64_live.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+rlkit\tests\test_v64_live.py:67: in _baseline
+    _CACHE["base"] = _replay(v62s_diag.baseline_actions())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\tests\test_v64_live.py:43: in _replay
+    _launch([slot_index])
+rlkit\tests\test_v64_live.py:27: in _launch
+    report = launch.preflight(RUN_DIR, slot_ids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\parallel\launch.py:105: in preflight
+    report["cleanup"] = cleanup_stale_slots(slot_indices, api=api)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+slot_indices = [6]
+api = <rlkit.parallel.procs.ProcApi object at 0x0000014C23ABB620>
+
+    def cleanup_stale_slots(slot_indices, api=None):
+        """組ごとに、死んだ所有者のロックを外し、複製の中で動いている残留プロセスを終了させる（K-f 相当）。"""
+        api = api or procs.DEFAULT_API
+        reports = []
+        for k in slot_indices:
+            slot = slots.make_slot(k)
+            rep = {"slot": k, "lock": None, "lock_released": False, "killed": [], "residual_after": []}
+            lock = slots.SlotLock(slot, api)
+            rec = lock.read()
+            if rec is not None:
+                rep["lock"] = {"learner_pid": rec.get("learner_pid"), "emulator_pid": rec.get("emulator_pid")}
+                if api.is_alive(rec.get("learner_pid"), rec.get("learner_create_time")):
+>                   raise LaunchError(f"組{k}は使用中（学習側 PID {rec.get('learner_pid')} が生きている）。起動を拒否する")
+E                   rlkit.parallel.launch.LaunchError: 組6は使用中（学習側 PID 33840 が生きている）。起動を拒否する
+
+rlkit\parallel\launch.py:80: LaunchError
+___________________ test_ut31_live_counterfactual_identity ____________________
+
+    def test_ut31_live_counterfactual_identity():
+        """UT-31: \u53cd\u4e8b\u5b9f\u306e\u518d\u751f\u3067\u3001\u53cd\u8ee2\u524d\u306f\u57fa\u6e96\u3068\u540c\u4e00\u3001\u0394C_true \u304c \u0394E_true + \u03c1_eval\xb7\u0394DR_true \u3068 1% \u4ee5\u5185\uff08R8'-A \u3067\u306f 1e-9 GJ \u76f8\u5f53\uff09\u3002"""
+        rows = json.load(open(os.path.join("runs", "diag", "V64S", "K14", "K14p_rows.json"), encoding="utf-8"))
+        pick = max((r for r in rows if r["family"] == "S" and r["to_off"]), key=lambda r: abs(r["dC_true"]))
+        _base_actions, jobs = _jobs()
+        job = jobs[pick["label"]]
+>       b = _baseline()
+            ^^^^^^^^^^^
+
+rlkit\tests\test_v64_live.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+rlkit\tests\test_v64_live.py:67: in _baseline
+    _CACHE["base"] = _replay(v62s_diag.baseline_actions())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\tests\test_v64_live.py:43: in _replay
+    _launch([slot_index])
+rlkit\tests\test_v64_live.py:27: in _launch
+    report = launch.preflight(RUN_DIR, slot_ids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\parallel\launch.py:105: in preflight
+    report["cleanup"] = cleanup_stale_slots(slot_indices, api=api)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+slot_indices = [6]
+api = <rlkit.parallel.procs.ProcApi object at 0x0000014C23ABB620>
+
+    def cleanup_stale_slots(slot_indices, api=None):
+        """組ごとに、死んだ所有者のロックを外し、複製の中で動いている残留プロセスを終了させる（K-f 相当）。"""
+        api = api or procs.DEFAULT_API
+        reports = []
+        for k in slot_indices:
+            slot = slots.make_slot(k)
+            rep = {"slot": k, "lock": None, "lock_released": False, "killed": [], "residual_after": []}
+            lock = slots.SlotLock(slot, api)
+            rec = lock.read()
+            if rec is not None:
+                rep["lock"] = {"learner_pid": rec.get("learner_pid"), "emulator_pid": rec.get("emulator_pid")}
+                if api.is_alive(rec.get("learner_pid"), rec.get("learner_create_time")):
+>                   raise LaunchError(f"組{k}は使用中（学習側 PID {rec.get('learner_pid')} が生きている）。起動を拒否する")
+E                   rlkit.parallel.launch.LaunchError: 組6は使用中（学習側 PID 33840 が生きている）。起動を拒否する
+
+rlkit\parallel\launch.py:80: LaunchError
+_________________ test_ut34_live_seven_slots_read_own_output __________________
+
+    def test_ut34_live_seven_slots_read_own_output():
+        """UT-34: 並列の 7 組で、各組のエピソードが自分の分単位の出力を読む（7 組で異なる軌跡を同時に再生する）。"""
+        from rlkit.parallel import slots
+        from rlkit.parallel.batched import SlotVecEnv
+        rows = json.load(open(os.path.join("runs", "diag", "V64S", "K14", "K14p_rows.json"), encoding="utf-8"))
+        picks = sorted(rows, key=lambda r: -abs(r["dDR_true"]))
+        chosen, drs = [], [0.0]
+        for r in picks:                                  # DR が互いに相対 1e-5 以上離れた 6 本
+            if all(abs(r["dDR_true"] - d) > 1e-5 * 0.19 for d in drs):
+                chosen.append(r["label"])
+                drs.append(r["dDR_true"])
+            if len(chosen) == 6:
+                break
+        base, jobs = _jobs()
+        trajs = [base] + [jobs[l]["actions"] for l in chosen]
+        ids = [0, 1, 2, 3, 4, 5, 6]
+>       _launch(ids)
+
+rlkit\tests\test_v64_live.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+rlkit\tests\test_v64_live.py:27: in _launch
+    report = launch.preflight(RUN_DIR, slot_ids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\parallel\launch.py:105: in preflight
+    report["cleanup"] = cleanup_stale_slots(slot_indices, api=api)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+slot_indices = [0, 1, 2, 3, 4, 5, ...]
+api = <rlkit.parallel.procs.ProcApi object at 0x0000014C23ABB620>
+
+    def cleanup_stale_slots(slot_indices, api=None):
+        """組ごとに、死んだ所有者のロックを外し、複製の中で動いている残留プロセスを終了させる（K-f 相当）。"""
+        api = api or procs.DEFAULT_API
+        reports = []
+        for k in slot_indices:
+            slot = slots.make_slot(k)
+            rep = {"slot": k, "lock": None, "lock_released": False, "killed": [], "residual_after": []}
+            lock = slots.SlotLock(slot, api)
+            rec = lock.read()
+            if rec is not None:
+                rep["lock"] = {"learner_pid": rec.get("learner_pid"), "emulator_pid": rec.get("emulator_pid")}
+                if api.is_alive(rec.get("learner_pid"), rec.get("learner_create_time")):
+>                   raise LaunchError(f"組{k}は使用中（学習側 PID {rec.get('learner_pid')} が生きている）。起動を拒否する")
+E                   rlkit.parallel.launch.LaunchError: 組6は使用中（学習側 PID 33840 が生きている）。起動を拒否する
+
+rlkit\parallel\launch.py:80: LaunchError
+=========================== short test summary info ===========================
+FAILED rlkit/tests/test_v64_live.py::test_ut29_ut32p_live_baseline_replay - r...
+FAILED rlkit/tests/test_v64_live.py::test_ut31_live_counterfactual_identity
+FAILED rlkit/tests/test_v64_live.py::test_ut34_live_seven_slots_read_own_output
+========================= 3 failed, 4 passed in 9.80s =========================

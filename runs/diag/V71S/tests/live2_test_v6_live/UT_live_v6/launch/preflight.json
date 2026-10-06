@@ -1,0 +1,29 @@
+{
+  "time": "2026-10-03T14:07:21.607261",
+  "pid": 28792,
+  "slots": [
+    6
+  ],
+  "log_dir": "runs/diag/V71S/tests/live2_test_v6_live\\UT_live_v6\\launch",
+  "slot_limit": {
+    "n_slots": 1,
+    "limit": 7,
+    "slots": [
+      6
+    ]
+  },
+  "memory": {
+    "free_gb": 6.602161407470703,
+    "min_free_gb": 2.0
+  },
+  "cleanup": [
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

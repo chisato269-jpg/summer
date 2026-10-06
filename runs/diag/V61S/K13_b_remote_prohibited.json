@@ -1,0 +1,31 @@
+{
+  "label": "K13_b_remote_prohibited",
+  "E": 6.48877490234375,
+  "DR": 0.20734022557735443,
+  "E_hex": "0x1.9f4816872b021p+2",
+  "DR_hex": "0x1.a8a1fe0000000p-3",
+  "ECI": 0.323025040029671,
+  "P_E": 0.3166338550122515,
+  "P_DR": 0.3295452297169331,
+  "official_eci_reference": 0.323025040029671,
+  "dr_components": {
+    "thermal": 0.17610681398187808,
+    "draft": 0.03480880477394798,
+    "vtmp": 0.0034656275048504225,
+    "co2": 1.6027502606605685e-05,
+    "combined": 0.20796947627844015
+  },
+  "setpoint_mismatch_zone_steps": 0,
+  "setpoint_mismatch_rate_of_cooling": 0.0,
+  "setpoint_rewrite_count": 0,
+  "vrf_energy_gj": 5.273386902343744,
+  "hex_energy_gj_model": 1.215388000000005,
+  "raw_resid_rel": 0.0022276488190353513,
+  "remote_status_prohibited_tenant_steps": 756,
+  "remote_permit_fraction": {
+    "South": 0.0,
+    "North": 0.0
+  },
+  "onoff_mismatch": 0,
+  "elapsed_s": 121.15473079681396
+}

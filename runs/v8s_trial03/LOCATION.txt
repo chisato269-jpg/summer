@@ -1,0 +1,3 @@
+この走行の記録は OneDrive の外へ移した（2026-10-04、通信量の対策）。
+場所: C:\Users\chisa\rl_local\runs\v8s_trial03
+移す前に全 112 ファイルの SHA-256 の一致を確認した。再開の設定: rlkit/config_summer_v83_local.json

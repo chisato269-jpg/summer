@@ -1,0 +1,55 @@
+{
+  "status": "stopped",
+  "stop_reason": "G-20（更新 20）に不合格がある（judgment_g20.json）",
+  "finished_at": "2026-10-04T05:06:56.844060",
+  "updates_this_run": 20,
+  "update_index": 20,
+  "best_harvest": {
+    "update": 5,
+    "slot": 3,
+    "role": "sibling",
+    "E": 4.41855126953125,
+    "DR": 0.17769679427146912,
+    "ECI": 0.7123151322712822,
+    "P_E": 0.7315004455029875,
+    "P_DR": 0.6936329988340137,
+    "E_hex": "0x1.1ac98b4395810p+2",
+    "DR_hex": "0x1.6bec4c0000000p-3"
+  },
+  "harvest_replay": {
+    "time": "2026-10-04T05:06:56.486616",
+    "harvested_at_update": 5,
+    "saved_E_hex": "0x1.1ac98b4395810p+2",
+    "saved_DR_hex": "0x1.6bec4c0000000p-3",
+    "replay_E_hex": "0x1.1ac98b4395810p+2",
+    "replay_DR_hex": "0x1.6bec4c0000000p-3",
+    "replay_ECI": 0.7123151322712822,
+    "replay_P_E": 0.7315004455029875,
+    "replay_P_DR": 0.6936329988340137,
+    "E_hex_match": true,
+    "DR_hex_match": true,
+    "F-1_passed": true,
+    "attempts": [
+      {
+        "attempt": 1,
+        "result": "ok"
+      }
+    ]
+  },
+  "judgments": {
+    "C8-3": {
+      "mean_update_seconds_1_2": 221.65877521038055,
+      "limit_s": 600.0,
+      "passed": true
+    },
+    "G-20": {
+      "records_complete": true,
+      "median_update_seconds": 248.74534916877747,
+      "time_ok": true,
+      "n_adoptions_1_20": 0,
+      "adoption_ok": false,
+      "passed": false
+    }
+  },
+  "instruction_version": "V8.2-S"
+}

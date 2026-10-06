@@ -1,0 +1,29 @@
+{
+  "time": "2026-09-19T21:23:05.110434",
+  "pid": 12752,
+  "slots": [
+    6
+  ],
+  "log_dir": "runs\\diag\\V5S\\K7\\launch",
+  "slot_limit": {
+    "n_slots": 1,
+    "limit": 7,
+    "slots": [
+      6
+    ]
+  },
+  "memory": {
+    "free_gb": 7.602504730224609,
+    "min_free_gb": 2.0
+  },
+  "cleanup": [
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,83 @@
+{
+  "time": "2026-09-24T20:41:40.026144",
+  "pid": 18680,
+  "slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "log_dir": "runs\\diag\\V6S\\stageB\\launch",
+  "slot_limit": {
+    "n_slots": 7,
+    "limit": 7,
+    "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "memory": {
+    "free_gb": 6.608245849609375,
+    "min_free_gb": 2.0
+  },
+  "cleanup": [
+    {
+      "slot": 0,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 1,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 2,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 3,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 4,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 5,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

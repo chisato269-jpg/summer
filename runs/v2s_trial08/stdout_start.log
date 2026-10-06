@@ -1,0 +1,4 @@
+[train_summer] {'event': 'warm_start', 'source': 'C:\\Users\\chisa\\OneDrive - Kogakuin University\\CmŒ¤‹†\\CmŒ¤‹†_ŠJ”­\\21\\21(s)_Shizuku2-RL-kit\\runs/v2s_trial07/checkpoint_latest.pt', 'source_update_index': 388, 'policy_lr': 0.0001316872427983539, 'specs': {'policy': {'zone_head.weight': ['rows', [0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]], 'zone_head.bias': ['rows', [0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]], 'global_encoder.0.weight': ['pad_cols', 8]}, 'value': {'global_encoder.0.weight': ['pad_cols', 8]}}}
+[train_summer] {'event': 'initial_reference', 'rho': 75.06, 'E_ref': 4.85, 'DR_ref': 0.1876, 'ref_update': None, 'ref_ECI': None, 'rho_n': 0.4688521400192659, 'D_n': 0.4257264761068626, 'initial_eval_E': 4.770767578125, 'initial_eval_DR': 0.1942482739686966, 'initial_eval_ECI': 0.5655215372055304}
+[train_summer] {'event': 'U20_checks', 'update': 20, 'all_passed': True}
+[train_summer] ’â~: ’ÊZ 20 XV‚É’B‚µ‚½i--updates ‚Í’ÊZj

@@ -1,0 +1,42 @@
+{
+  "time": "2026-09-24T20:41:31.988285",
+  "step": "B1",
+  "baseline_E_hex": "0x1.a228e147ae148p+2",
+  "baseline_DR_hex": "0x1.863c140000000p-3",
+  "results": {
+    "6": {
+      "slot": 6,
+      "E": 6.5337451171875,
+      "DR": 0.1905442774295807,
+      "E_hex": "0x1.a228e147ae148p+2",
+      "DR_hex": "0x1.863c140000000p-3",
+      "eci_official": 0.40345078695398967,
+      "raw_resid_rel": -0.006099795305442789,
+      "hex_energy_gj_model": 1.215388000000005,
+      "vent_level_fraction": {
+        "South": {
+          "off": 0.05555555555555555,
+          "Low": 0.0,
+          "Middle": 0.9444444444444444,
+          "High": 0.0
+        },
+        "North": {
+          "off": 0.06613756613756613,
+          "Low": 0.0,
+          "Middle": 0.9338624338624338,
+          "High": 0.0
+        }
+      },
+      "onoff_mismatch": 0,
+      "remote_permit_fraction": {
+        "South": 1.0,
+        "North": 1.0
+      },
+      "elapsed_s": 126.76766848564148,
+      "match": true
+    }
+  },
+  "errors": {},
+  "all_match": true,
+  "all_same": true
+}

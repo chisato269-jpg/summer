@@ -1,0 +1,11 @@
+{
+  "segments": 3,
+  "recorded_E_hex": "0x1.1e374dd2f1aa0p+2",
+  "recorded_DR_hex": "0x1.6b6d400000000p-3",
+  "replay_E_hex": "0x1.1e374dd2f1aa0p+2",
+  "replay_DR_hex": "0x1.6b6d400000000p-3",
+  "replay_ECI": 0.70913700374106,
+  "dE": 0.0,
+  "dDR": 0.0,
+  "matched": true
+}

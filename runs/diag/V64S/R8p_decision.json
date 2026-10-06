@@ -1,0 +1,95 @@
+{
+  "hex_match": true,
+  "E_hex": "0x1.a228e147ae148p+2",
+  "DR_hex": "0x1.863c140000000p-3",
+  "A_T_equals_DR": true,
+  "minute_output_same_as_V63S": true,
+  "elapsed_s": 121.15746545791626,
+  "A_T": 0.1905442774295807,
+  "n_B_week_rel": 2.473471196613961e-07,
+  "by_delta": {
+    "-1": {
+      "W": 159497.0,
+      "week_rel": 0.0,
+      "L1": 3.260023731531495e-05,
+      "min_n": 0.0,
+      "max_drop": 0.0,
+      "n_steps_drop_gt_tol": 0
+    },
+    "0": {
+      "W": 159497.0,
+      "week_rel": 0.0,
+      "L1": 0.005703286952597385,
+      "min_n": 0.0,
+      "max_drop": 0.0,
+      "n_steps_drop_gt_tol": 0
+    },
+    "1": {
+      "W": 159497.0,
+      "week_rel": 0.0,
+      "L1": 0.01138992450886985,
+      "min_n": 0.0,
+      "max_drop": 0.0,
+      "n_steps_drop_gt_tol": 0
+    }
+  },
+  "delta": -1,
+  "P4_monotonic": true,
+  "conditions_A": {
+    "week_rel": true,
+    "L1": true,
+    "min_n": true
+  },
+  "branch": "R8'-A",
+  "zone_sum_equals_building_max_abs": 4.336808689942018e-19,
+  "empty_steps": 67,
+  "empty_steps_max_abs_n": 0.0,
+  "n_nonneg_min": 0.0,
+  "share_vs_endpoint_abs_diff_by_system_median": {
+    "system1": 0.0019789174024657415,
+    "system2": 0.003413506254655984,
+    "system3": 0.0030400457808034773,
+    "system4": 0.0032402466387294483
+  },
+  "share_vs_endpoint_rel_diff_large_zones_median": 0.07778530500443145,
+  "assignment_open_closed_(start,end]": {
+    "by_delta": {
+      "-1": {
+        "W": 159497.0,
+        "week_rel": 0.0,
+        "L1": 0.0069099650298933175,
+        "min_n": 0.0,
+        "max_drop": 0.0,
+        "n_steps_drop_gt_tol": 0
+      },
+      "0": {
+        "W": 159497.0,
+        "week_rel": 0.0,
+        "L1": 0.003476858149514104,
+        "min_n": 0.0,
+        "max_drop": 0.0,
+        "n_steps_drop_gt_tol": 0
+      },
+      "1": {
+        "W": 159497.0,
+        "week_rel": 0.0,
+        "L1": 0.006513893233064557,
+        "min_n": 0.0,
+        "max_drop": 0.0,
+        "n_steps_drop_gt_tol": 0
+      }
+    },
+    "delta": 0,
+    "P4_monotonic": true,
+    "conditions_A": {
+      "week_rel": true,
+      "L1": false,
+      "min_n": true
+    },
+    "branch": "R8'-B",
+    "n_B_week_rel": 2.473471198070608e-07
+  },
+  "minute_assignment": "[start, end)",
+  "n_min": 0.0,
+  "sum_n_kt_rel_to_A_T": 0.0
+}

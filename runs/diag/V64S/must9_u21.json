@@ -1,0 +1,93 @@
+{
+ "checks": {
+  "update_index": true,
+  "rho": true,
+  "eval_point": true,
+  "lr": true,
+  "harvest_best": true,
+  "sil_buffer": true,
+  "entropy": true,
+  "levels_lambda": true,
+  "r8p": true,
+  "c_sil": true
+ },
+ "all": true,
+ "resumed_event": {
+  "time": "2026-09-25T21:40:58.085716",
+  "event": "resumed",
+  "update_index": 20,
+  "reference": {
+   "rho": 30.526664625546225,
+   "E_ref": 7.34671337890625,
+   "DR_ref": 0.18681950867176056,
+   "ref_update": 20,
+   "ref_ECI": 0.32178066354294077,
+   "rho_n": 0.37116983885838917,
+   "D_n": 0.3718667301687674
+  },
+  "rho": 30.526664625546225,
+  "policy_lr": 6.666666666666667e-05,
+  "best_harvest": {
+   "update": 20,
+   "slot": 1,
+   "step_in_collection": 377,
+   "stage": 1,
+   "E": 7.34671337890625,
+   "DR": 0.18681950867176056,
+   "eci_official": 0.0,
+   "eci_smooth": 0.32178066354294077,
+   "ECI": 0.32178066354294077,
+   "P_E": 0.17975101362329587,
+   "P_DR": 0.576034556595769,
+   "J": null,
+   "E_hex": "0x1.d6308d4fdf3b6p+2",
+   "DR_hex": "0x1.7e9b3a0000000p-3"
+  },
+  "sil_buffer": [
+   {
+    "update": 20,
+    "ECI": 0.32178066354294077
+   },
+   {
+    "update": 18,
+    "ECI": 0.31605423430248397
+   },
+   {
+    "update": 19,
+    "ECI": 0.3133295681536896
+   },
+   {
+    "update": 16,
+    "ECI": 0.3072177999427364
+   },
+   {
+    "update": 14,
+    "ECI": 0.3069164899714058
+   },
+   {
+    "update": 10,
+    "ECI": 0.3052967134127647
+   },
+   {
+    "update": 7,
+    "ECI": 0.30453988468715415
+   },
+   {
+    "update": 17,
+    "ECI": 0.30399108803568997
+   }
+  ],
+  "c_sil": 0.1,
+  "entropy_c0_next_update": 0.002,
+  "planned_updates": 1500,
+  "sil_enabled": false,
+  "credit_levels": {
+   "S": "building",
+   "P": "building",
+   "V": "tenant"
+  },
+  "lambda_hour": 0.99,
+  "r8p_branch": "R8'-A",
+  "r8p_delta_min": -1
+ }
+}

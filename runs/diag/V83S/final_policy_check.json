@@ -1,0 +1,9 @@
+{
+ "update_index": 600,
+ "expected_E_hex": "0x1.1e0f7ae147ae1p+2",
+ "expected_DR_hex": "0x1.58efe40000000p-3",
+ "actual_E_hex": "0x1.1e0f7ae147ae1p+2",
+ "actual_DR_hex": "0x1.58efe40000000p-3",
+ "ECI": 0.7612993813058083,
+ "match": true
+}

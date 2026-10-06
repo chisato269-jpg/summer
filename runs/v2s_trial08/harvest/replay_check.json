@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-03T13:15:54.055440",
+  "harvested_at_update": 1268,
+  "slot_harvested": 4,
+  "replay_slot": 12,
+  "saved_E": 4.4950302734375,
+  "saved_DR": 0.17745234072208405,
+  "saved_E_hex": "0x1.1fae9374bc6a8p+2",
+  "saved_DR_hex": "0x1.6b6c220000000p-3",
+  "replay_E": 4.4950302734375,
+  "replay_DR": 0.17745234072208405,
+  "replay_E_hex": "0x1.1fae9374bc6a8p+2",
+  "replay_DR_hex": "0x1.6b6c220000000p-3",
+  "replay_eci_official": 0.7070936771862606,
+  "replay_eci_smooth": 0.7070936771862606,
+  "replay_ECI": 0.7070936771862606,
+  "replay_P_E": 0.7176479126515015,
+  "replay_P_DR": 0.6966946597385071,
+  "E_hex_match": true,
+  "DR_hex_match": true,
+  "F-1_passed": true
+}

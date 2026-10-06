@@ -1,0 +1,32 @@
+{
+  "label": "Z1_baseline",
+  "E": 6.5337451171875,
+  "DR": 0.1905442774295807,
+  "E_hex": "0x1.a228e147ae148p+2",
+  "DR_hex": "0x1.863c140000000p-3",
+  "ECI": 0.40345078695398967,
+  "P_E": 0.3084193203195592,
+  "P_DR": 0.527763751392558,
+  "official_eci_reference": 0.40345078695398967,
+  "dr_components": {
+    "thermal": 0.15488877960555034,
+    "draft": 0.03992817788395744,
+    "vtmp": 0.003469599683203403,
+    "co2": 1.6027502606605685e-05,
+    "combined": 0.1918084500025725
+  },
+  "setpoint_mismatch_zone_steps": 2331,
+  "setpoint_mismatch_rate_of_cooling": 0.5380886426592798,
+  "setpoint_rewrite_count": 0,
+  "vrf_energy_gj": 5.318357117187498,
+  "hex_energy_gj_model": 1.215388000000005,
+  "raw_resid_rel": -0.006099795305442789,
+  "remote_status_prohibited_tenant_steps": 0,
+  "remote_permit_fraction": {
+    "South": 1.0,
+    "North": 1.0
+  },
+  "onoff_mismatch": 0,
+  "elapsed_s": 120.53489828109741,
+  "match": true
+}

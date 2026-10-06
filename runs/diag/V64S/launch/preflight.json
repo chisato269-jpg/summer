@@ -1,0 +1,29 @@
+{
+  "time": "2026-09-25T16:55:30.315612",
+  "pid": 47736,
+  "slots": [
+    6
+  ],
+  "log_dir": "runs\\diag\\V64S\\launch",
+  "slot_limit": {
+    "n_slots": 1,
+    "limit": 7,
+    "slots": [
+      6
+    ]
+  },
+  "memory": {
+    "free_gb": 5.813640594482422,
+    "min_free_gb": 2.0
+  },
+  "cleanup": [
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,100 @@
+{
+  "r8p_branch": "R8'-A",
+  "delta": -1,
+  "identity_tol_GJeq": 1e-09,
+  "rho_eval": 72.3,
+  "families": {
+    "S": {
+      "members": [
+        "S",
+        "S2"
+      ],
+      "n": 90,
+      "n_excluded_small": 20,
+      "levels": {
+        "local": {
+          "sign_agreement": 0.6285714285714286,
+          "median_rel_err": 1.8686200138700828,
+          "passed": false
+        },
+        "system": {
+          "sign_agreement": 0.8142857142857143,
+          "median_rel_err": 0.725075019747782,
+          "passed": false
+        },
+        "building": {
+          "sign_agreement": 1.0,
+          "median_rel_err": 0.0,
+          "passed": true
+        }
+      },
+      "chosen": "building"
+    },
+    "P": {
+      "members": [
+        "P"
+      ],
+      "n": 18,
+      "n_excluded_small": 8,
+      "levels": {
+        "local": {
+          "sign_agreement": 0.5,
+          "median_rel_err": 1.8615471506604284,
+          "passed": false
+        },
+        "system": {
+          "sign_agreement": 0.6,
+          "median_rel_err": 1.1924520385304795,
+          "passed": false
+        },
+        "building": {
+          "sign_agreement": 1.0,
+          "median_rel_err": 0.0,
+          "passed": true
+        }
+      },
+      "chosen": "building"
+    },
+    "V": {
+      "members": [
+        "V"
+      ],
+      "n": 4,
+      "n_excluded_small": 0,
+      "levels": {
+        "tenant": {
+          "sign_agreement": 1.0,
+          "median_rel_err": 0.023704788512489344,
+          "passed": true
+        },
+        "building": {
+          "sign_agreement": 1.0,
+          "median_rel_err": 0.0,
+          "passed": true
+        }
+      },
+      "chosen": "tenant"
+    }
+  },
+  "S2_by_occupancy": {
+    "unoccupied": {
+      "n": 14,
+      "local_sign_agreement": 0.42857142857142855,
+      "local_median_rel_err": 1.5797904421088687,
+      "median_dC_true": 0.0014632398486137557,
+      "median_dC_local": -0.00035459611806793216
+    },
+    "occupied": {
+      "n": 8,
+      "local_sign_agreement": 0.375,
+      "local_median_rel_err": 1.6450609098449032,
+      "median_dC_true": 0.0008355077207088515,
+      "median_dC_local": -0.0012635029969163673
+    }
+  },
+  "identity_violations": [],
+  "identity_abs_err_max": 8.76902717106276e-16,
+  "pre_flip_all_identical": true,
+  "n_rows": 112,
+  "current_levels_all_pass": false
+}

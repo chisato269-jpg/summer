@@ -1,0 +1,83 @@
+{
+  "time": "2026-10-03T17:22:59.938142",
+  "pid": 18772,
+  "slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "log_dir": "runs/diag/V8S/tests/live_v64a\\UT_live\\launch",
+  "slot_limit": {
+    "n_slots": 7,
+    "limit": 7,
+    "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "memory": {
+    "free_gb": 8.32998275756836,
+    "min_free_gb": 2.0
+  },
+  "cleanup": [
+    {
+      "slot": 0,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 1,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 2,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 3,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 4,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 5,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

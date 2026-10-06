@@ -1,0 +1,28 @@
+{
+  "grid_stage1": [
+    22.0,
+    23.0,
+    24.0,
+    25.0,
+    26.0,
+    27.0,
+    28.0
+  ],
+  "results": [
+    {
+      "written": 18.0,
+      "write_ok": true,
+      "error": null,
+      "readback_zone_S1": 18.0,
+      "accepted": true
+    },
+    {
+      "written": 30.0,
+      "write_ok": true,
+      "error": null,
+      "readback_zone_S1": 30.0,
+      "accepted": true
+    }
+  ],
+  "note": "夏季の格子は変えない。冬季機の格子拡張の可否を判断する材料として記録する（K-8）"
+}

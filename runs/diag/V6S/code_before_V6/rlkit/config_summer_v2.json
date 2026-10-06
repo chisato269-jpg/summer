@@ -1,0 +1,23 @@
+{
+  "run_dir": "runs/v2s_trial04",
+  "seed": 19800614,
+  "train_slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "eval_slot": 6,
+  "eval_concurrent": true,
+  "manual_stage2_update": null,
+  "max_collection_retries": 5,
+  "max_eval_retries": 5,
+  "include_indoor_unit_power": true,
+  "zone_step_energy_norm_gj": 0.02,
+  "entropy_coef_init": 0.01,
+  "planned_updates": 1500,
+  "stage2_start_fraction": 0.5,
+  "m9_enabled": false
+}

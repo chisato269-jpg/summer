@@ -1,0 +1,13 @@
+{"time": "2026-10-01T11:53:30.593120", "pid": 20132, "slot": 12, "event": "emulator_started", "executable": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot12\\Shizuku2.exe"}
+{"time": "2026-10-01T11:53:33.512564", "pid": 20132, "slot": 12, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-01T11:54:37.362244", "pid": 20132, "slot": 12, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-01T11:54:37.921642", "pid": 24184, "slot": 12, "event": "emulator_started", "executable": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot12\\Shizuku2.exe"}
+{"time": "2026-10-01T11:54:42.469691", "pid": 24184, "slot": 12, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-01T11:56:39.866264", "pid": 24184, "slot": 12, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-01T11:57:14.677467", "pid": 23192, "slot": 12, "event": "emulator_started", "executable": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot12\\Shizuku2.exe"}
+{"time": "2026-10-01T11:57:19.486189", "pid": 23192, "slot": 12, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-01T11:59:19.036627", "pid": 23192, "slot": 12, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-01T11:59:54.711852", "pid": 16512, "slot": 12, "event": "emulator_started", "executable": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot12\\Shizuku2.exe"}
+{"time": "2026-10-01T11:59:59.688604", "pid": 16512, "slot": 12, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-01T12:01:59.730856", "pid": 16512, "slot": 12, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-01T12:02:39.133292", "pid": 18900, "slot": 12, "event": "parent_closed_worker", "worker_pid": 13872, "killed": false, "exitcode": 0}

@@ -1,0 +1,34 @@
+{
+  "H-1": {
+    "passed": true,
+    "n_updates": 20,
+    "missing": {}
+  },
+  "H-2": {
+    "passed": true,
+    "cutoff_rate_11_20": 0.2
+  },
+  "H-3": {
+    "passed": true,
+    "max_1_20": 0.28807027695304904,
+    "update1": 0.06318458184371573
+  },
+  "H-4'": {
+    "passed": false,
+    "median_1_10": 0.17013729183435736,
+    "median_11_20": 0.154364118541139
+  },
+  "H-5": {
+    "passed": true,
+    "median_update_seconds": 447.47417986392975
+  },
+  "H-6": {
+    "report": true,
+    "max_streak": 19
+  },
+  "H-7": {
+    "report": false,
+    "inside_11_20": 19
+  },
+  "all_passed": false
+}

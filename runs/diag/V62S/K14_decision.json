@@ -1,0 +1,147 @@
+{
+  "rho_eval": 72.3,
+  "min_abs_dC": 0.0005,
+  "families": {
+    "S": {
+      "n": 54,
+      "n_excluded_small": 8,
+      "levels": {
+        "local": {
+          "sign_agreement": 0.8913043478260869,
+          "median_rel_err": 1.116127910202474,
+          "passed": false
+        },
+        "system": {
+          "sign_agreement": 0.8913043478260869,
+          "median_rel_err": 0.46460254546789914,
+          "passed": false
+        },
+        "building": {
+          "sign_agreement": 1.0,
+          "median_rel_err": 0.0,
+          "passed": true
+        }
+      },
+      "chosen": "building",
+      "sign_threshold": 0.9
+    },
+    "P": {
+      "n": 18,
+      "n_excluded_small": 9,
+      "levels": {
+        "local": {
+          "sign_agreement": 0.6666666666666666,
+          "median_rel_err": 0.7829785617044329,
+          "passed": false
+        },
+        "system": {
+          "sign_agreement": 0.7777777777777778,
+          "median_rel_err": 0.6203254185154239,
+          "passed": false
+        },
+        "building": {
+          "sign_agreement": 1.0,
+          "median_rel_err": 0.0,
+          "passed": true
+        }
+      },
+      "chosen": "building",
+      "sign_threshold": 0.9
+    },
+    "V": {
+      "n": 4,
+      "n_excluded_small": 0,
+      "levels": {
+        "tenant": {
+          "sign_agreement": 1.0,
+          "median_rel_err": 0.019883265648323545,
+          "passed": true
+        },
+        "building": {
+          "sign_agreement": 1.0,
+          "median_rel_err": 0.0,
+          "passed": true
+        }
+      },
+      "chosen": "tenant",
+      "sign_threshold": 1.0
+    }
+  },
+  "identity_violations": [
+    "S_10_S2",
+    "S_10_S7",
+    "S_10_S5",
+    "S_10_S4",
+    "S_10_S3",
+    "S_10_S6",
+    "S_10_S1",
+    "S_10_N3",
+    "S_10_S8",
+    "S_10_N2",
+    "S_10_N1",
+    "S_10_S9",
+    "S_10_N5",
+    "S_10_N4",
+    "S_10_N6",
+    "S_10_N7",
+    "S_10_N8",
+    "S_10_N9",
+    "S_13_S1",
+    "S_13_S3",
+    "S_13_S2",
+    "S_13_S4",
+    "S_13_S6",
+    "S_13_S5",
+    "S_13_S7",
+    "S_13_S8",
+    "S_13_N1",
+    "S_13_S9",
+    "S_13_N2",
+    "S_13_N5",
+    "S_13_N4",
+    "S_13_N3",
+    "S_13_N8",
+    "S_13_N6",
+    "S_13_N7",
+    "S_13_N9",
+    "S_16_S1",
+    "S_16_S2",
+    "S_16_S3",
+    "S_16_S6",
+    "S_16_S5",
+    "S_16_S4",
+    "S_16_S7",
+    "S_16_S8",
+    "S_16_N1",
+    "S_16_S9",
+    "S_16_N2",
+    "S_16_N3",
+    "S_16_N4",
+    "S_16_N5",
+    "S_16_N7",
+    "S_16_N6",
+    "S_16_N8",
+    "S_16_N9",
+    "P_13_S1",
+    "P_13_S3",
+    "P_13_S4",
+    "P_13_S7",
+    "P_13_S6",
+    "P_13_S8",
+    "P_13_S5",
+    "P_13_S9",
+    "P_13_N1",
+    "P_13_N4",
+    "P_13_N3",
+    "P_13_N5",
+    "P_13_N7",
+    "P_13_N8",
+    "P_13_N9",
+    "V_13_South_High",
+    "V_13_North_High",
+    "V_13_South_Low"
+  ],
+  "identity_rel_err_max": 6.598750751970559,
+  "pre_flip_all_identical": true,
+  "current_levels_all_pass": false
+}

@@ -1,0 +1,36 @@
+[v6s_diag] z1_slot1: ok
+[v6s_diag] z1_slot4: ok
+[v6s_diag] z1_slot3: ok
+[v6s_diag] z1_slot5: ok
+[v6s_diag] z1_slot2: ok
+[v6s_diag] z1_slot0: ok
+[v6s_diag] z1_slot6: ok
+Z'-1 全組一致: True
+  組0: E 0x1.a228e147ae148p+2 DR 0x1.863c140000000p-3 一致 True (185 秒)
+  組1: E 0x1.a228e147ae148p+2 DR 0x1.863c140000000p-3 一致 True (181 秒)
+  組2: E 0x1.a228e147ae148p+2 DR 0x1.863c140000000p-3 一致 True (182 秒)
+  組3: E 0x1.a228e147ae148p+2 DR 0x1.863c140000000p-3 一致 True (181 秒)
+  組4: E 0x1.a228e147ae148p+2 DR 0x1.863c140000000p-3 一致 True (181 秒)
+  組5: E 0x1.a228e147ae148p+2 DR 0x1.863c140000000p-3 一致 True (181 秒)
+  組6: E 0x1.a228e147ae148p+2 DR 0x1.863c140000000p-3 一致 True (193 秒)
+K-9: {
+ "zone_steps": 6804,
+ "cooling_zone_steps": 4332,
+ "total_vrf_energy_gj": 5.318065933366469,
+ "total_hex_energy_gj_model": 1.215679183821026,
+ "zone_vrf_energy_gj": 5.317934585710223,
+ "onoff_mismatch": 0,
+ "onoff_mismatch_frac": 0.0,
+ "onoff_mismatch_cmd_on_status_off": 0,
+ "onoff_mismatch_cmd_off_status_on": 0,
+ "onoff_mismatch_vrf_energy_gj": 0.0,
+ "onoff_mismatch_energy_frac": 0.0,
+ "mode_mismatch_while_cmd_cool": 0,
+ "setpoint_mismatch": 2331,
+ "setpoint_mismatch_frac_of_cooling": 0.5380886426592798,
+ "setpoint_mismatch_vrf_energy_gj": 2.9367128291554803,
+ "setpoint_mismatch_energy_frac": 0.5522144452422137,
+ "remote_prohibited_zone_steps": 0,
+ "result": "B",
+ "energy_definition": "VRF 電力量 = ΔE_t − 全熱交換器の模型分（ΔE_t·ΣP_hex/Q_t）。ゾーン別の VRF 電力量は e_k,t から全熱交換器分を除いた ΔE_t·(q_k − P_hex,k)/Q_t。系統ヘッダ（待機）は全体にだけ含む"
+}

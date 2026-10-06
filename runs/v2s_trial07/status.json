@@ -1,0 +1,59 @@
+{
+  "status": "stopped",
+  "stop_reason": "STOP ファイルが置かれた",
+  "finished_at": "2026-09-27T18:25:16.197777",
+  "updates_this_run": 368,
+  "update_index": 388,
+  "stage": 1,
+  "best_smooth": {
+    "update": 231,
+    "stage": 1,
+    "E": 4.88159423828125,
+    "DR": 0.1891472041606903,
+    "E_hex": "0x1.386c0a3d70a3dp+2",
+    "DR_hex": "0x1.835f9c0000000p-3",
+    "eci_smooth": 0.5925900522062533,
+    "eci_official": 0.5925900522062533,
+    "J": null
+  },
+  "best_official": {
+    "update": 231,
+    "stage": 1,
+    "E": 4.88159423828125,
+    "DR": 0.1891472041606903,
+    "E_hex": "0x1.386c0a3d70a3dp+2",
+    "DR_hex": "0x1.835f9c0000000p-3",
+    "eci_smooth": 0.5925900522062533,
+    "eci_official": 0.5925900522062533,
+    "J": null
+  },
+  "best_harvest": {
+    "update": 281,
+    "slot": 5,
+    "step_in_collection": 377,
+    "stage": 1,
+    "E": 4.85009716796875,
+    "DR": 0.1875597983598709,
+    "eci_official": 0.6066094784948464,
+    "eci_smooth": 0.6066094784948464,
+    "ECI": 0.6066094784948464,
+    "P_E": 0.6496747739002272,
+    "P_DR": 0.5663988724553751,
+    "J": null,
+    "E_hex": "0x1.3667fdf3b645ap+2",
+    "DR_hex": "0x1.801f5a0000000p-3"
+  },
+  "harvest_replay": null,
+  "sil_enabled": true,
+  "sil_guard": {
+    "triggered": false,
+    "median_301_340": 0.5927396562678235,
+    "median_261_300": 0.5987780883614819,
+    "threshold": 0.4790224706891856
+  },
+  "judgments": {
+    "H-9_reported": 17,
+    "H": true,
+    "I": true
+  }
+}

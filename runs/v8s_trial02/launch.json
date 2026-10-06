@@ -1,0 +1,1 @@
+{"pid": 16144, "breakaway": true, "breakaway_error": null, "log": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\runs\\v8s_trial02\\stdout.log", "cmd": ["python", "-m", "rlkit.v8.trainer2", "--config", "rlkit/config_summer_v82.json"], "started_at": "2026-10-04T03:41:21"}

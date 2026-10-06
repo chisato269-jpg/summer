@@ -1,0 +1,1 @@
+{"pid": 22800, "breakaway": true, "breakaway_error": null, "log": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\runs\\diag\\V83S\\calib\\calib_stdout.log", "cmd": ["python", "-m", "rlkit.diag.v83s_calib", "--workers", "6"], "started_at": "2026-10-04T13:02:31"}

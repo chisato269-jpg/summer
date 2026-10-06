@@ -1,0 +1,13 @@
+[train_summer] {'event': 'initial_reference', 'E_star': 7.90298779296875, 'DR_star': 0.19065715372562408, 'alpha': 10.414993518328608, 'beta': 12.222579271146936, 'rho': 1.1735561092416704, 'eci_smooth': 0.24663159205362034, 'eci_official': 0.0}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 11, 'streak': 10}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 12, 'streak': 11}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 13, 'streak': 12}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 14, 'streak': 13}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 15, 'streak': 14}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 16, 'streak': 15}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 17, 'streak': 16}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 18, 'streak': 17}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 19, 'streak': 18}
+[train_summer] {'event': 'H-6_degenerate_argmax', 'update': 20, 'streak': 19}
+[train_summer] {'event': 'H_checks', 'update': 20, 'all_passed': False}
+[train_summer] 停止: S-3: 更新 20 の H-1〜H-5 に不合格がある（judgment_u20.json）

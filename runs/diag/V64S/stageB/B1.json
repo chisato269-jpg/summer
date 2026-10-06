@@ -1,0 +1,67 @@
+{
+  "time": "2026-09-25T19:00:40.560249",
+  "step": "B1",
+  "baseline_E_hex": "0x1.a228e147ae148p+2",
+  "baseline_DR_hex": "0x1.863c140000000p-3",
+  "results": {
+    "6": {
+      "slot": 6,
+      "E": 6.5337451171875,
+      "DR": 0.1905442774295807,
+      "E_hex": "0x1.a228e147ae148p+2",
+      "DR_hex": "0x1.863c140000000p-3",
+      "eci_official": 0.40345078695398967,
+      "ECI": 0.40345078695398967,
+      "co2_delta_obs_clip_rate": 0.0,
+      "raw_resid_rel": -0.006099795305442789,
+      "hex_energy_gj_model": 1.215388000000005,
+      "vent_level_fraction": {
+        "South": {
+          "off": 0.05555555555555555,
+          "Low": 0.0,
+          "Middle": 0.9444444444444444,
+          "High": 0.0
+        },
+        "North": {
+          "off": 0.06613756613756613,
+          "Low": 0.0,
+          "Middle": 0.9338624338624338,
+          "High": 0.0
+        }
+      },
+      "onoff_mismatch": 0,
+      "remote_permit_fraction": {
+        "South": 1.0,
+        "North": 1.0
+      },
+      "elapsed_s": 123.72231531143188,
+      "match": true,
+      "T-3": {
+        "week_rel": 0.0,
+        "L1": 3.260023731531495e-05,
+        "min_n": 0.0,
+        "cond1": true,
+        "cond2": true,
+        "cond3": true,
+        "branch_by_evaluate": "R8'-A",
+        "delta_by_evaluate": -1,
+        "n_B_week_rel": 2.473471196613961e-07,
+        "passed": true
+      },
+      "r8p_sum_rel": 0.0,
+      "r8p_zone_sum_max_abs": 4.336808689942018e-19,
+      "r8p_empty_max_abs_n": 0.0,
+      "r8p_min_n": 0.0,
+      "r8p_minute_B_week_rel": 2.473471196613961e-07,
+      "r8p_seconds": 0.8117811679840088,
+      "raw_resid_dissatisfaction_rel": 0.0,
+      "raw_resid_dissatisfaction_endpoint_rel": 0.006634534450707338,
+      "remote_status_all_permit": true,
+      "action_dims": 60
+    }
+  },
+  "errors": {},
+  "all_match": true,
+  "all_T3": true,
+  "all_same": true
+}

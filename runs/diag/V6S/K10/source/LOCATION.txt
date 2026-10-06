@@ -1,0 +1,3 @@
+この診断の出力（エミュレータの分単位の CSV など）は、容量が大きいため OneDrive の外に移した。
+場所: C:\Users\chisa\rl_local\diag_csv\V6S\K10\source
+全ファイルの SHA-256 は runs/diag/local_data_manifest.json にある（移動の前後で一致を確認済み）。

@@ -1,0 +1,59 @@
+........................................................................ [ 55%]
+............................sssssss..............F......s                [100%]
+================================== FAILURES ===================================
+___________________________ test_ut38_sil_disabled ____________________________
+
+    def test_ut38_sil_disabled():
+        """UT-38: 自己模倣学習の損失が 0 で、勾配に寄与しない。学習の入口は SIL を適用しない。"""
+        assert constants.SIL_ENABLED is False
+        lp = th.randn(4, 60, requires_grad=True)
+        loss = learner.sil_policy_loss(lp, th.rand(4, 60), 1.0, th.ones(4, 60, dtype=th.bool), 0.0)
+        loss.backward()
+        assert loss.item() == 0.0 and th.count_nonzero(lp.grad) == 0
+        vec = DummyVecEnv([lambda: MockSummerEnv(seed=0)])
+        vec.env_method("set_reference", REF)
+        model = learner.SummerPPO(vec, 1, planned_updates=10, seed=constants.RANDOM_SEED, n_steps_per_env=756)
+        assert model.c_sil == 0.0
+        model.collect_one()
+        buf = [{"update": 1, "E": 5.0, "DR": 0.2, "eci_official": 0.3, "eci_smooth": 0.3, "ECI": 0.3, "J": None,
+                "W": 159497.0, "actions": model._rollout["actions"][:378].astype(np.int64),
+                "obs": model._rollout["observations"][:378].astype(np.float32),
+                "masks": model._rollout["action_masks"][:378].copy(), "step_seconds": np.full(378, 900.0),
+                "delta_E": np.full(378, 0.01), "zone_energy": np.full((378, 18), 0.0005), "zone_n": np.full((378, 18), 1e-6)}]
+        before = {k: v.clone() for k, v in model.policy.policy_network.state_dict().items()}
+        ref = ReferencePoint.from_dict(REF)
+        stats = {lv: {"mean": 0.0, "std": 1.0, "n": 1} for lv in dict.fromkeys(advantage.dim_levels())}
+        obs = th.as_tensor(model._rollout["observations"]).float()
+        acts = th.as_tensor(model._rollout["actions"]).long()
+        masks = th.as_tensor(model._rollout["action_masks"]).bool()
+        rec = model._sil(buf, "apply", ref, stats, obs, acts, masks, th.ones(acts.shape[0], 60, dtype=th.bool))
+        assert "approx_kl_sil" not in rec
+        after = model.policy.policy_network.state_dict()
+        assert all(th.equal(before[k], after[k]) for k in before)
+>       tr = ts.Trainer({"planned_updates": 1500}, ".", factory="mock")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+rlkit\tests\test_v7.py:176: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rlkit.train_summer.Trainer object at 0x000002774894E7B0>
+cfg = {'planned_updates': 1500}, run_dir = '.', factory = 'mock'
+max_updates = None
+
+    def __init__(self, cfg, run_dir, factory="real", max_updates=None):
+        """factory: "real"（エミュレータ）または "mock"（試験用の模擬環境。組の複製を作らない）。
+        max_updates: 通算の更新数の上限（--updates は通算の意味。None なら計画更新数まで）。"""
+        self.cfg = cfg
+        self.run_dir = run_dir
+        self.factory = factory
+        self.max_updates = max_updates
+        # 並列数拡張: 1 組あたりの本数（既定 2。訓練の組数 × 本数 = 12 は config.validate が保つ）
+        self.eps_per_slot = int(cfg.get("episodes_per_slot", constants.EPISODES_PER_SLOT))
+>       self.n_episodes = len(cfg["train_slots"]) * self.eps_per_slot
+                              ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'train_slots'
+
+rlkit\train_summer.py:353: KeyError
+=========================== short test summary info ===========================
+FAILED rlkit/tests/test_v7.py::test_ut38_sil_disabled - KeyError: 'train_slots'
+1 failed, 120 passed, 8 skipped in 941.67s (0:15:41)

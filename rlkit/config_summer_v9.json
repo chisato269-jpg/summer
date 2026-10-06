@@ -1,0 +1,60 @@
+{
+  "run_dir": "C:/Users/chisa/rl_local/runs/v9s_single01",
+  "model_dir": "C:/Users/chisa/rl_models/v9s_single01",
+  "seed": 20261008,
+  "train_slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "eval_slot": 12,
+  "episodes_per_slot": 1,
+  "slot_limit": 13,
+  "min_free_gb": 4.5,
+  "comm_rpm": true,
+  "include_indoor_unit_power": true,
+  "zone_step_energy_norm_gj": 0.02,
+  "m9_enabled": true,
+  "k9_result": "B",
+  "eval_concurrent": true,
+  "max_collection_retries": 4,
+  "max_eval_retries": 4,
+  "planned_updates": 2500,
+  "v9": {
+    "reference0": {
+      "rho": 60.0,
+      "E_ref": 6.5,
+      "DR_ref": 0.2
+    },
+    "switch": {
+      "min_update": 600,
+      "window": 300,
+      "rise": 0.002,
+      "cap_update": 1200
+    },
+    "phase_b": {
+      "l6r_loss": "k3",
+      "l6r_lr": 0.003,
+      "l6r_max_epochs": 1000
+    },
+    "candidate2": {
+      "loss": "k3",
+      "lr": 0.003,
+      "max_epochs": 3000
+    },
+    "environment_seeds": {
+      "rseed_o": 19800614,
+      "rseed_w": 19800614,
+      "rseed_oprm": 1
+    }
+  }
+}

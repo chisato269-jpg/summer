@@ -1,0 +1,20 @@
+{
+  "time": "2026-10-04T05:06:56.486616",
+  "harvested_at_update": 5,
+  "saved_E_hex": "0x1.1ac98b4395810p+2",
+  "saved_DR_hex": "0x1.6bec4c0000000p-3",
+  "replay_E_hex": "0x1.1ac98b4395810p+2",
+  "replay_DR_hex": "0x1.6bec4c0000000p-3",
+  "replay_ECI": 0.7123151322712822,
+  "replay_P_E": 0.7315004455029875,
+  "replay_P_DR": 0.6936329988340137,
+  "E_hex_match": true,
+  "DR_hex_match": true,
+  "F-1_passed": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "ok"
+    }
+  ]
+}

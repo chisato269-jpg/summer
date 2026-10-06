@@ -1,0 +1,26 @@
+{
+  "run_dir": "runs/v2s_trial08",
+  "seed": 19800614,
+  "train_slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "eval_slot": 6,
+  "eval_concurrent": true,
+  "max_collection_retries": 4,
+  "max_eval_retries": 4,
+  "include_indoor_unit_power": true,
+  "zone_step_energy_norm_gj": 0.02,
+  "planned_updates": 1500,
+  "m9_enabled": true,
+  "k9_result": "B",
+  "warm_start_from": "runs/v2s_trial07/checkpoint_latest.pt",
+  "episodes_per_slot": 2,
+  "slot_limit": 7,
+  "min_free_gb": 2.0,
+  "comm_rpm": false
+}

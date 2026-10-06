@@ -1,0 +1,70 @@
+{
+  "zone_steps": 6804,
+  "cooling_zone_steps": 4332,
+  "total_vrf_energy_gj": 5.318065933366469,
+  "total_hex_energy_gj_model": 1.215679183821026,
+  "zone_vrf_energy_gj": 5.317934585710223,
+  "onoff_mismatch": 0,
+  "onoff_mismatch_frac": 0.0,
+  "onoff_mismatch_cmd_on_status_off": 0,
+  "onoff_mismatch_cmd_off_status_on": 0,
+  "onoff_mismatch_vrf_energy_gj": 0.0,
+  "onoff_mismatch_energy_frac": 0.0,
+  "mode_mismatch_while_cmd_cool": 0,
+  "setpoint_mismatch": 2331,
+  "setpoint_mismatch_frac_of_cooling": 0.5380886426592798,
+  "setpoint_mismatch_vrf_energy_gj": 2.9367128291554803,
+  "setpoint_mismatch_energy_frac": 0.5522144452422137,
+  "remote_prohibited_zone_steps": 0,
+  "mode_status_counts": {
+    "ThermoOff": 155,
+    "Cooling": 6649
+  },
+  "onoff_mismatch_by_zone": {
+    "S1": 0,
+    "S2": 0,
+    "S3": 0,
+    "S4": 0,
+    "S5": 0,
+    "S6": 0,
+    "S7": 0,
+    "S8": 0,
+    "S9": 0,
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0,
+    "N6": 0,
+    "N7": 0,
+    "N8": 0,
+    "N9": 0
+  },
+  "setpoint_readback_values_when_mismatch": {
+    "21.0": 370,
+    "26.0": 307,
+    "25.0": 284,
+    "22.0": 296,
+    "24.0": 335,
+    "23.0": 351,
+    "27.0": 130,
+    "28.0": 11,
+    "29.0": 8,
+    "19.0": 47,
+    "20.0": 152,
+    "18.0": 27,
+    "17.0": 6,
+    "16.0": 7
+  },
+  "result": "B",
+  "thresholds": {
+    "onoff_mismatch_frac": 0.01,
+    "onoff_energy_frac": 0.05,
+    "setpoint_energy_frac": 0.1
+  },
+  "energy_definition": "VRF 電力量 = ΔE_t − 全熱交換器の模型分（ΔE_t·ΣP_hex/Q_t）。ゾーン別の VRF 電力量は e_k,t から全熱交換器分を除いた ΔE_t·(q_k − P_hex,k)/Q_t。系統ヘッダ（待機）は全体にだけ含む",
+  "diff_writer_skips_onoff": {
+    "answer": true,
+    "evidence": "rlkit/env.py の _write_action は発停を dw.write(('zone_on', ou, iu), 値, ...) で書き、rlkit/comm.py の DiffWriter.write は同じキーに同じ値を前回書いていれば書き込みを省く（constants.USE_DIFF_WRITER = True）。執務者が発停を変えても、指令が変わるまで書き直さない"
+  }
+}

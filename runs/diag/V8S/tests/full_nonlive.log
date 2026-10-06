@@ -1,0 +1,36 @@
+........................................................................ [ 39%]
+F...........................sssssss..................................... [ 79%]
+.................s..............sssss                                    [100%]
+================================== FAILURES ===================================
+_____________________ test_config_unresolved_and_template _____________________
+
+    def test_config_unresolved_and_template():
+        cfg = config.load()
+        assert [k for k, _, _ in config.unresolved_items(cfg)] == list(config.UNRESOLVED)
+        template = os.path.join(os.path.dirname(config.__file__), "config_summer_v7.json")
+        cfg_t = config.load(template)
+        # 値は指示書 V7-S 第 11 章の ASCII 数値参照リストと同じ（走行は runs/v2s_trial08。V6-S〜V6.4-S の設定は残す）
+        assert config.unresolved_items(cfg_t) == []
+        assert cfg_t["run_dir"] == "runs/v2s_trial08" and cfg_t["include_indoor_unit_power"] is True
+        assert cfg_t["warm_start_from"] == "runs/v2s_trial07/checkpoint_latest.pt"
+        assert config.load(os.path.join(os.path.dirname(config.__file__), "config_summer_v64.json"))["run_dir"] == "runs/v2s_trial07"
+        assert config.load(os.path.join(os.path.dirname(config.__file__), "config_summer_v6.json"))["run_dir"] == "runs/v2s_trial05"
+        assert config.load(os.path.join(os.path.dirname(config.__file__), "config_summer_v61.json"))["run_dir"] == "runs/v2s_trial06"
+        assert cfg_t["zone_step_energy_norm_gj"] == 0.020 and cfg_t["seed"] == 19800614
+        assert cfg_t["planned_updates"] == 1500 and cfg_t["m9_enabled"] is True and cfg_t["k9_result"] == "B"
+        assert cfg_t["max_collection_retries"] == 4       # S-8: やり直しが 3 回を超えたら停止
+        with open(template, encoding="utf-8") as f:
+>           assert set(json.load(f)) == set(config.DEFAULTS)
+E           AssertionError: assert {'comm_rpm', ..._result', ...} == {'comm_rpm', ...weights', ...}
+E             
+E             Extra items in the right set:
+E             'max_epochs'
+E             'init_weights'
+E             'kl_limit'
+E             'lr'
+E             Use -v to get more diff
+
+rlkit\tests\test_policy_observation.py:177: AssertionError
+=========================== short test summary info ===========================
+FAILED rlkit/tests/test_policy_observation.py::test_config_unresolved_and_template
+1 failed, 167 passed, 13 skipped in 1348.68s (0:22:28)

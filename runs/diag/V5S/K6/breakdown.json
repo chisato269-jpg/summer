@@ -1,0 +1,67 @@
+{
+  "note": "全停止の行動列は runs/v2s_trial03 に保存されていない（決定論的評価は最良のときだけ行動列を保存する仕様のため）。全ゾーン停止・蒸発温度の索引 6・換気は両テナント運転で組み立て直した。保存済みの決定論的評価の行動列がこの換気・蒸発温度であることを確認して合わせた",
+  "reference_point": {
+    "E_rep": 1.3255498046875,
+    "DR_rep": 0.6349297165870667
+  },
+  "reference_E_hex": "0x1.53573b645a1cbp+0",
+  "reference_DR_hex": "0x1.4515820000000p-1",
+  "all_stop": {
+    "final": {
+      "E_rep": 1.3255498046875,
+      "DR_rep": 0.6349297165870667,
+      "eci_official": 0.0,
+      "eci_smooth": 7.722852506353506e-05,
+      "sum_delta_E_gj": 1.3255498046874996,
+      "raw_resid_rel": 0.009401234599734958,
+      "header_energy_fraction": 0.0,
+      "setpoint_override_rate": 0.0,
+      "n_steps": 378,
+      "E_hex": "0x1.53573b645a1cbp+0",
+      "DR_hex": "0x1.4515820000000p-1"
+    },
+    "summary": {
+      "sum_delta_E_gj": 1.3255498046875,
+      "hex_energy_gj": 1.313088,
+      "outdoor_energy_gj": 0.0,
+      "indoor_energy_gj": 0.0,
+      "modelled_total_gj": 1.313088,
+      "dr_weighted_with_co2": 0.6326155244053264,
+      "dr_weighted_without_co2": 0.6326155243757388,
+      "dr_co2_component": 2.958766565086535e-11
+    }
+  },
+  "all_fan": {
+    "final": {
+      "E_rep": 1.3255498046875,
+      "DR_rep": 0.6349297165870667,
+      "eci_official": 0.0,
+      "eci_smooth": 7.722852506353506e-05,
+      "sum_delta_E_gj": 1.3255498046874996,
+      "raw_resid_rel": 0.009401234599734958,
+      "header_energy_fraction": 0.0,
+      "setpoint_override_rate": 0.9600235155790712,
+      "n_steps": 378,
+      "E_hex": "0x1.53573b645a1cbp+0",
+      "DR_hex": "0x1.4515820000000p-1"
+    },
+    "summary": {
+      "sum_delta_E_gj": 1.3255498046875,
+      "hex_energy_gj": 1.313088,
+      "outdoor_energy_gj": 0.0,
+      "indoor_energy_gj": 0.0,
+      "modelled_total_gj": 1.313088,
+      "dr_weighted_with_co2": 0.6326155244053264,
+      "dr_weighted_without_co2": 0.6326155243757388,
+      "dr_co2_component": 2.958766565086535e-11
+    }
+  },
+  "reconstruction_matches_reference": true,
+  "fan_equals_stop": true,
+  "breakdown_share": {
+    "hex": 0.990598765400265,
+    "outdoor": 0.0,
+    "indoor": 0.0,
+    "unexplained": 0.009401234599734944
+  }
+}

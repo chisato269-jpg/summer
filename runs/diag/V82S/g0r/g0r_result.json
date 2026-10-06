@@ -1,0 +1,30 @@
+{
+  "start_expected_E_hex": "0x1.1aea1a9fbe76dp+2",
+  "start_expected_DR_hex": "0x1.6c1d5c0000000p-3",
+  "pre_weights": "C:\\Users\\chisa\\rl_models\\v8s_trial01\\best\\best_harvest.pt",
+  "pre_weights_update": 22,
+  "replay_E_hex": "0x1.1aea1a9fbe76dp+2",
+  "replay_DR_hex": "0x1.6c1d5c0000000p-3",
+  "replay_matches_start": true,
+  "fit": {
+    "adopted": false,
+    "epochs": 300,
+    "n_effective": 20676,
+    "n_mismatch_before": 15,
+    "n_margin_fail_before": 16,
+    "min_margin_before": -34.64525604248047,
+    "n_mismatch_after": 28,
+    "n_margin_fail_after": 28,
+    "min_margin_after": -25.601027488708496
+  },
+  "fallback_base_E_hex": "0x1.1a204189374bcp+2",
+  "fallback_base_DR_hex": "0x1.6cd5d80000000p-3",
+  "start_point": {
+    "E_hex": "0x1.1a204189374bcp+2",
+    "DR_hex": "0x1.6cd5d80000000p-3",
+    "source": "G-0R の分岐: 学習前の重み（trial01 更新 22 の採取に使った重み）の基準の軌跡",
+    "ECI": 0.7103300576247301
+  },
+  "G0R_reproduced": false,
+  "policy_path": "C:\\Users\\chisa\\rl_models\\v8s_trial02\\g0r_policy.pt"
+}

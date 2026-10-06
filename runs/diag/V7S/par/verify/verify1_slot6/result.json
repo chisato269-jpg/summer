@@ -1,0 +1,18 @@
+{
+  "label": "verify1",
+  "slot": 6,
+  "elapsed_s": 135.4343717098236,
+  "E_hex": "0x1.a228e147ae148p+2",
+  "DR_hex": "0x1.863c140000000p-3",
+  "calls": 2650,
+  "n_mismatch": 0,
+  "mismatch_examples": [],
+  "rpm_stats": {
+    "requests": 6246,
+    "points": 129706,
+    "fallback_chunks": 0,
+    "fallback_points": 0
+  },
+  "hex_match": true,
+  "passed": true
+}

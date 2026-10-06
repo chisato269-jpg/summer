@@ -1,0 +1,90 @@
+<title>学習の走行状況</title>
+<style>
+:root{--bg:#f6f7f5;--panel:#ffffff;--fg:#1d2420;--muted:#5b665f;--line:#dde2dc;--ok:#1a7f37;--ok-bg:#dcf3e2;--bad:#b3261e;--bad-bg:#fbe2df;--warn:#8a5a00;--warn-bg:#fdefc7;--ink:#2b5c8a;--ink2:#9aa7a0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121613;--panel:#1b211d;--fg:#e6ebe7;--muted:#9aa59e;--line:#2c352f;--ok:#58c47a;--ok-bg:#16301f;--bad:#ff8a80;--bad-bg:#3a1b19;--warn:#f0c15a;--warn-bg:#3a2e10;--ink:#7fb3e6;--ink2:#5d6a63;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121613;--panel:#1b211d;--fg:#e6ebe7;--muted:#9aa59e;--line:#2c352f;--ok:#58c47a;--ok-bg:#16301f;--bad:#ff8a80;--bad-bg:#3a1b19;--warn:#f0c15a;--warn-bg:#3a2e10;--ink:#7fb3e6;--ink2:#5d6a63;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;padding-inline:16px;padding-block:16px 32px;max-width:720px;margin-inline:auto;line-height:1.5}
+h1{font-size:1.05rem;margin:0 0 12px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.state{border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:4px}
+.state.ok{background:var(--ok-bg);color:var(--ok)}.state.bad{background:var(--bad-bg);color:var(--bad)}.state.warn{background:var(--warn-bg);color:var(--warn)}
+.state .big{font-size:1.6rem;font-weight:700;line-height:1.2}
+.state .sub{font-size:.9rem;color:var(--fg)}
+.bar{height:10px;border-radius:5px;background:var(--line);overflow:hidden;margin-block:14px 4px}
+.bar>i{display:block;height:100%;background:var(--ink)}
+.prog{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-block:14px}
+.cell{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-width:0}
+.cell b{display:block;font-size:1.15rem;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.cell span{font-size:.78rem;color:var(--muted)}
+h2{font-size:.9rem;margin:20px 0 8px;color:var(--muted);font-weight:600}
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px}
+svg{display:block;width:100%;height:auto}
+.tw{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.85rem;font-variant-numeric:tabular-nums;min-width:420px}
+th,td{padding:6px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+.note{font-size:.8rem;color:var(--muted);margin-top:16px}
+</style>
+<h1>夏季の学習 trial08（V7.1-S）</h1>
+<div id="state" class="state"><span class="big">読み込み中</span></div>
+<div class="bar"><i id="barfill" style="width:0%"></i></div>
+<div class="prog"><span id="p1"></span><span id="p2"></span></div>
+<div class="grid" id="grid"></div>
+<h2>収穫の ECI（直近 80 更新）</h2>
+<div class="chart"><svg id="chart" viewBox="0 0 640 210" role="img" aria-label="収穫の ECI の推移"></svg></div>
+<h2>直近 8 更新</h2>
+<div class="tw"><table id="tbl"></table></div>
+<p class="note" id="note"></p>
+<script>
+var D = {"generated_ms": 1790905646347, "last_update_ms": 1790905489818, "update": 1000, "planned": 1500, "alive_s": 1200, "stop_file": false, "stop_reason": null, "best_eci": 0.6906305284111388, "best_update": 998, "sec_median": 179.9596848487854, "eta_h": 24.994400673442417, "min_free_gb": 1.6428070068359375, "fallbacks": 0, "updates_since_resume": 200, "series": [[921, 0.6793933583777801, 0.6816239291984847], [922, 0.6810289796448414, 0.6798388263242938], [923, 0.6805406768955287, 0.6782649230652004], [924, 0.6814282264765724, 0.6786921875541874], [925, 0.6805628812897838, 0.6793892336055084], [926, 0.6838409810979835, 0.6802281937060103], [927, 0.6828081604026376, 0.6812957595138277], [928, 0.682503212946002, 0.6836680783492566], [929, 0.6831086784900345, 0.6696699431075621], [930, 0.6834912386883145, 0.6841388519217904], [931, 0.6829880520880077, 0.6839230114159593], [932, 0.6823934215955664, 0.6797471518481751], [933, 0.6831296352826574, 0.6843474976507099], [934, 0.6826713597926033, 0.684319198050144], [935, 0.6828211040377665, 0.6791576279765938], [936, 0.6827365948262331, 0.6770938505890781], [937, 0.6859140646853278, 0.6773047221482976], [938, 0.6845507111562599, 0.6848649064010659], [939, 0.6860896687749518, 0.6844062092200555], [940, 0.6858709732060063, 0.6788225698127385], [941, 0.6864224985488824, 0.6824269693280286], [942, 0.6844385755943508, 0.6472234673822731], [943, 0.6864693456551867, 0.6613065190121225], [944, 0.6905562241677412, 0.6766774233310916], [945, 0.6861741821928281, 0.6872323241391216], [946, 0.6885753140420982, 0.6880358489038509], [947, 0.6861474887801623, 0.6882659376528557], [948, 0.6875092701906917, 0.6899061494394224], [949, 0.6886960651607129, 0.6900221852937947], [950, 0.6873406050598782, 0.6895675347923693], [951, 0.6869513827298624, 0.6880642799909612], [952, 0.6896582197423401, 0.6884700996421592], [953, 0.6872716424631274, 0.6865328193889724], [954, 0.689133132455874, 0.6892065801025742], [955, 0.6889627045451769, 0.6887086374655869], [956, 0.6882559922531003, 0.6868911282760739], [957, 0.6888308625415474, 0.6861368641522904], [958, 0.6887789821436849, 0.6886147186870282], [959, 0.6872858372904291, 0.6877488681792271], [960, 0.6876523846213002, 0.6877496895211069], [961, 0.6870905522262516, 0.6869934315240714], [962, 0.6897826137129952, 0.6884584535912832], [963, 0.686980424146439, 0.6914183683346019], [964, 0.6888066651036454, 0.6885803500820058], [965, 0.6864524423453987, 0.679896272936105], [966, 0.6869372847749703, 0.6896828087975939], [967, 0.6853978704741892, 0.6878226758878608], [968, 0.685057629385849, 0.6846182303780776], [969, 0.6857508818138035, 0.6855279106296427], [970, 0.6859970920119994, 0.6875252984799373], [971, 0.6873488446296538, 0.6841631879864732], [972, 0.6874247677860352, 0.6836034140339313], [973, 0.6880566339029233, 0.683153329170584], [974, 0.6860427676193991, 0.6820499542146152], [975, 0.6856074644930953, 0.6833416058001383], [976, 0.6873367458606535, 0.6847477425627809], [977, 0.6848701446927684, 0.6844373800193483], [978, 0.6861759429794966, 0.6848772088438713], [979, 0.6865734537775138, 0.6851017909959976], [980, 0.6888968850124402, 0.6833589487625344], [981, 0.688208447282491, 0.6861581645748259], [982, 0.6860559468301889, 0.6856354928983567], [983, 0.6857500495162165, 0.6859540018198204], [984, 0.6865147046816831, 0.6839514592215488], [985, 0.6880177383260985, 0.6851657817053235], [986, 0.6888712499245322, 0.6856855703550632], [987, 0.687643581760323, 0.6856554550216216], [988, 0.6872475403742236, 0.683831563010592], [989, 0.685765894464855, 0.6831947798503418], [990, 0.6870453994501509, 0.6870304389888567], [991, 0.6835924346792494, 0.6841465743325318], [992, 0.6871929696751586, 0.6853529315130986], [993, 0.6862815494147058, 0.6864347125427449], [994, 0.688560513997429, 0.6860252753017468], [995, 0.6883417867517374, 0.6867820592006526], [996, 0.6870089303672166, 0.6877128350700185], [997, 0.6891886274281362, 0.6883699199654595], [998, 0.6906305284111388, 0.6877285166715277], [999, 0.6900780835992166, 0.6882439320281073], [1000, 0.6894300108355788, 0.6900575120991381]], "recent": [[993, 179.6882040500641, 0.6862815494147058, 0.6864347125427449, 0, 2.003223419189453], [994, 178.0175895690918, 0.688560513997429, 0.6860252753017468, 0, 1.8405189514160156], [995, 178.09913539886475, 0.6883417867517374, 0.6867820592006526, 0, 2.055438995361328], [996, 181.0881006717682, 0.6870089303672166, 0.6877128350700185, 0, 1.876007080078125], [997, 178.29029202461243, 0.6891886274281362, 0.6883699199654595, 0, 1.9477882385253906], [998, 178.01300072669983, 0.6906305284111388, 0.6877285166715277, 0, 1.8417472839355469], [999, 178.90732383728027, 0.6900780835992166, 0.6882439320281073, 0, 1.6428070068359375], [1000, 181.52346920967102, 0.6894300108355788, 0.6900575120991381, 0, 1.8958663940429688]]};
+function pad(n){return (n<10?"0":"")+n}
+function hm(ms){var d=new Date(ms);return pad(d.getMonth()+1)+"/"+pad(d.getDate())+" "+pad(d.getHours())+":"+pad(d.getMinutes())}
+function ago(sec){var m=Math.floor(sec/60);if(m<1)return "1 分未満前";if(m<120)return m+" 分前";return (m/60).toFixed(1)+" 時間前"}
+function render(){
+  var now=Date.now(), lastAge=(now-D.last_update_ms)/1000, genAge=(now-D.generated_ms)/1000;
+  var cls, big, sub;
+  if(D.update>=D.planned){cls="ok";big="完了";sub="更新 "+D.planned+" に到達"}
+  else if(D.stop_file){cls="bad";big="停止指示あり";sub="STOP ファイルがある"}
+  else if(lastAge<=D.alive_s){cls="ok";big="稼働中";sub="最終更新 "+ago(lastAge)}
+  else if(lastAge<=3600){cls="warn";big="更新が止まっている可能性";sub="最終更新 "+ago(lastAge)+"。この表示が古いだけの場合もある"}
+  else{cls="bad";big="停止";sub="最終更新 "+ago(lastAge)+(D.stop_reason?"。"+D.stop_reason:"")}
+  var el=document.getElementById("state");el.className="state "+cls;
+  el.innerHTML='<span class="big">'+(cls==="ok"?"● ":cls==="warn"?"▲ ":"■ ")+big+'</span><span class="sub">'+sub+'</span>';
+  document.getElementById("barfill").style.width=(100*D.update/D.planned).toFixed(1)+"%";
+  document.getElementById("p1").textContent="更新 "+D.update+" / "+D.planned+"（"+(100*D.update/D.planned).toFixed(1)+"%）";
+  document.getElementById("p2").textContent=D.eta_h!=null&&cls==="ok"?"残り約 "+(D.eta_h/24).toFixed(1)+" 日":"";
+  var cells=[["最良の収穫の ECI",D.best_eci.toFixed(4),"更新 "+D.best_update],
+    ["1 更新の実時間（直近 20 の中央値）",D.sec_median.toFixed(0)+" 秒",""],
+    ["空きメモリの最小（直近 20 の最小）",D.min_free_gb==null?"記録なし":D.min_free_gb.toFixed(2)+" GB",""],
+    ["一括読み取りの戻し（直近 20 の合計）",D.fallbacks==null?"記録なし":String(D.fallbacks),"回"],
+    ["再開からの更新数",String(D.updates_since_resume),"V7.1-S は更新 685 から"],
+    ["最終更新の時刻",hm(D.last_update_ms),""]];
+  document.getElementById("grid").innerHTML=cells.map(function(c){return '<div class="cell"><span>'+c[0]+'</span><b>'+c[1]+'</b><span>'+c[2]+'</span></div>'}).join("");
+  var note="この表示の作成: "+hm(D.generated_ms)+"（"+ago(genAge)+"）。ページは作り直したときだけ更新される。";
+  if(genAge>2700) note+=" 作成から 45 分以上経っているので、上の状態は現在と違う可能性がある。";
+  document.getElementById("note").textContent=note;
+}
+function chart(){
+  var s=D.series, W=640,H=210,L=44,R=10,T=10,B=24;
+  var vals=s.map(function(r){return r[1]}).concat(s.map(function(r){return r[2]}));
+  var lo=Math.min.apply(null,vals), hi=Math.max.apply(null,vals), pad=(hi-lo)*0.1||0.01; lo-=pad; hi+=pad;
+  var n=s.length, x=function(i){return L+(W-L-R)*i/Math.max(n-1,1)}, y=function(v){return T+(H-T-B)*(1-(v-lo)/(hi-lo))};
+  var css=getComputedStyle(document.documentElement), line=css.getPropertyValue("--line"), muted=css.getPropertyValue("--muted"), ink=css.getPropertyValue("--ink"), ink2=css.getPropertyValue("--ink2");
+  var g="";
+  for(var k=0;k<=4;k++){var v=lo+(hi-lo)*k/4;g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v)+'" y2="'+y(v)+'" stroke="'+line+'" stroke-width="1"/><text x="'+(L-6)+'" y="'+(y(v)+4)+'" text-anchor="end" font-size="11" fill="'+muted+'">'+v.toFixed(3)+'</text>'}
+  var p1=s.map(function(r,i){return (i?"L":"M")+x(i).toFixed(1)+" "+y(r[1]).toFixed(1)}).join(" ");
+  var p2=s.map(function(r,i){return (i?"L":"M")+x(i).toFixed(1)+" "+y(r[2]).toFixed(1)}).join(" ");
+  var by=D.best_eci; g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(by)+'" y2="'+y(by)+'" stroke="'+ink+'" stroke-width="1" stroke-dasharray="4 4" opacity=".6"/>';
+  g+='<path d="'+p2+'" fill="none" stroke="'+ink2+'" stroke-width="1.4"/><path d="'+p1+'" fill="none" stroke="'+ink+'" stroke-width="2"/>';
+  g+='<circle cx="'+x(n-1)+'" cy="'+y(s[n-1][1])+'" r="3.5" fill="'+ink+'"/>';
+  g+='<text x="'+L+'" y="'+(H-6)+'" font-size="11" fill="'+muted+'">更新 '+s[0][0]+'</text><text x="'+(W-R)+'" y="'+(H-6)+'" text-anchor="end" font-size="11" fill="'+muted+'">更新 '+s[n-1][0]+'　（濃い線: 収穫の最良、薄い線: 決定論的評価、破線: これまでの最良）</text>';
+  document.getElementById("chart").innerHTML=g;
+}
+function table(){
+  var h="<tr><th>更新</th><th>実時間 [秒]</th><th>収穫 ECI</th><th>評価 ECI</th><th>戻し</th><th>空き [GB]</th></tr>";
+  D.recent.forEach(function(r){h+="<tr><td>"+r[0]+"</td><td>"+r[1].toFixed(0)+"</td><td>"+r[2].toFixed(4)+"</td><td>"+r[3].toFixed(4)+"</td><td>"+(r[4]==null?"-":r[4])+"</td><td>"+(r[5]==null?"-":r[5].toFixed(2))+"</td></tr>"});
+  document.getElementById("tbl").innerHTML=h;
+}
+render();chart();table();setInterval(render,30000);
+</script>

@@ -1,0 +1,45 @@
+{
+  "update": 300,
+  "harvest_best_update": 263,
+  "groups": {
+    "zone_state": {
+      "K": 2,
+      "valid": 5736,
+      "low_edge_frac": 0.41997907949790797,
+      "high_edge_frac": 0.5800209205020921,
+      "flag": false
+    },
+    "zone_setpoint": {
+      "K": 7,
+      "valid": 3327,
+      "low_edge_frac": 0.6077547339945897,
+      "high_edge_frac": 0.00510970844604749,
+      "flag": true
+    },
+    "zone_fan": {
+      "K": 3,
+      "valid": 3327,
+      "low_edge_frac": 0.012623985572587917,
+      "high_edge_frac": 0.9477006311992786,
+      "flag": true
+    },
+    "system_evap": {
+      "K": 8,
+      "valid": 235,
+      "low_edge_frac": 0.029787234042553193,
+      "high_edge_frac": 0.029787234042553193,
+      "flag": false
+    },
+    "tenant_vent": {
+      "K": 4,
+      "valid": 613,
+      "low_edge_frac": 0.2234910277324633,
+      "high_edge_frac": 0.0,
+      "flag": false
+    }
+  },
+  "flagged": [
+    "zone_setpoint",
+    "zone_fan"
+  ]
+}

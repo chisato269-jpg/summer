@@ -1,0 +1,55 @@
+{"time": "2026-10-04T11:56:33.971883", "pid": 15948, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T11:56:38.551827", "pid": 15948, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:00:09.333446", "pid": 15948, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:00:10.977801", "pid": 32092, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:00:15.670027", "pid": 32092, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:03:46.992157", "pid": 32092, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:03:48.365871", "pid": 23960, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:03:53.059364", "pid": 23960, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:07:24.353038", "pid": 23960, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:07:25.896073", "pid": 33536, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:07:30.524974", "pid": 33536, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:11:02.575398", "pid": 33536, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:11:04.193985", "pid": 29856, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:11:08.870541", "pid": 29856, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:14:40.287764", "pid": 29856, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:14:41.770217", "pid": 18968, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:14:46.400165", "pid": 18968, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:18:18.679768", "pid": 18968, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:18:20.150072", "pid": 33144, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:18:24.627197", "pid": 33144, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:21:58.413968", "pid": 33144, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:21:59.890622", "pid": 34412, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:22:04.546549", "pid": 34412, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:25:36.487940", "pid": 34412, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:25:38.135100", "pid": 28380, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:25:42.852889", "pid": 28380, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:29:15.826870", "pid": 28380, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:29:17.491711", "pid": 28548, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:29:22.212137", "pid": 28548, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:32:54.494074", "pid": 28548, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:32:56.028698", "pid": 34208, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:33:00.837863", "pid": 34208, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:36:33.794555", "pid": 34208, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:36:35.280850", "pid": 28768, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:36:40.050357", "pid": 28768, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:40:13.681068", "pid": 28768, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:40:15.114163", "pid": 34612, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:40:19.611126", "pid": 34612, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:43:53.586887", "pid": 34612, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:43:55.242467", "pid": 18940, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:43:59.989731", "pid": 18940, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:47:33.942489", "pid": 18940, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:47:35.463939", "pid": 33108, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:47:40.163290", "pid": 33108, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:51:14.873928", "pid": 33108, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:51:16.358112", "pid": 21708, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:51:21.156150", "pid": 21708, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:54:55.716560", "pid": 21708, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:54:57.307425", "pid": 30028, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:55:01.981015", "pid": 30028, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T12:58:36.177321", "pid": 30028, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T12:58:37.552032", "pid": 11572, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-10-04T12:58:42.268712", "pid": 11572, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-10-04T13:02:15.169871", "pid": 11572, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-10-04T13:02:17.760936", "pid": 30232, "slot": 4, "event": "parent_closed_worker", "worker_pid": 23320, "killed": false, "exitcode": 0}

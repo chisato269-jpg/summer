@@ -1,0 +1,156 @@
+{
+  "source": "runs\\diag\\V6S\\K10\\source\\slot6\\vrf.csv",
+  "source_result_txt": "Energy consumption[GJ]:6.534098635745203\nAverage dissatisfied rate[-]:0.19054427543250022\nVersion:1.1.1\nuserid:0\nperiod:0\nrseed_o:19800614\nrseed_w:19800614\nipadd:127.0.0.7\naccelerationRate:60000\nuse_rso:1\nuse_rsw:1\nrseed_oprm:1\ntimestep:60\nscheduler:0\ncontroller:0\nweather:3\noutputSpan:60\noneday:0\nsmall_vrf:0\nuserpass:guest\nDateTime:2026/09/21 11:30:49\n",
+  "note": "組 6 の出力は V5 の走行終了時の収穫の再生（基準の軌跡を第 2 段階の索引に写したもの。物理量は同じ）。運転モード列の値は ShutOff（停止）・Cooling・ThermoOff（運転中の圧縮機の休止）・Heating（開始時刻のみ）",
+  "daytime_definition": "平日 9:00 以上 18:00 未満のステップ",
+  "results": {
+    "daytime": {
+      "zone_steps": 3149,
+      "minutes": 47235,
+      "min_Cooling": 40640,
+      "min_ThermoOff": 6441,
+      "steps_with_cooling_thermooff_transition": 329,
+      "steps_cooling_thermooff_alternating(>=2 transitions)": 51,
+      "min_ShutOff": 154,
+      "steps_with_shutoff_and_running": 1
+    },
+    "all": {
+      "zone_steps": 4236,
+      "minutes": 67725,
+      "min_Cooling": 57909,
+      "min_ThermoOff": 9361,
+      "steps_with_cooling_thermooff_transition": 439,
+      "steps_cooling_thermooff_alternating(>=2 transitions)": 81,
+      "min_ShutOff": 455,
+      "steps_with_shutoff_and_running": 8
+    }
+  },
+  "examples": [
+    {
+      "zone": "S1",
+      "step_start": "1999-07-21T10:15:00",
+      "minutes": [
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling"
+      ]
+    },
+    {
+      "zone": "S1",
+      "step_start": "1999-07-21T10:30:00",
+      "minutes": [
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling"
+      ]
+    },
+    {
+      "zone": "S1",
+      "step_start": "1999-07-21T12:15:00",
+      "minutes": [
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling"
+      ]
+    },
+    {
+      "zone": "S1",
+      "step_start": "1999-07-21T15:45:00",
+      "minutes": [
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "Cooling",
+        "Cooling",
+        "Cooling",
+        "Cooling"
+      ]
+    },
+    {
+      "zone": "S1",
+      "step_start": "1999-07-21T16:15:00",
+      "minutes": [
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "Cooling",
+        "Cooling",
+        "Cooling"
+      ]
+    },
+    {
+      "zone": "S1",
+      "step_start": "1999-07-21T16:45:00",
+      "minutes": [
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "ThermoOff",
+        "Cooling"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,626 @@
+FFF..........................F....F...FFF..FF....F.....F.FFF.F.F........ [ 67%]
+FF..FF....FF.......sssssss.........                                      [100%]
+================================== FAILURES ===================================
+___________________________ test_action_space_sizes ___________________________
+
+    def test_action_space_sizes():
+>       assert len(action.nvec(1)) == 60 and sum(action.nvec(1)) == 292    # V6.2-S C-5（V6-S は 62・296）
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert (60 == 60 and 256 == 292)
+E        +  where 60 = len([2, 2, 2, 2, 2, 2, ...])
+E        +    where [2, 2, 2, 2, 2, 2, ...] = <function nvec at 0x000001E8BC4EA350>(1)
+E        +      where <function nvec at 0x000001E8BC4EA350> = action.nvec
+E        +  and   256 = sum([2, 2, 2, 2, 2, 2, ...])
+E        +    where [2, 2, 2, 2, 2, 2, ...] = <function nvec at 0x000001E8BC4EA350>(1)
+E        +      where <function nvec at 0x000001E8BC4EA350> = action.nvec
+
+rlkit\tests\test_action_advantage.py:16: AssertionError
+_________________________ test_decode_and_v5_mapping __________________________
+
+    def test_decode_and_v5_mapping():
+        a = np.zeros(60, dtype=int)
+        a[0] = 1   # S1 冷房
+        a[18] = 6  # 26 ℃
+        a[36] = 2  # High
+        a[54] = 3  # 系統1 蒸発温度 18 ℃
+        a[58], a[59] = 1, 3   # 南 Low、北 High
+        d = action.decode_action(a, 1)
+>       assert d["zones"]["S1"] == {"state": "cool", "setpoint": 26.0, "fan_speed": "High"}
+E       AssertionError: assert {'state': 'co...peed': 'High'} == {'state': 'co...peed': 'High'}
+E         
+E         Omitting 2 identical items, use -vv to show
+E         Differing items:
+E         {'setpoint': 28.0} != {'setpoint': 26.0}
+E         Use -v to get more diff
+
+rlkit\tests\test_action_advantage.py:34: AssertionError
+________________________ test_ut2_mask_m3_system_only _________________________
+
+    def test_ut2_mask_m3_system_only():
+        """UT-2: M-3 は系統だけ（C-5 でリモコンの次元を廃止）。換気は M-3 の対象外（境界でないステップでも 4 択が残る）。"""
+        prev = np.zeros(60, dtype=int)
+        prev[54], prev[58] = 6, 2
+        m = action.compute_mask(prev, is_boundary=False, stage=1)
+        assert len(m) == 60
+        assert m[54].tolist() == [i == 6 for i in range(8)]            # 系統: 前回値に退化
+        assert m[58].all() and m[59].all()                              # 換気: M-3 の対象外
+        # M-1 は廃止: 前ステップで停止していたゾーンでも設定温度・風量は全選択肢が残る
+        assert m[18].all() and m[36].all()
+        m_b = action.compute_mask(prev, is_boundary=True, stage=1)
+        assert m_b[54].all()
+>       assert action.mask_to_flat(m).shape == (292,)
+E       assert (256,) == (292,)
+E         
+E         At index 0 diff: 256 != 292
+E         Use -v to get more diff
+
+rlkit\tests\test_action_advantage.py:61: AssertionError
+____________________ test_ut6_entropy_coefficient_schedule ____________________
+
+    def test_ut6_entropy_coefficient_schedule():
+        """UT-6: 更新 1・900・1,200・1,500 で c0/lnK_g、同、半分、0（計画 1,500 更新）。"""
+        gl = action.group_layout(1)
+        c1 = learner.entropy_coefficients(1, 1500, gl)
+        c900 = learner.entropy_coefficients(900, 1500, gl)
+        c1200 = learner.entropy_coefficients(1200, 1500, gl)
+        c1500 = learner.entropy_coefficients(1500, 1500, gl)
+        K = {"zone_state": 2, "zone_setpoint": 9, "zone_fan": 3, "system_evap": 8, "tenant_vent": 4}      # C-5
+        assert set(c1) == set(K)
+        for g, k in K.items():
+>           assert c1[g] == pytest.approx(0.002 / math.log(k))
+E           assert 0.0010277966847395015 == 0.00091023922...8374 ± 9.1e-10
+E             
+E             comparison failed
+E             Obtained: 0.0010277966847395015
+E             Expected: 0.0009102392266268374 ± 9.1e-10
+
+rlkit\tests\test_learner_mock.py:70: AssertionError
+________________________ test_ut8_value_context_input _________________________
+
+    def test_ut8_value_context_input():
+        v = policy.ValueNetwork()
+        assert v.context[0].in_features == 322
+        obs = th.rand(4, 640)
+        v.set_reward_context(0.2, 0.3)
+>       a = v(obs)
+            ^^^^^^
+
+rlkit\tests\test_learner_mock.py:203: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1776: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1787: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\policy.py:131: in forward
+    zone_emb, ctx = self._trunk(obs, extra_context=extra)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = ValueNetwork(
+  (zone_encoder): Sequential(
+    (0): Linear(in_features=31, out_features=64, bias=True)
+    (1): Tanh(...in_features=224, out_features=1, bias=True)
+  (system_value_head): Linear(in_features=128, out_features=1, bias=True)
+)
+obs = tensor([[0.5675, 0.8150, 0.9801,  ..., 0.2128, 0.2210, 0.8279],
+        [0.4266, 0.5682, 0.9512,  ..., 0.8207, 0.9318,...0.0076, 0.9776, 0.9343,  ..., 0.2917, 0.6949, 0.6967],
+        [0.8022, 0.5348, 0.9806,  ..., 0.1583, 0.8335, 0.5363]])
+extra_context = tensor([[0.2000, 0.3000],
+        [0.2000, 0.3000],
+        [0.2000, 0.3000],
+        [0.2000, 0.3000]])
+
+    def _trunk(self, obs, extra_context=None):
+        B = obs.shape[0]
+>       zone_x = obs[:, self.global_dim:].reshape(B * N_ZONES, ZONE_DIM)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       RuntimeError: shape '[72, 31]' is invalid for input of size 2200
+
+rlkit\policy.py:69: RuntimeError
+____________________ test_ut9_sil_kl_adjustment_and_revert ____________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001E8CA89D010>
+
+    def test_ut9_sil_kl_adjustment_and_revert(monkeypatch):
+        model, buf = _sil_ready_model()
+        ref = ReferencePoint.from_dict(REF)
+        obs = th.as_tensor(model._rollout["observations"]).float()
+        acts = th.as_tensor(model._rollout["actions"]).long()
+        masks = th.as_tensor(model._rollout["action_masks"]).bool()
+        include = th.ones(acts.shape[0], 60, dtype=th.bool)
+        kl_values = []
+        monkeypatch.setattr(model, "_approx_kl", lambda *a, **k: kl_values.pop(0))
+        stats = {lv: {"mean": 0.0, "std": 1.0, "n": 1} for lv in dict.fromkeys(learner.adv_mod.dim_levels())}
+    
+        def run():
+            return model._sil(buf, "apply", ref, stats, obs, acts, masks, include)
+        # 0.075 超で半分
+        kl_values.append(0.08)
+>       rec = run()
+              ^^^^^
+
+rlkit\tests\test_learner_mock.py:301: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+rlkit\tests\test_learner_mock.py:298: in run
+    return model._sil(buf, "apply", ref, stats, obs, acts, masks, include)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\learner.py:592: in _sil
+    b = self._sil_batch(sil_buffer, reference, level_stats)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\learner.py:578: in _sil_batch
+    V = self.policy.values19(obs_t).cpu().numpy()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\learner.py:126: in values19
+    return self.value_network(self.extract_features(obs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1776: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1787: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\policy.py:131: in forward
+    zone_emb, ctx = self._trunk(obs, extra_context=extra)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = ValueNetwork(
+  (zone_encoder): Sequential(
+    (0): Linear(in_features=31, out_features=64, bias=True)
+    (1): Tanh(...in_features=224, out_features=1, bias=True)
+  (system_value_head): Linear(in_features=128, out_features=1, bias=True)
+)
+obs = tensor([[0.5760, 0.1677, 0.6020,  ..., 0.3880, 0.2186, 0.2191],
+        [0.1937, 0.2669, 0.1103,  ..., 0.4296, 0.3088,...0.1000, 0.4111, 0.5555,  ..., 0.3625, 0.2038, 0.5187],
+        [0.2381, 0.6395, 0.9128,  ..., 0.9611, 0.6048, 0.1293]])
+extra_context = tensor([[0., 0.],
+        [0., 0.],
+        [0., 0.],
+        ...,
+        [0., 0.],
+        [0., 0.],
+        [0., 0.]])
+
+    def _trunk(self, obs, extra_context=None):
+        B = obs.shape[0]
+>       zone_x = obs[:, self.global_dim:].reshape(B * N_ZONES, ZONE_DIM)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       RuntimeError: shape '[13608, 31]' is invalid for input of size 415800
+
+rlkit\policy.py:69: RuntimeError
+_________________________ test_ut9_sil_modes_in_train _________________________
+
+    def test_ut9_sil_modes_in_train():
+        model, buf = _sil_ready_model()
+        ref = ReferencePoint.from_dict(REF)
+        before = {k: v.clone() for k, v in model.policy.policy_network.state_dict().items()}
+>       rec = model.train(sil_buffer=buf, sil_mode="stats", reference=ref)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+rlkit\tests\test_learner_mock.py:336: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+rlkit\learner.py:526: in train
+    sil_rec = self._sil(sil_buffer, sil_mode, reference, level_stats, obs, actions, masks, include)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\learner.py:592: in _sil
+    b = self._sil_batch(sil_buffer, reference, level_stats)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\learner.py:578: in _sil_batch
+    V = self.policy.values19(obs_t).cpu().numpy()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\learner.py:126: in values19
+    return self.value_network(self.extract_features(obs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1776: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1787: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\policy.py:131: in forward
+    zone_emb, ctx = self._trunk(obs, extra_context=extra)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = ValueNetwork(
+  (zone_encoder): Sequential(
+    (0): Linear(in_features=31, out_features=64, bias=True)
+    (1): Tanh(...in_features=224, out_features=1, bias=True)
+  (system_value_head): Linear(in_features=128, out_features=1, bias=True)
+)
+obs = tensor([[0.5760, 0.1677, 0.6020,  ..., 0.3880, 0.2186, 0.2191],
+        [0.1937, 0.2669, 0.1103,  ..., 0.4296, 0.3088,...0.1000, 0.4111, 0.5555,  ..., 0.3625, 0.2038, 0.5187],
+        [0.2381, 0.6395, 0.9128,  ..., 0.9611, 0.6048, 0.1293]])
+extra_context = tensor([[0., 0.],
+        [0., 0.],
+        [0., 0.],
+        ...,
+        [0., 0.],
+        [0., 0.],
+        [0., 0.]])
+
+    def _trunk(self, obs, extra_context=None):
+        B = obs.shape[0]
+>       zone_x = obs[:, self.global_dim:].reshape(B * N_ZONES, ZONE_DIM)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       RuntimeError: shape '[13608, 31]' is invalid for input of size 415800
+
+rlkit\policy.py:69: RuntimeError
+________________ test_ut12_observation_dimension_for_k9_result ________________
+
+    def test_ut12_observation_dimension_for_k9_result():
+        assert constants.K9_RESULT == "B" and constants.C5_TENANT_REMOTE_REMOVED
+>       assert constants.OBSERVATION_DIM == 82 + 31 * 18 == 640                     # C-5: O-3 を除く
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 648 == (82 + (31 * 18))
+E        +  where 648 = constants.OBSERVATION_DIM
+
+rlkit\tests\test_learner_mock.py:353: AssertionError
+_______________ test_ut14_trainer_wiring_interim_sil_and_guard ________________
+
+tmp_path = WindowsPath('C:/Users/chisa/AppData/Local/Temp/pytest-of-chisa/pytest-132/test_ut14_trainer_wiring_inter0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001E8CFCB2360>
+
+    def test_ut14_trainer_wiring_interim_sil_and_guard(tmp_path, monkeypatch):
+        """更新 300 の中間判定の合格で更新 301 から SIL が有効になり、更新 340 の見張りで c_sil = 0 になる（番号を縮めて試す）。"""
+        monkeypatch.setattr(constants, "INTERIM_UPDATE", 2)
+        monkeypatch.setattr(constants, "SIL_START_UPDATE", 3)
+        monkeypatch.setattr(constants, "SIL_GUARD_UPDATE", 4)
+        monkeypatch.setattr(ts, "interim_checks", lambda updates, keys: {"all_passed": True, "stub": True})
+        monkeypatch.setattr(ts, "sil_guard_check", lambda hist: {"triggered": True, "stub": True})
+        tr = Trainer(_trial_config(tmp_path, planned_updates=5), str(tmp_path), factory="mock")
+        tr.run()
+        ups = _read(tmp_path / "updates.jsonl")
+        modes = [u["sil"]["mode"] for u in ups]
+>       assert modes == ["stats", "stats", "apply", "apply", "apply"]
+E       AssertionError: assert ['stats', 'st...ats', 'stats'] == ['stats', 'st...ply', 'apply']
+E         
+E         At index 2 diff: 'stats' != 'apply'
+E         Use -v to get more diff
+
+rlkit\tests\test_learner_mock.py:431: AssertionError
+---------------------------- Captured stdout call -----------------------------
+[train_summer] {'event': 'initial_reference', 'rho': 75.06, 'E_ref': 4.85, 'DR_ref': 0.1876, 'ref_update': None, 'ref_ECI': None, 'rho_n': 0.4688521400192659, 'D_n': 0.4257264761068626, 'initial_eval_E': 2.5573790322580705, 'initial_eval_DR': 0.2362999231950845, 'initial_eval_ECI': 0.33216575889751626}
+[train_summer] {'event': 'interim_checks', 'update': 2, 'all_passed': True}
+[train_summer] {'event': 'harvest_replay', 'time': '2026-09-27T22:41:33.465290', 'harvested_at_update': 2, 'slot_harvested': 5, 'replay_slot': 6, 'saved_E': 2.490604838709681, 'saved_DR': 0.23100038402457768, 'saved_E_hex': '0x1.3ecc23acc23b5p+1', 'saved_DR_hex': '0x1.d916bab5fdf4cp-3', 'replay_E': 2.490604838709681, 'replay_DR': 0.23100038402457768, 'replay_E_hex': '0x1.3ecc23acc23b5p+1', 'replay_DR_hex': '0x1.d916bab5fdf4cp-3', 'replay_eci_official': 0.0, 'replay_eci_smooth': 0.3694093075138755, 'replay_ECI': 0.3694093075138755, 'replay_P_E': 0.9555492026255696, 'replay_P_DR': 0.14281131322481352, 'E_hex_match': True, 'DR_hex_match': True, 'F-1_passed': True}
+_________________ test_ut14_trainer_wiring_interim_fail_stops _________________
+
+tmp_path = WindowsPath('C:/Users/chisa/AppData/Local/Temp/pytest-of-chisa/pytest-132/test_ut14_trainer_wiring_inter1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001E8CB6E3750>
+
+    def test_ut14_trainer_wiring_interim_fail_stops(tmp_path, monkeypatch):
+        monkeypatch.setattr(constants, "INTERIM_UPDATE", 2)
+        monkeypatch.setattr(ts, "interim_checks", lambda updates, keys: {"all_passed": False, "stub": True})
+        tr = Trainer(_trial_config(tmp_path, planned_updates=5), str(tmp_path), factory="mock")
+        reason = tr.run()
+>       assert reason.startswith("S-5") and tr.model.update_index == 2 and not tr.sil_enabled
+E       AssertionError: assert (False)
+E        +  where False = <built-in method startswith of str object at 0x000001E8CB9660D0>('S-5')
+E        +    where <built-in method startswith of str object at 0x000001E8CB9660D0> = '計画更新数 5 に到達した'.startswith
+
+rlkit\tests\test_learner_mock.py:442: AssertionError
+---------------------------- Captured stdout call -----------------------------
+[train_summer] {'event': 'initial_reference', 'rho': 75.06, 'E_ref': 4.85, 'DR_ref': 0.1876, 'ref_update': None, 'ref_ECI': None, 'rho_n': 0.4688521400192659, 'D_n': 0.4257264761068626, 'initial_eval_E': 2.5573790322580705, 'initial_eval_DR': 0.2362999231950845, 'initial_eval_ECI': 0.33216575889751626}
+[train_summer] {'event': 'interim_checks', 'update': 2, 'all_passed': False}
+[train_summer] {'event': 'harvest_replay', 'time': '2026-09-27T22:43:14.993940', 'harvested_at_update': 2, 'slot_harvested': 5, 'replay_slot': 6, 'saved_E': 2.490604838709681, 'saved_DR': 0.23100038402457768, 'saved_E_hex': '0x1.3ecc23acc23b5p+1', 'saved_DR_hex': '0x1.d916bab5fdf4cp-3', 'replay_E': 2.490604838709681, 'replay_DR': 0.23100038402457768, 'replay_E_hex': '0x1.3ecc23acc23b5p+1', 'replay_DR_hex': '0x1.d916bab5fdf4cp-3', 'replay_eci_official': 0.0, 'replay_eci_smooth': 0.3694093075138755, 'replay_ECI': 0.3694093075138755, 'replay_P_E': 0.9555492026255696, 'replay_P_DR': 0.14281131322481352, 'E_hex_match': True, 'DR_hex_match': True, 'F-1_passed': True}
+______________________ test_collect_and_train_one_update ______________________
+
+    def test_collect_and_train_one_update():
+        model = _model()
+        terminal = model.collect_one()
+        assert len(terminal) == 4  # 2 組 × 2 周
+        ro = model._rollout
+>       assert ro["observations"].shape == (1512, 640) and ro["advantages19"].shape == (1512, 19)
+E       assert ((1512, 648) == (1512, 640)
+E         
+E         At index 1 diff: 648 != 640
+E         Use -v to get more diff)
+
+rlkit\tests\test_learner_mock.py:496: AssertionError
+______________________ test_harvest_best_action_sequence ______________________
+
+tmp_path = WindowsPath('C:/Users/chisa/AppData/Local/Temp/pytest-of-chisa/pytest-132/test_harvest_best_action_seque0')
+
+    def test_harvest_best_action_sequence(tmp_path):
+        """L-4: 12 本から公式 ECI 最大（同点は J 最大）の行動列が保存され、走行全体の最良が更新される。"""
+        cfg = _trial_config(tmp_path, planned_updates=3)
+        trainer = Trainer(cfg, str(tmp_path), factory="mock")
+        trainer.run()
+        updates = _read(tmp_path / "updates.jsonl")
+        eps = _read(tmp_path / "episodes.jsonl")
+        for u in updates:
+            best = u["harvest_update_best"]
+            same = [e for e in eps if e["update"] == u["update"]]
+            assert len(same) == 12
+            top = max(same, key=lambda e: harvest_key(e))
+            assert best["E"] == pytest.approx(top["E"]) and best["slot"] == top["slot"]
+            assert best["ECI"] == pytest.approx(top["ECI"])          # V6.1-S: ECI の大きい順
+        run_best = [harvest_key(u["harvest_best"]) for u in updates]
+        assert run_best == sorted(run_best)
+        meta = json.load(open(tmp_path / "harvest" / "best_harvest.json", encoding="utf-8"))
+        d = np.load(tmp_path / "harvest" / "best_harvest.npz")
+>       assert d["actions"].shape == (378, 60) and d["masks"].shape == (378, 292)
+E       assert ((378, 60) == (378, 60)
+E         
+E         Use -v to get more diff and (378, 256) == (378, 292)
+E         
+E         At index 1 diff: 256 != 292
+E         Use -v to get more diff)
+
+rlkit\tests\test_learner_mock.py:611: AssertionError
+---------------------------- Captured stdout call -----------------------------
+[train_summer] {'event': 'initial_reference', 'rho': 75.06, 'E_ref': 4.85, 'DR_ref': 0.1876, 'ref_update': None, 'ref_ECI': None, 'rho_n': 0.4688521400192659, 'D_n': 0.4257264761068626, 'initial_eval_E': 2.5573790322580705, 'initial_eval_DR': 0.2362999231950845, 'initial_eval_ECI': 0.33216575889751626}
+[train_summer] {'event': 'harvest_replay', 'time': '2026-09-27T22:47:34.078570', 'harvested_at_update': 2, 'slot_harvested': 5, 'replay_slot': 6, 'saved_E': 2.490604838709681, 'saved_DR': 0.23100038402457768, 'saved_E_hex': '0x1.3ecc23acc23b5p+1', 'saved_DR_hex': '0x1.d916bab5fdf4cp-3', 'replay_E': 2.490604838709681, 'replay_DR': 0.23100038402457768, 'replay_E_hex': '0x1.3ecc23acc23b5p+1', 'replay_DR_hex': '0x1.d916bab5fdf4cp-3', 'replay_eci_official': 0.0, 'replay_eci_smooth': 0.3694093075138755, 'replay_ECI': 0.3694093075138755, 'replay_P_E': 0.9555492026255696, 'replay_P_DR': 0.14281131322481352, 'E_hex_match': True, 'DR_hex_match': True, 'F-1_passed': True}
+____________________ test_ut11_parameter_counts_table_3_7 _____________________
+
+    def test_ut11_parameter_counts_table_3_7():
+        """UT-11（V6.2-S C-5 で差し替え）: 観測 640、方策 75,610、価値 70,370、総計 145,980。"""
+        assert constants.K9_RESULT == "B" and not constants.TENANT_REMOTE_ENABLED
+        p1, v = policy.PolicyNetwork(1), policy.ValueNetwork()
+>       assert policy.parameter_count(p1) == 75610
+E       assert 75928 == 75610
+E        +  where 75928 = <function parameter_count at 0x000001E8C976AE50>(PolicyNetwork(\n  (zone_encoder): Sequential(\n    (0): Linear(in_features=31, out_features=64, bias=True)\n    (1): Tanh...inear(in_features=224, out_features=8, bias=True)\n  (tenant_head): Linear(in_features=224, out_features=4, bias=True)\n))
+E        +    where <function parameter_count at 0x000001E8C976AE50> = policy.parameter_count
+
+rlkit\tests\test_policy_observation.py:25: AssertionError
+_____________________ test_forward_shapes_and_init_gains ______________________
+
+    def test_forward_shapes_and_init_gains():
+        obs = torch.rand(5, 640)
+        p = policy.PolicyNetwork(1)
+>       assert p(obs).shape == (5, 292)
+               ^^^^^^
+
+rlkit\tests\test_policy_observation.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1776: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1787: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\policy.py:101: in forward
+    zone_emb, ctx = self._trunk(obs)
+                    ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = PolicyNetwork(
+  (zone_encoder): Sequential(
+    (0): Linear(in_features=31, out_features=64, bias=True)
+    (1): Tanh...inear(in_features=224, out_features=8, bias=True)
+  (tenant_head): Linear(in_features=224, out_features=4, bias=True)
+)
+obs = tensor([[4.0618e-01, 1.5348e-01, 1.8144e-04,  ..., 9.1150e-01, 2.2781e-01,
+         7.0991e-01],
+        [5.7938e-01, ...         2.7488e-01],
+        [3.8449e-01, 1.1584e-01, 8.4862e-01,  ..., 1.3357e-01, 9.9358e-01,
+         3.5043e-01]])
+extra_context = None
+
+    def _trunk(self, obs, extra_context=None):
+        B = obs.shape[0]
+>       zone_x = obs[:, self.global_dim:].reshape(B * N_ZONES, ZONE_DIM)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       RuntimeError: shape '[90, 31]' is invalid for input of size 2750
+
+rlkit\policy.py:69: RuntimeError
+________________________ test_stage2_expansion_logits _________________________
+
+    def test_stage2_expansion_logits():
+        """B-4: 第 2 段階への変換。設定温度は 7 → 13 へ内挿し、送風の行は停止の行から複写する（S-5）。"""
+        torch.manual_seed(0)
+        p1, p2 = policy.PolicyNetwork(1), policy.PolicyNetwork(2)
+        with torch.no_grad():
+            p1.zone_head.weight.normal_()
+            p1.zone_head.bias.normal_()
+        policy.transfer_policy_stage1_to_stage2(p1, p2)
+        obs = torch.rand(3, 640)
+>       l1, l2 = p1(obs), p2(obs)
+                 ^^^^^^^
+
+rlkit\tests\test_policy_observation.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1776: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\nn\modules\module.py:1787: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rlkit\policy.py:101: in forward
+    zone_emb, ctx = self._trunk(obs)
+                    ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = PolicyNetwork(
+  (zone_encoder): Sequential(
+    (0): Linear(in_features=31, out_features=64, bias=True)
+    (1): Tanh...inear(in_features=224, out_features=8, bias=True)
+  (tenant_head): Linear(in_features=224, out_features=4, bias=True)
+)
+obs = tensor([[0.9833, 0.3804, 0.7825,  ..., 0.1020, 0.4436, 0.2699],
+        [0.9621, 0.4534, 0.8760,  ..., 0.4362, 0.1391, 0.2261],
+        [0.6871, 0.1865, 0.1065,  ..., 0.4383, 0.8424, 0.6016]])
+extra_context = None
+
+    def _trunk(self, obs, extra_context=None):
+        B = obs.shape[0]
+>       zone_x = obs[:, self.global_dim:].reshape(B * N_ZONES, ZONE_DIM)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       RuntimeError: shape '[54, 31]' is invalid for input of size 1650
+
+rlkit\policy.py:69: RuntimeError
+___________________________ test_observation_layout ___________________________
+
+    def test_observation_layout():
+        exo = exogenous.load()
+        with pytest.raises(ValueError):
+            observation.ObservationBuilder(exo, None)
+        ob = observation.ObservationBuilder(exo, zone_step_energy_norm_gj=0.01)
+        dt = datetime.datetime(1999, 7, 21, 0, 0)
+        a = action.initial_action(1)
+        a[0], a[18] = 1, 6  # S1 冷房 26 ℃（20～28 ℃の格子の索引 6）
+        a[58], a[59] = 1, 3  # 換気 南 Low、北 High
+        decoded = action.decode_action(a, 1)
+        tenant = {"South": {"counts": [0, 0, 1, 2, 1, 0, 0], "n_present": 4}, "North": {"counts": [0] * 7, "n_present": 0}}
+        readback = [24.0] * 18
+        obs, raw = ob.build(dt, 0, 1, _fake_snapshot(), decoded, zone_energy_gj := np.full(18, 0.005),
+                            np.full(18, 0.2), tenant, readback, remote_status={"South": 1.0, "North": 0.0})
+>       assert obs.shape == (640,) and obs.dtype == np.float32 and obs.min() >= 0 and obs.max() <= 1
+E       assert ((648,) == (640,)
+E         
+E         At index 0 diff: 648 != 640
+E         Use -v to get more diff)
+
+rlkit\tests\test_policy_observation.py:113: AssertionError
+_____________________ test_config_unresolved_and_template _____________________
+
+    def test_config_unresolved_and_template():
+        cfg = config.load()
+        assert [k for k, _, _ in config.unresolved_items(cfg)] == list(config.UNRESOLVED)
+        template = os.path.join(os.path.dirname(config.__file__), "config_summer_v64.json")
+        cfg_t = config.load(template)
+        # 値は指示書 V6.3-S 第 11 章の ASCII 数値参照リストと同じ（走行は runs/v2s_trial07。V6-S・V6.1-S の設定は残す）
+        assert config.unresolved_items(cfg_t) == []
+        assert cfg_t["run_dir"] == "runs/v2s_trial07" and cfg_t["include_indoor_unit_power"] is True
+        assert config.load(os.path.join(os.path.dirname(config.__file__), "config_summer_v6.json"))["run_dir"] == "runs/v2s_trial05"
+        assert config.load(os.path.join(os.path.dirname(config.__file__), "config_summer_v61.json"))["run_dir"] == "runs/v2s_trial06"
+        assert cfg_t["zone_step_energy_norm_gj"] == 0.020 and cfg_t["seed"] == 19800614
+        assert cfg_t["planned_updates"] == 1500 and cfg_t["m9_enabled"] is True and cfg_t["k9_result"] == "B"
+        assert cfg_t["max_collection_retries"] == 4       # S-8: やり直しが 3 回を超えたら停止
+        with open(template, encoding="utf-8") as f:
+>           assert set(json.load(f)) == set(config.DEFAULTS)
+E           AssertionError: assert {'eval_concur...retries', ...} == {'eval_concur...retries', ...}
+E             
+E             Extra items in the right set:
+E             'warm_start_from'
+E             Use -v to get more diff
+
+rlkit\tests\test_policy_observation.py:171: AssertionError
+_______________ test_ut19_ratio_limits_and_unchanged_reference ________________
+
+    def test_ut19_ratio_limits_and_unchanged_reference():
+        r = R7Reference()
+>       assert (r.rho, r.E_ref, r.DR_ref) == (60.0, 6.5, 0.20) and r.denominator() == pytest.approx(6.5 + 60 * 0.20)
+E       assert ((75.06, 4.85, 0.1876) == (60.0, 6.5, 0.2)
+E         
+E         At index 0 diff: 75.06 != 60.0
+E         Use -v to get more diff)
+
+rlkit\tests\test_v61.py:87: AssertionError
+_____________ test_ut19_update1_uses_rho0_and_initial_denominator _____________
+
+tmp_path = WindowsPath('C:/Users/chisa/AppData/Local/Temp/pytest-of-chisa/pytest-132/test_ut19_update1_uses_rho0_an0')
+
+    def test_ut19_update1_uses_rho0_and_initial_denominator(tmp_path):
+        tr = ts.Trainer(_trial_config(tmp_path, planned_updates=2), str(tmp_path), factory="mock")
+        tr.run()
+        ups = _read(tmp_path / "updates.jsonl")
+        ru = ups[0]["reference_used"]
+>       assert (ru["rho"], ru["E_ref"], ru["DR_ref"], ru["ref_update"]) == (60.0, 6.5, 0.20, None)
+E       assert (75.06, 4.85, 0.1876, None) == (60.0, 6.5, 0.2, None)
+E         
+E         At index 0 diff: 75.06 != 60.0
+E         Use -v to get more diff
+
+rlkit\tests\test_v61.py:106: AssertionError
+---------------------------- Captured stdout call -----------------------------
+[train_summer] {'event': 'initial_reference', 'rho': 75.06, 'E_ref': 4.85, 'DR_ref': 0.1876, 'ref_update': None, 'ref_ECI': None, 'rho_n': 0.4688521400192659, 'D_n': 0.4257264761068626, 'initial_eval_E': 2.5573790322580705, 'initial_eval_DR': 0.2362999231950845, 'initial_eval_ECI': 0.33216575889751626}
+[train_summer] {'event': 'harvest_replay', 'time': '2026-09-27T22:49:22.829531', 'harvested_at_update': 2, 'slot_harvested': 5, 'replay_slot': 6, 'saved_E': 2.490604838709681, 'saved_DR': 0.23100038402457768, 'saved_E_hex': '0x1.3ecc23acc23b5p+1', 'saved_DR_hex': '0x1.d916bab5fdf4cp-3', 'replay_E': 2.490604838709681, 'replay_DR': 0.23100038402457768, 'replay_E_hex': '0x1.3ecc23acc23b5p+1', 'replay_DR_hex': '0x1.d916bab5fdf4cp-3', 'replay_eci_official': 0.0, 'replay_eci_smooth': 0.3694093075138755, 'replay_ECI': 0.3694093075138755, 'replay_P_E': 0.9555492026255696, 'replay_P_DR': 0.14281131322481352, 'E_hex_match': True, 'DR_hex_match': True, 'F-1_passed': True}
+____________________ test_ut21_zero_point_items_not_called ____________________
+
+tmp_path = WindowsPath('C:/Users/chisa/AppData/Local/Temp/pytest-of-chisa/pytest-132/test_ut21_zero_point_items_not0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001E96629D750>
+
+    def test_ut21_zero_point_items_not_called(tmp_path, monkeypatch):
+        """S-8'・H-7・R-5 の J が呼ばれない（呼ばれたら例外）。S-8' の更新番号を縮めても呼ばれない。"""
+        def boom(*a, **k):
+            raise AssertionError("零点条件の項目が呼ばれた")
+        monkeypatch.setattr(ts, "s8prime_check", boom)
+        monkeypatch.setattr(eci, "objective_j", boom)
+        monkeypatch.setattr(eci, "r5_slopes", boom)
+        monkeypatch.setattr(constants, "S8PRIME_UPDATE", 2)
+        monkeypatch.setattr(constants, "H_CHECK_UPDATE", 3)
+        tr = ts.Trainer(_trial_config(tmp_path, planned_updates=3), str(tmp_path), factory="mock")
+        reason = tr.run()
+>       assert "計画更新数 3" in reason or reason.startswith("S-3")
+E       AssertionError: assert ('計画更新数 3' in '更新 3 の判定（V7-S 第 9 章）に不合格がある（judgment_u3.json）' or False)
+E        +  where False = <built-in method startswith of str object at 0x000001E96AB2C030>('S-3')
+E        +    where <built-in method startswith of str object at 0x000001E96AB2C030> = '更新 3 の判定（V7-S 第 9 章）に不合格がある（judgment_u3.json）'.startswith
+
+rlkit\tests\test_v61.py:181: AssertionError
+---------------------------- Captured stdout call -----------------------------
+[train_summer] {'event': 'initial_reference', 'rho': 75.06, 'E_ref': 4.85, 'DR_ref': 0.1876, 'ref_update': None, 'ref_ECI': None, 'rho_n': 0.4688521400192659, 'D_n': 0.4257264761068626, 'initial_eval_E': 2.5573790322580705, 'initial_eval_DR': 0.2362999231950845, 'initial_eval_ECI': 0.33216575889751626}
+[train_summer] {'event': 'U20_checks', 'update': 3, 'all_passed': False}
+___________________________ test_ut22_o6_co2_change ___________________________
+
+    def test_ut22_o6_co2_change():
+        ob = observation.ObservationBuilder(exogenous.load(), zone_step_energy_norm_gj=0.02)
+        dt = datetime.datetime(1999, 7, 21, 9, 0)
+        dec = action.decode_action(action.initial_action(1), 1)
+        o0, r0 = ob.build(dt, 0, 1, _snap(800.0, 900.0), dec)
+>       assert o0.shape == (640,) and r0[42] == 0.0 and r0[43] == 0.0          # 最初のステップは 0
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert ((648,) == (640,)
+E         
+E         At index 0 diff: 648 != 640
+E         Use -v to get more diff)
+
+rlkit\tests\test_v61.py:205: AssertionError
+________________ test_ut28_ratio_follows_rho_raw_every_update _________________
+
+    def test_ut28_ratio_follows_rho_raw_every_update():
+        """UT-28（C-4）: 評価点が変わらない更新でも、比が ρ_raw へ 2 倍の制限の範囲で近づく（30 → 60 → 72.3）。"""
+        E, DR = 6.63993017578125, 0.2595181465148926                  # trial06 \u306e\u8a55\u4fa1\u70b9\uff08\u03c1_raw \u2248 72.3\uff09
+        raw = R7Reference.raw_ratio(E, DR)
+        assert raw == pytest.approx(72.3, abs=0.01)
+        r = R7Reference(rho=30.0, E_ref=E, DR_ref=DR, ref_update=5, ref_eci=0.4)
+        best = {"update": 5, "E": E, "DR": DR, "ECI": 0.4}
+        e1 = r.update_after_harvest(best, 6)
+        assert not e1["changed"] and e1["rho"] == pytest.approx(60.0) and e1["rho_limited_by_ratio"]
+        e2 = r.update_after_harvest(best, 7)
+        assert not e2["changed"] and e2["rho"] == pytest.approx(raw) and not e2["rho_limited_by_ratio"]
+        e3 = r.update_after_harvest(best, 8)
+        assert e3["rho"] == pytest.approx(raw)                           # 届いた後は動かない
+        # \u8a55\u4fa1\u70b9\u304c\u307e\u3060\u7121\u3044\uff08\u66f4\u65b0 1 \u306e\u524d\uff09\u306a\u3089 \u03c1\u2080 \u306e\u307e\u307e
+        r0 = R7Reference()
+        e0 = r0.update_after_harvest(None, 0)
+>       assert e0["rho"] == 60.0 and e0["rho_raw"] is None
+E       assert (75.06 == 60.0)
+
+rlkit\tests\test_v64.py:141: AssertionError
+______________ test_ut29_remote_removed_shapes_and_fixed_permit _______________
+
+    def test_ut29_remote_removed_shapes_and_fixed_permit():
+        """UT-29（C-5）: 行動 60 次元・292 ロジット、観測 640 次元、母数 145,980。リモコンは常に許可。"""
+>       assert constants.ACTION_DIMS == 60 and constants.ACTION_LOGITS[1] == 292 and constants.OBSERVATION_DIM == 640
+E       assert (60 == 60 and 256 == 292)
+E        +  where 60 = constants.ACTION_DIMS
+
+rlkit\tests\test_v64.py:148: AssertionError
+=========================== short test summary info ===========================
+FAILED rlkit/tests/test_action_advantage.py::test_action_space_sizes - assert...
+FAILED rlkit/tests/test_action_advantage.py::test_decode_and_v5_mapping - Ass...
+FAILED rlkit/tests/test_action_advantage.py::test_ut2_mask_m3_system_only - a...
+FAILED rlkit/tests/test_learner_mock.py::test_ut6_entropy_coefficient_schedule
+FAILED rlkit/tests/test_learner_mock.py::test_ut8_value_context_input - Runti...
+FAILED rlkit/tests/test_learner_mock.py::test_ut9_sil_kl_adjustment_and_revert
+FAILED rlkit/tests/test_learner_mock.py::test_ut9_sil_modes_in_train - Runtim...
+FAILED rlkit/tests/test_learner_mock.py::test_ut12_observation_dimension_for_k9_result
+FAILED rlkit/tests/test_learner_mock.py::test_ut14_trainer_wiring_interim_sil_and_guard
+FAILED rlkit/tests/test_learner_mock.py::test_ut14_trainer_wiring_interim_fail_stops
+FAILED rlkit/tests/test_learner_mock.py::test_collect_and_train_one_update - ...
+FAILED rlkit/tests/test_learner_mock.py::test_harvest_best_action_sequence - ...
+FAILED rlkit/tests/test_policy_observation.py::test_ut11_parameter_counts_table_3_7
+FAILED rlkit/tests/test_policy_observation.py::test_forward_shapes_and_init_gains
+FAILED rlkit/tests/test_policy_observation.py::test_stage2_expansion_logits
+FAILED rlkit/tests/test_policy_observation.py::test_observation_layout - asse...
+FAILED rlkit/tests/test_policy_observation.py::test_config_unresolved_and_template
+FAILED rlkit/tests/test_v61.py::test_ut19_ratio_limits_and_unchanged_reference
+FAILED rlkit/tests/test_v61.py::test_ut19_update1_uses_rho0_and_initial_denominator
+FAILED rlkit/tests/test_v61.py::test_ut21_zero_point_items_not_called - Asser...
+FAILED rlkit/tests/test_v61.py::test_ut22_o6_co2_change - assert ((648,) == (...
+FAILED rlkit/tests/test_v64.py::test_ut28_ratio_follows_rho_raw_every_update
+FAILED rlkit/tests/test_v64.py::test_ut29_remote_removed_shapes_and_fixed_permit
+23 failed, 77 passed, 7 skipped in 810.88s (0:13:30)

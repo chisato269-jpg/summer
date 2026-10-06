@@ -1,0 +1,78 @@
+{
+  "I-1": {
+    "passed": true,
+    "cutoff_rate_281_300": 0.05
+  },
+  "I-2": {
+    "passed": true,
+    "median_281_300": 0.6007175842981334,
+    "block_medians_1_280": [
+      0.29914718106205374,
+      0.32859294012652307,
+      0.3217377404042196,
+      0.32608738139389387,
+      0.3549114335591561,
+      0.4261285397141049,
+      0.4940376529375251,
+      0.5419063708199312,
+      0.5639122086729351,
+      0.5601287432909208,
+      0.580650456782491,
+      0.5848301796564229,
+      0.5944144640974165,
+      0.5978049078449461
+    ],
+    "threshold": 0.4782439262759569
+  },
+  "I-3": {
+    "passed": true,
+    "n_updates": 300,
+    "missing": {},
+    "eval_raw_resid_rel_300": 0.004361497984871258
+  },
+  "all_passed": true,
+  "bd1": {
+    "update": 300,
+    "harvest_best_update": 281,
+    "groups": {
+      "zone_state": {
+        "K": 2,
+        "valid": 5736,
+        "low_edge_frac": 0.29428172942817293,
+        "high_edge_frac": 0.705718270571827,
+        "flag": false
+      },
+      "zone_setpoint": {
+        "K": 9,
+        "valid": 4048,
+        "low_edge_frac": 0.010128458498023716,
+        "high_edge_frac": 0.039525691699604744,
+        "flag": false
+      },
+      "zone_fan": {
+        "K": 3,
+        "valid": 4048,
+        "low_edge_frac": 0.04076086956521739,
+        "high_edge_frac": 0.8196640316205533,
+        "flag": true
+      },
+      "system_evap": {
+        "K": 8,
+        "valid": 236,
+        "low_edge_frac": 0.0,
+        "high_edge_frac": 0.05508474576271186,
+        "flag": false
+      },
+      "tenant_vent": {
+        "K": 4,
+        "valid": 613,
+        "low_edge_frac": 0.20717781402936378,
+        "high_edge_frac": 0.008156606851549755,
+        "flag": false
+      }
+    },
+    "flagged": [
+      "zone_fan"
+    ]
+  }
+}

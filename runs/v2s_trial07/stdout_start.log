@@ -1,0 +1,4 @@
+[train_summer] {'event': 'initial_reference', 'rho': 60.0, 'E_ref': 6.5, 'DR_ref': 0.2, 'ref_update': None, 'ref_ECI': None, 'rho_n': 0.4445378125959109, 'D_n': 0.4223905761343379, 'initial_eval_E': 8.0134462890625, 'initial_eval_DR': 0.7896298766136169, 'initial_eval_ECI': 2.363242414478296e-06}
+[train_summer] {'event': 'H-9_ratio_stuck_at_clip', 'update': 17, 'report': True, 'max_streak': 10}
+[train_summer] {'event': 'H_checks', 'update': 20, 'all_passed': True}
+[train_summer] ’â~: ’ÊZ 20 XV‚É’B‚µ‚½i--updates ‚Í’ÊZj

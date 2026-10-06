@@ -1,0 +1,63 @@
+{
+  "recorded_E_hex": "0x1.1e374dd2f1aa0p+2",
+  "recorded_DR_hex": "0x1.6b6d400000000p-3",
+  "replay_E_hex": "0x1.1e374dd2f1aa0p+2",
+  "replay_DR_hex": "0x1.6b6d400000000p-3",
+  "replay_ECI": 0.70913700374106,
+  "recorded_ECI": 0.70913700374106,
+  "n_steps": 378,
+  "actions_equal_to_v7_mapped": true,
+  "n_action_mismatches": 0,
+  "first_mismatches": [],
+  "step_datetimes_match_table": true,
+  "v8_use": {
+    "duty_counts_occupied": [
+      1469,
+      0,
+      0,
+      2544
+    ],
+    "duty_counts_unoccupied": [
+      2219,
+      0,
+      0,
+      572
+    ],
+    "prohibit_zone_steps": 0,
+    "bypass_tenant_steps": 0,
+    "setpoint_counts": [
+      1361,
+      0,
+      58,
+      0,
+      354,
+      78,
+      1232,
+      4,
+      29
+    ],
+    "evap_counts": [
+      0,
+      25,
+      171,
+      103,
+      0,
+      339,
+      32,
+      492,
+      350
+    ],
+    "mid_step_writes": 0
+  },
+  "raw_resid_rel": 0.01101899419840574,
+  "raw_resid_sum_gj": 0.049278324809913496,
+  "energy_identity_rel": 1.9860319707653713e-16,
+  "diss_identity_rel": 0.0,
+  "v8_new_obs_clip_rate_max": 0.0,
+  "setpoint_override_rate": 0.7512836970474968,
+  "E_hex_match": true,
+  "DR_hex_match": true,
+  "G0_passed": true,
+  "segments": 3,
+  "alloc_end_only": true
+}

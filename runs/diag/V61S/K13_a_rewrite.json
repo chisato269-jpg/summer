@@ -1,0 +1,31 @@
+{
+  "label": "K13_a_rewrite",
+  "E": 6.52407373046875,
+  "DR": 0.19073179364204407,
+  "E_hex": "0x1.a18a6c8b43958p+2",
+  "DR_hex": "0x1.869e640000000p-3",
+  "ECI": 0.40367387793443027,
+  "P_E": 0.31017743494348504,
+  "P_DR": 0.5253528508813403,
+  "official_eci_reference": 0.40367387793443027,
+  "dr_components": {
+    "thermal": 0.15536299022680417,
+    "draft": 0.03972835098661071,
+    "vtmp": 0.00346894885147762,
+    "co2": 1.6027502606605685e-05,
+    "combined": 0.1920891944128083
+  },
+  "setpoint_mismatch_zone_steps": 2223,
+  "setpoint_mismatch_rate_of_cooling": 0.5131578947368421,
+  "setpoint_rewrite_count": 3749,
+  "vrf_energy_gj": 5.30868573046875,
+  "hex_energy_gj_model": 1.215388000000005,
+  "raw_resid_rel": -0.006926859021101654,
+  "remote_status_prohibited_tenant_steps": 0,
+  "remote_permit_fraction": {
+    "South": 1.0,
+    "North": 1.0
+  },
+  "onoff_mismatch": 0,
+  "elapsed_s": 124.67377185821533
+}

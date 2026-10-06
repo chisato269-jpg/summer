@@ -1,0 +1,29 @@
+{
+  "time": "2026-10-04T03:11:45.828446",
+  "pid": 21956,
+  "slots": [
+    12
+  ],
+  "log_dir": "runs/diag/V82S/tests/live_v8\\UT_live_v8\\launch",
+  "slot_limit": {
+    "n_slots": 1,
+    "limit": 13,
+    "slots": [
+      12
+    ]
+  },
+  "memory": {
+    "free_gb": 7.416526794433594,
+    "min_free_gb": 1.0
+  },
+  "cleanup": [
+    {
+      "slot": 12,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

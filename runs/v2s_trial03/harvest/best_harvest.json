@@ -1,0 +1,12 @@
+{
+  "update": 15,
+  "slot": 0,
+  "step_in_collection": 755,
+  "stage": 1,
+  "E": 5.71629296875,
+  "DR": 0.24135446548461914,
+  "eci_official": 0.0,
+  "eci_smooth": 0.2107281492747322,
+  "E_hex": "0x1.6dd7be76c8b44p+2",
+  "DR_hex": "0x1.ee4b400000000p-3"
+}

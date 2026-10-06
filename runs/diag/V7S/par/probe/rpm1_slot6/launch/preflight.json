@@ -1,0 +1,32 @@
+{
+  "time": "2026-10-01T11:36:29.061108",
+  "pid": 19240,
+  "slots": [
+    6
+  ],
+  "log_dir": "runs\\diag\\V7S\\par\\probe\\rpm1_slot6\\launch",
+  "slot_limit": {
+    "n_slots": 1,
+    "limit": 7,
+    "slots": [
+      6
+    ]
+  },
+  "memory": {
+    "free_gb": 7.838626861572266,
+    "min_free_gb": 1.0
+  },
+  "cleanup": [
+    {
+      "slot": 6,
+      "lock": {
+        "learner_pid": 1984,
+        "emulator_pid": 59012
+      },
+      "lock_released": true,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

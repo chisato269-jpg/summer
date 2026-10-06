@@ -1,0 +1,489 @@
+{
+  "started_at": "2026-10-04T03:41:23.334566",
+  "argv": [
+    "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\rlkit\\v8\\trainer2.py",
+    "--config",
+    "rlkit/config_summer_v82.json"
+  ],
+  "config": {
+    "run_dir": "runs/v8s_trial02",
+    "seed": 19800614,
+    "train_slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "eval_slot": 12,
+    "episodes_per_slot": 1,
+    "slot_limit": 13,
+    "min_free_gb": 3.0,
+    "comm_rpm": true,
+    "eval_concurrent": false,
+    "max_collection_retries": 4,
+    "max_eval_retries": 4,
+    "m9_enabled": true,
+    "k9_result": "B",
+    "warm_start_from": null,
+    "include_indoor_unit_power": true,
+    "zone_step_energy_norm_gj": 0.02,
+    "planned_updates": 600,
+    "init_weights": "runs/v2s_trial08/best/best_official.pt",
+    "start_E_hex": "0x1.1a204189374bcp+2",
+    "start_DR_hex": "0x1.6cd5d80000000p-3",
+    "c83_limit_s": 600.0,
+    "init_policy": "C:/Users/chisa/rl_models/v8s_trial02/g0r_policy.pt",
+    "model_dir": "C:\\Users\\chisa\\rl_models\\v8s_trial02"
+  },
+  "factory": "real_v8",
+  "resume": false,
+  "instruction_version": "V8.2-S",
+  "train_slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "eval_slot": 12,
+  "comm_rpm": true,
+  "model_dir": "C:\\Users\\chisa\\rl_models\\v8s_trial02",
+  "preflight": {
+    "time": "2026-10-04T03:41:23.543874",
+    "pid": 16144,
+    "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "log_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\runs/v8s_trial02\\launch",
+    "slot_limit": {
+      "n_slots": 13,
+      "limit": 13,
+      "slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "memory": {
+      "free_gb": 7.225864410400391,
+      "min_free_gb": 3.0
+    },
+    "cleanup": [
+      {
+        "slot": 0,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 1,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 2,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 3,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 4,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 5,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 6,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 7,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 8,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 9,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 10,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 11,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 12,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      }
+    ],
+    "passed": true
+  },
+  "replica_checks": [
+    {
+      "slot": 0,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot0",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [],
+      "ipadd_value": "127.0.0.1",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 1,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot1",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.2",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 2,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot2",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.3",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 3,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot3",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.4",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 4,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.5",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 5,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot5",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.6",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 6,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot6",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.7",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 7,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot7",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.8",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 8,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot8",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.9",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 9,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot9",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.10",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 10,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot10",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.11",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 11,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot11",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.12",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 12,
+      "replica_dir": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot12",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.13",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    }
+  ]
+}

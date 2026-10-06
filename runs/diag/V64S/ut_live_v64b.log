@@ -1,0 +1,47 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit
+collecting ... collected 3 items / 2 deselected / 1 selected
+
+rlkit/tests/test_v64_live.py::test_ut34_live_seven_slots_read_own_output FAILED
+
+================================== FAILURES ===================================
+_________________ test_ut34_live_seven_slots_read_own_output __________________
+
+    def test_ut34_live_seven_slots_read_own_output():
+        """UT-34: 並列の 7 組で、各組のエピソードが自分の分単位の出力を読む（7 組で異なる軌跡を同時に再生する）。"""
+        from rlkit.parallel import slots
+        from rlkit.parallel.batched import SlotVecEnv
+        rows = json.load(open(os.path.join("runs", "diag", "V64S", "K14", "K14p_rows.json"), encoding="utf-8"))
+        picks = sorted(rows, key=lambda r: -abs(r["dDR_true"]))
+        chosen, drs = [], [0.0]
+        for r in picks:                                  # DR が互いに相対 1e-5 以上離れた 6 本
+            if all(abs(r["dDR_true"] - d) > 1e-5 * 0.19 for d in drs):
+                chosen.append(r["label"])
+                drs.append(r["dDR_true"])
+            if len(chosen) == 6:
+                break
+        base, jobs = _jobs()
+        trajs = [base] + [jobs[l]["actions"] for l in chosen]
+        ids = [0, 1, 2, 3, 4, 5, 6]
+        _launch(ids)
+        T = base.shape[0]
+        vec = SlotVecEnv(ids, _env_kwargs(), steps_per_collection=T)
+        try:
+            vec.reset()
+            for t in range(T):
+                _obs, _r, dones, infos = vec.step(np.stack([a[t] for a in trajs]))
+            assert all(dones)
+        finally:
+            vec.close()
+        DR = np.array([inf["DR_rep"] for inf in infos])
+        for k, inf in enumerate(infos):
+>           assert inf["r8p_minute_B_week_rel"] <= 1e-6, (k, inf["r8p_minute_B_week_rel"])
+E           AssertionError: (2, 2.665125225404812e-06)
+E           assert 2.665125225404812e-06 <= 1e-06
+
+rlkit\tests\test_v64_live.py:150: AssertionError
+=========================== short test summary info ===========================
+FAILED rlkit/tests/test_v64_live.py::test_ut34_live_seven_slots_read_own_output
+================= 1 failed, 2 deselected in 205.71s (0:03:25) =================

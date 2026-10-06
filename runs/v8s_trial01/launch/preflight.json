@@ -1,0 +1,137 @@
+{
+  "time": "2026-10-03T20:36:22.076911",
+  "pid": 29140,
+  "slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "log_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\runs/v8s_trial01\\launch",
+  "slot_limit": {
+    "n_slots": 13,
+    "limit": 13,
+    "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "memory": {
+    "free_gb": 7.692390441894531,
+    "min_free_gb": 3.0
+  },
+  "cleanup": [
+    {
+      "slot": 0,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 1,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 2,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 3,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 4,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 5,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 7,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 8,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 9,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 10,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 11,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 12,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

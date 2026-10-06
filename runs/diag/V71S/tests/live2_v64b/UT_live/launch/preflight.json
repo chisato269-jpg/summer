@@ -1,0 +1,83 @@
+{
+  "time": "2026-10-03T14:12:21.560545",
+  "pid": 29804,
+  "slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "log_dir": "runs/diag/V71S/tests/live2_v64b\\UT_live\\launch",
+  "slot_limit": {
+    "n_slots": 7,
+    "limit": 7,
+    "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "memory": {
+    "free_gb": 6.405460357666016,
+    "min_free_gb": 2.0
+  },
+  "cleanup": [
+    {
+      "slot": 0,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 1,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 2,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 3,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 4,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 5,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

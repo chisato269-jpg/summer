@@ -1,0 +1,8 @@
+{"time": "2026-09-25T18:37:42.316772", "pid": 4280, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-09-25T18:37:45.830611", "pid": 4280, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-09-25T18:41:01.971370", "pid": 4280, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-09-25T18:41:02.896640", "pid": 33796, "slot": 4, "event": "parent_closed_worker", "worker_pid": 17020, "killed": false, "exitcode": 0}
+{"time": "2026-09-25T18:41:47.858243", "pid": 32468, "slot": 4, "event": "emulator_started", "executable": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot4\\Shizuku2.exe"}
+{"time": "2026-09-25T18:41:51.355593", "pid": 32468, "slot": 4, "event": "bacnet_ready", "final_dtime": "1999-07-28 00:00:00"}
+{"time": "2026-09-25T18:45:08.076553", "pid": 32468, "slot": 4, "event": "emulator_exited", "returncode": 1}
+{"time": "2026-09-25T18:45:09.050398", "pid": 42264, "slot": 4, "event": "parent_closed_worker", "worker_pid": 40104, "killed": false, "exitcode": 0}

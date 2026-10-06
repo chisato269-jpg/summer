@@ -1,0 +1,21 @@
+{
+  "n_steps": 378,
+  "E_rep": 4.58734814453125,
+  "DR_rep": 0.1848166584968567,
+  "E_rep_hex": "0x1.25971cac08312p+2",
+  "DR_rep_hex": "0x1.7a81280000000p-3",
+  "P2_E_hex": "0x1.25971cac08312p+2",
+  "P2_DR_hex": "0x1.7a81280000000p-3",
+  "P2_E_GJ": 4.58734814453125,
+  "P2_DR": 0.1848166584968567,
+  "E_hex_match": true,
+  "DR_hex_match": true,
+  "eci_official": 0.6494687619192625,
+  "eci_smooth": 0.6494687619192625,
+  "power_sampling": "end_of_step_single_point",
+  "J2_implemented": false,
+  "J2_reason": "エミュレータの内部時間刻みが 60 秒のため、900 秒ステップを 4 等分する 225 秒で区切れない（advance(225) は実測 240 秒進み、4 区切りで 960 秒になる）。指示書 V3-S J-5 に従い終端 1 点を維持した",
+  "episode_wall_s": 135.30577635765076,
+  "include_indoor_unit_power": true,
+  "finished_at": "2026-09-17T16:03:03.781124"
+}

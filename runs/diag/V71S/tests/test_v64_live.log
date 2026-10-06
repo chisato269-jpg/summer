@@ -1,0 +1,73 @@
+..F
+================================== FAILURES ===================================
+_________________ test_ut34_live_seven_slots_read_own_output __________________
+
+    def test_ut34_live_seven_slots_read_own_output():
+        """UT-34: 並列の 7 組で、各組のエピソードが自分の分単位の出力を読む（7 組で異なる軌跡を同時に再生する）。"""
+        from rlkit.parallel import slots
+        from rlkit.parallel.batched import SlotVecEnv
+        rows = json.load(open(os.path.join("runs", "diag", "V64S", "K14", "K14p_rows.json"), encoding="utf-8"))
+        picks = sorted(rows, key=lambda r: -abs(r["dDR_true"]))
+        chosen, drs = [], [0.0]
+        for r in picks:                                  # DR が互いに相対 1e-5 以上離れた 6 本
+            if all(abs(r["dDR_true"] - d) > 1e-5 * 0.19 for d in drs):
+                chosen.append(r["label"])
+                drs.append(r["dDR_true"])
+            if len(chosen) == 6:
+                break
+        base, jobs = _jobs()
+        trajs = [base] + [jobs[l]["actions"] for l in chosen]
+        ids = [0, 1, 2, 3, 4, 5, 6]
+        _launch(ids)
+        T = base.shape[0]
+        vec = SlotVecEnv(ids, _env_kwargs(), steps_per_collection=T)
+        try:
+>           vec.reset()
+
+rlkit\tests\test_v64_live.py:142: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+rlkit\parallel\batched.py:60: in reset
+    results = [self._recv(r) for r in self.remotes]
+               ^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rlkit.parallel.batched.SlotVecEnv object at 0x000001AECE0C9D30>
+remote = <multiprocessing.connection.PipeConnection object at 0x000001AECE12CE50>
+
+    def _recv(self, remote):
+        try:
+            status, payload = remote.recv()
+        except (EOFError, ConnectionResetError, BrokenPipeError, OSError) as exc:
+            raise SlotVecEnvError(f"組の子プロセスとの通信が切れた: {exc!r}")
+        if status != "ok":
+>           raise SlotVecEnvError(f"組の子プロセスで失敗した: {payload}")
+E           rlkit.parallel.batched.SlotVecEnvError: 組の子プロセスで失敗した: Traceback (most recent call last):
+E             File "C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit\rlkit\parallel\slot_worker.py", line 50, in worker
+E               obs, reset_info = env.reset(seed=seed, **kw)
+E                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^
+E             File "C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit\rlkit\env.py", line 169, in reset
+E               self._driver.start()
+E               ~~~~~~~~~~~~~~~~~~^^
+E             File "C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit\rlkit\driver.py", line 62, in start
+E               fut.result(timeout=90)
+E               ~~~~~~~~~~^^^^^^^^^^^^
+E             File "C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 450, in result
+E               return self.__get_result()
+E                      ~~~~~~~~~~~~~~~~~^^
+E             File "C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 395, in __get_result
+E               raise self._exception
+E             File "C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit\rlkit\driver.py", line 88, in _async_start
+E               runtime.before_launch()
+E               ~~~~~~~~~~~~~~~~~~~~~^^
+E             File "C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit\rlkit\parallel\slots.py", line 523, in before_launch
+E               self.acquire_report = self.lock.acquire()
+E                                     ~~~~~~~~~~~~~~~~~^^
+E             File "C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit\rlkit\parallel\slots.py", line 448, in acquire
+E               raise SlotError(f"組{self.slot.index}はロック中（学習側 PID {lp} が生きている）。起動を拒否する")
+E           rlkit.parallel.slots.SlotError: 組6はロック中（学習側 PID 24376 が生きている）。起動を拒否する
+
+rlkit\parallel\batched.py:54: SlotVecEnvError
+=========================== short test summary info ===========================
+FAILED rlkit/tests/test_v64_live.py::test_ut34_live_seven_slots_read_own_output
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 2 passed in 273.10s (0:04:33)

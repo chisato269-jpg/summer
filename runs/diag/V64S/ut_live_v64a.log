@@ -1,0 +1,10 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\chisa\OneDrive - Kogakuin University\èCémå§ãÜ\èCémå§ãÜ_äJî≠\21\21(s)_Shizuku2-RL-kit
+collecting ... collected 3 items / 1 deselected / 2 selected
+
+rlkit/tests/test_v64_live.py::test_ut29_ut32p_live_baseline_replay PASSED
+rlkit/tests/test_v64_live.py::test_ut31_live_counterfactual_identity PASSED
+
+================= 2 passed, 1 deselected in 245.34s (0:04:05) =================

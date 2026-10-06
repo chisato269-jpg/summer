@@ -1,0 +1,101 @@
+{
+  "time": "2026-10-01T11:39:27.806344",
+  "pid": 13536,
+  "slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "log_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\runs\\diag\\V7S\\par\\scale\\seq_n07\\launch",
+  "slot_limit": {
+    "n_slots": 7,
+    "limit": 7,
+    "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "memory": {
+    "free_gb": 7.761325836181641,
+    "min_free_gb": 1.0
+  },
+  "cleanup": [
+    {
+      "slot": 0,
+      "lock": {
+        "learner_pid": 51448,
+        "emulator_pid": 49584
+      },
+      "lock_released": true,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 1,
+      "lock": {
+        "learner_pid": 53240,
+        "emulator_pid": 49320
+      },
+      "lock_released": true,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 2,
+      "lock": {
+        "learner_pid": 55348,
+        "emulator_pid": 10168
+      },
+      "lock_released": true,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 3,
+      "lock": {
+        "learner_pid": 53572,
+        "emulator_pid": 49604
+      },
+      "lock_released": true,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 4,
+      "lock": {
+        "learner_pid": 50756,
+        "emulator_pid": 47852
+      },
+      "lock_released": true,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 5,
+      "lock": {
+        "learner_pid": 32884,
+        "emulator_pid": 40224
+      },
+      "lock_released": true,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

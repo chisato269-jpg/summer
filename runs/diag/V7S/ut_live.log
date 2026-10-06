@@ -1,0 +1,160 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\python.exe
+rootdir: C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit
+collecting ... collected 1 item
+
+rlkit/tests/test_v7_live.py::test_ut35_direction_fixed_horizontal 読み戻し（書き込み前） [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5] （書き込み後） [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+PASSED
+
+============================== 1 passed in 6.11s ==============================
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\python.exe
+rootdir: C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit
+collecting ... collected 4 items
+
+rlkit/tests/test_v6_live.py::test_ut1_ventilation_levels_written_and_read_back PASSED [ 25%]
+rlkit/tests/test_v6_live.py::test_ut16_remote_permission_fixed_permit PASSED [ 50%]
+rlkit/tests/test_v6_live.py::test_ut15_setpoint_20c_accepted FAILED      [ 75%]
+rlkit/tests/test_v6_live.py::test_ut25_k13_tools FAILED                  [100%]
+
+================================== FAILURES ===================================
+_______________________ test_ut15_setpoint_20c_accepted _______________________
+
+live_env = <rlkit.env.SummerEnv object at 0x0000017687E97CB0>
+
+    def test_ut15_setpoint_20c_accepted(live_env):
+        """UT-15: 設定温度 20 ℃の書き込みがエミュレータに受理され、1 ステップ後に読み戻せる。"""
+        env = live_env
+>       assert action.setpoint_grid(1)[0] == 20.0
+E       assert 22.0 == 20.0
+
+rlkit\tests\test_v6_live.py:83: AssertionError
+_____________________________ test_ut25_k13_tools _____________________________
+
+live_env = <rlkit.env.SummerEnv object at 0x0000017687E97CB0>
+
+    def test_ut25_k13_tools(live_env):
+        """UT-25（V6.1-S）: K-13 の道具。(a) 読み戻しが指令と違うときだけ設定温度を書き直す、(b) リモコン禁止の書き込みと読み戻し。"""
+        env = live_env
+        env.set_setpoint_rewrite_on_mismatch(True)
+        try:
+            act = _act(s1_on=True, sp_idx=4)                     # S1 冷房 24 ℃
+            env.step(act)
+            n0 = env._setpoint_rewrites
+            # 執務者の操作を模して、設定温度を 27 ℃に直接書き換える
+            driver.run_coro(env._driver, comm.call_write(env._driver.comms.vrf.change_setpoint_temperature(1, 1, 27.0), "sp"))
+            # 状態値（1106）はシミュレーションが進んだ後に反映されるため、60 秒だけ進める（執務者の操作はステップ内に起こり、
+            # 次のステップの書き込み前の読み戻しで見えるのと同じ状況を作る）
+            driver.run_coro(env._driver, env._driver.advance(60))
+            rb = driver.run_coro(env._driver, comm.read_setpoint_readback(env._driver.comms))
+            assert rb[0] == pytest.approx(27.0)
+            _o, _r, _d, _t, info = env.step(act)                   # 読み戻し 27 ≠ 指令 24 → 書き直す
+            assert env._setpoint_rewrites == n0 + 1
+>           assert info["diag"]["setpoint_readback"][0] == pytest.approx(24.0)
+E           assert 26.0 == 24.0 ± 2.4e-05
+E             
+E             comparison failed
+E             Obtained: 26.0
+E             Expected: 24.0 ± 2.4e-05
+
+rlkit\tests\test_v6_live.py:106: AssertionError
+=========================== short test summary info ===========================
+FAILED rlkit/tests/test_v6_live.py::test_ut15_setpoint_20c_accepted - assert ...
+FAILED rlkit/tests/test_v6_live.py::test_ut25_k13_tools - assert 26.0 == 24.0...
+========================= 2 failed, 2 passed in 8.80s =========================
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\python.exe
+rootdir: C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit
+collecting ... collected 3 items / 1 deselected / 2 selected
+
+rlkit/tests/test_v64_live.py::test_ut29_ut32p_live_baseline_replay PASSED
+rlkit/tests/test_v64_live.py::test_ut31_live_counterfactual_identity PASSED
+
+================= 2 passed, 1 deselected in 262.18s (0:04:22) =================
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\chisa\AppData\Local\Python\pythoncore-3.14-64\python.exe
+rootdir: C:\Users\chisa\OneDrive - Kogakuin University\修士研究\修士研究_開発\21\21(s)_Shizuku2-RL-kit
+collecting ... collected 3 items / 2 deselected / 1 selected
+
+rlkit/tests/test_v64_live.py::test_ut34_live_seven_slots_read_own_output FAILED
+
+================================== FAILURES ===================================
+_________________ test_ut34_live_seven_slots_read_own_output __________________
+
+    def test_ut34_live_seven_slots_read_own_output():
+        """UT-34: 並列の 7 組で、各組のエピソードが自分の分単位の出力を読む（7 組で異なる軌跡を同時に再生する）。"""
+        from rlkit.parallel import slots
+        from rlkit.parallel.batched import SlotVecEnv
+        rows = json.load(open(os.path.join("runs", "diag", "V64S", "K14", "K14p_rows.json"), encoding="utf-8"))
+        picks = sorted(rows, key=lambda r: -abs(r["dDR_true"]))
+        chosen, drs = [], [0.0]
+        for r in picks:                                  # DR が互いに相対 1e-5 以上離れた 6 本
+            if all(abs(r["dDR_true"] - d) > 1e-5 * 0.19 for d in drs):
+                chosen.append(r["label"])
+                drs.append(r["dDR_true"])
+            if len(chosen) == 6:
+                break
+        base, jobs = _jobs()
+        trajs = [base] + [jobs[l]["actions"] for l in chosen]
+        ids = [0, 1, 2, 3, 4, 5, 6]
+>       _launch(ids)
+
+rlkit\tests\test_v64_live.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+rlkit\tests\test_v64_live.py:35: in _launch
+    slots.prepare_replica(slots.make_slot(k))
+rlkit\parallel\slots.py:281: in prepare_replica
+    result = verify_replica(slot, original_dir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+slot = SlotSpec(index=0, address='127.0.0.1', client_id_items=(('vrf', 12), ('vent', 13), ('env', 14), ('occ', 15)), replica_dir='C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot0')
+original_dir = 'C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2'
+
+    def verify_replica(slot, original_dir=ORIGINAL_DIR):
+        """原本と複製の全ファイルの SHA-256 を比べ、差が setting.ini の ipadd の値だけであることを
+        確かめる。原本側が複製の作成時（前回の照合時）から変わっていれば誤りとする。"""
+        manifest_path = os.path.join(slot.replica_dir, MANIFEST_NAME)
+        if not os.path.exists(manifest_path):
+            raise SlotError(f"照合記録 {MANIFEST_NAME} が無い（この機構で作った複製ではない）: {slot.replica_dir}")
+        with open(manifest_path, encoding="utf-8") as f:
+            manifest = json.load(f)
+    
+        errors = []
+        orig = tree_hashes(original_dir, EMULATOR_OUTPUT_RELPATHS)
+        recorded = manifest.get("original_hashes") or {}
+        if recorded != orig:
+            changed = sorted(k for k in set(recorded) | set(orig) if recorded.get(k) != orig.get(k))
+            errors.append(f"原本が前回の照合時から変わっている: {changed[:10]}")
+    
+        repl = tree_hashes(slot.replica_dir, EMULATOR_OUTPUT_RELPATHS, SLOT_ADMIN_NAMES)
+        missing = sorted(set(orig) - set(repl))
+        extra = sorted(set(repl) - set(orig))
+        differing = sorted(k for k in set(orig) & set(repl) if orig[k] != repl[k])
+        if missing:
+            errors.append(f"複製に無いファイル: {missing[:10]}")
+        if extra:
+            errors.append(f"原本に無いファイル: {extra[:10]}")
+        unexpected = [k for k in differing if k != "setting.ini"]
+        if unexpected:
+            errors.append(f"setting.ini 以外に中身の違うファイル: {unexpected[:10]}")
+    
+        with open(os.path.join(original_dir, "setting.ini"), "rb") as f:
+            orig_ini = f.read()
+        with open(slot.setting_ini, "rb") as f:
+            repl_ini = f.read()
+        if repl_ini != rewrite_ipadd_bytes(orig_ini, slot.address):
+            errors.append("複製の setting.ini が「原本の ipadd の値だけを組のアドレスに置き換えたもの」と一致しない")
+        ol, rl = orig_ini.split(b"\n"), repl_ini.split(b"\n")
+        diff_lines = [i for i, (a, b) in enumerate(zip(ol, rl)) if a != b]
+        if len(ol) != len(rl):
+            errors.append(f"setting.ini の行数が違う（原本{len(ol)}行、複製{len(rl)}行）")
+    
+        if errors:
+>           raise SlotError(f"組{slot.index}の複製の照合に失敗: " + "; ".join(errors))
+E           rlkit.parallel.slots.SlotError: 組0の複製の照合に失敗: setting.ini 以外に中身の違うファイル: ['error.log']
+
+rlkit\parallel\slots.py:326: SlotError
+=========================== short test summary info ===========================
+FAILED rlkit/tests/test_v64_live.py::test_ut34_live_seven_slots_read_own_output
+======================= 1 failed, 2 deselected in 3.48s =======================

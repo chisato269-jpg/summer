@@ -1,0 +1,164 @@
+{
+  "time": "2026-10-01T11:48:40.225299",
+  "pid": 17012,
+  "slots": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "log_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\runs\\diag\\V7S\\par\\scale\\rpm_n16\\launch",
+  "slot_limit": {
+    "n_slots": 16,
+    "limit": 16,
+    "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "memory": {
+    "free_gb": 7.673057556152344,
+    "min_free_gb": 1.0
+  },
+  "cleanup": [
+    {
+      "slot": 0,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 1,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 2,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 3,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 4,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 5,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 7,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 8,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 9,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 10,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 11,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 12,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 13,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 14,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    },
+    {
+      "slot": 15,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

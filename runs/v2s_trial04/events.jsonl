@@ -1,0 +1,76 @@
+{"time": "2026-09-20T02:25:34.718707", "event": "initial_reference", "E_star": 5.674783203125, "DR_star": 0.5013922452926636, "alpha": 0.00013721090595187856, "beta": 0.012610913058198824, "eci_smooth": 0.0006276511470801981, "eci_official": 0.0}
+{"time": "2026-09-20T04:44:28.213617", "event": "harvest_replay", "harvested_at_update": 16, "slot_harvested": 5, "replay_slot": 6, "stage_converted_1_to_2": false, "saved_E": 6.5337451171875, "saved_DR": 0.1905442774295807, "saved_E_hex": "0x1.a228e147ae148p+2", "saved_DR_hex": "0x1.863c140000000p-3", "replay_E": 6.5337451171875, "replay_DR": 0.1905442774295807, "replay_E_hex": "0x1.a228e147ae148p+2", "replay_DR_hex": "0x1.863c140000000p-3", "replay_eci_official": 0.40345078695398967, "replay_eci_smooth": 0.40345078695398967, "E_hex_match": true, "DR_hex_match": true}
+{"time": "2026-09-20T04:45:50.815771", "event": "resumed", "update_index": 20, "stage": 1, "planned_updates": 1500, "m5_enabled": true}
+{"time": "2026-09-20T12:12:54.736068", "event": "collection_failed_discarded", "attempt": 1, "error": "py\", line 50, in worker\n    obs, reset_info = env.reset(seed=seed, **kw)\n                      ~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\rlkit\\env.py\", line 142, in reset\n    obs = driver.run_coro(self._driver, self._async_first_obs())\n  File \"C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\rlkit\\driver.py\", line 183, in run_coro\n    return asyncio.run_coroutine_threadsafe(coro, drv.loop).result(timeout=timeout)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chisa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\concurrent\\futures\\_base.py\", line 450, in result\n    return self.__get_result()\n           ~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\chisa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\concurrent\\futures\\_base.py\", line 395, in __get_result\n    raise self._exception\n  File \"C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\rlkit\\env.py\", line 156, in _async_first_obs\n    snap = await comm.read_step_snapshot(comms)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\rlkit\\comm.py\", line 116, in read_step_snapshot\n    z[\"thermal_sensation\"] = await call_write(comms.occ.get_averaged_thermal_sensation(tenant, zn), f\"{label} TS\")\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\rlkit\\comm.py\", line 79, in call_write\n    return await _check(await coro, description)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\rlkit\\comm.py\", line 73, in _check\n    raise BacnetError(f\"{description} に失敗: {value}\")\nrlkit.comm.BacnetError: S1 TS に失敗: no-response\n"}
+{"time": "2026-09-21T00:38:02.321157", "gate": "G-1''", "trigger": "G-1''", "update": 200, "passed": true, "harvest_official_streak": 193, "det_official_positive_streak": 146, "inside_rate_recent": 1.0}
+{"time": "2026-09-21T00:42:22.631086", "gate": "G-2", "trigger": "G-1''", "update": 200, "passed": true, "pre_eci_official": 0.378832323593105, "post_eci_official": 0.378832323593105, "relative_difference": 0.0, "tolerance": 0.0001}
+{"time": "2026-09-21T00:42:22.633447", "gate": "G-3'", "phase": "released", "update": 200, "before_median": 0.3937060201283286, "judge_at": 203, "retries": 0}
+{"time": "2026-09-21T01:06:59.220404", "gate": "G-3'", "phase": "judged", "update": 203, "passed": false, "before_median": 0.3937060201283286, "after_median": 0.00011887638751025168, "ratio_min": 0.98, "retries": 1, "retry_at": 253}
+{"time": "2026-09-21T06:29:26.963014", "gate": "G-3'", "phase": "released", "update": 253, "before_median": 0.38904453982885656, "judge_at": 256, "retries": 1}
+{"time": "2026-09-21T06:35:33.972446", "gate": "G-3'", "phase": "released", "update": 254, "before_median": 0.38904453982885656, "judge_at": 257, "retries": 1}
+{"time": "2026-09-21T06:41:41.038346", "gate": "G-3'", "phase": "released", "update": 255, "before_median": 9.531587082063926e-05, "judge_at": 258, "retries": 1}
+{"time": "2026-09-21T06:47:46.056051", "gate": "G-3'", "phase": "released", "update": 256, "before_median": 9.353814536212715e-05, "judge_at": 259, "retries": 1}
+{"time": "2026-09-21T06:53:53.325666", "gate": "G-3'", "phase": "released", "update": 257, "before_median": 9.290960933373968e-05, "judge_at": 260, "retries": 1}
+{"time": "2026-09-21T07:00:00.441776", "gate": "G-3'", "phase": "released", "update": 258, "before_median": 9.201263834426066e-05, "judge_at": 261, "retries": 1}
+{"time": "2026-09-21T07:06:06.910742", "gate": "G-3'", "phase": "released", "update": 259, "before_median": 9.201263834426066e-05, "judge_at": 262, "retries": 1}
+{"time": "2026-09-21T07:12:12.908880", "gate": "G-3'", "phase": "released", "update": 260, "before_median": 9.360265462691103e-05, "judge_at": 263, "retries": 1}
+{"time": "2026-09-21T07:18:17.969827", "gate": "G-3'", "phase": "released", "update": 261, "before_median": 9.675273436538127e-05, "judge_at": 264, "retries": 1}
+{"time": "2026-09-21T07:24:23.403022", "gate": "G-3'", "phase": "released", "update": 262, "before_median": 9.675273436538127e-05, "judge_at": 265, "retries": 1}
+{"time": "2026-09-21T07:30:21.848100", "event": "H-6_degenerate_argmax", "update": 263, "streak": 10}
+{"time": "2026-09-21T07:30:28.052466", "gate": "G-3'", "phase": "released", "update": 263, "before_median": 9.675273436538127e-05, "judge_at": 266, "retries": 1}
+{"time": "2026-09-21T07:36:28.250726", "event": "H-6_degenerate_argmax", "update": 264, "streak": 11}
+{"time": "2026-09-21T07:36:35.000554", "gate": "G-3'", "phase": "released", "update": 264, "before_median": 9.778732750402031e-05, "judge_at": 267, "retries": 1}
+{"time": "2026-09-21T07:42:35.454932", "event": "H-6_degenerate_argmax", "update": 265, "streak": 12}
+{"time": "2026-09-21T07:42:42.479451", "gate": "G-3'", "phase": "released", "update": 265, "before_median": 0.00010337226804365956, "judge_at": 268, "retries": 1}
+{"time": "2026-09-21T07:48:42.669241", "event": "H-6_degenerate_argmax", "update": 266, "streak": 13}
+{"time": "2026-09-21T07:48:49.465239", "gate": "G-3'", "phase": "released", "update": 266, "before_median": 0.00011005114015957955, "judge_at": 269, "retries": 1}
+{"time": "2026-09-21T07:54:49.652557", "event": "H-6_degenerate_argmax", "update": 267, "streak": 14}
+{"time": "2026-09-21T07:54:56.600603", "gate": "G-3'", "phase": "released", "update": 267, "before_median": 0.00011417985814219461, "judge_at": 270, "retries": 1}
+{"time": "2026-09-21T08:00:59.647674", "event": "H-6_degenerate_argmax", "update": 268, "streak": 15}
+{"time": "2026-09-21T08:01:06.351803", "gate": "G-3'", "phase": "released", "update": 268, "before_median": 0.00011986770785316224, "judge_at": 271, "retries": 1}
+{"time": "2026-09-21T08:07:09.684522", "event": "H-6_degenerate_argmax", "update": 269, "streak": 16}
+{"time": "2026-09-21T08:07:14.875664", "gate": "G-3'", "phase": "released", "update": 269, "before_median": 0.0001291093901584848, "judge_at": 272, "retries": 1}
+{"time": "2026-09-21T08:13:18.958503", "event": "H-6_degenerate_argmax", "update": 270, "streak": 17}
+{"time": "2026-09-21T08:13:25.671149", "gate": "G-3'", "phase": "released", "update": 270, "before_median": 0.00015349142314619087, "judge_at": 273, "retries": 1}
+{"time": "2026-09-21T08:19:29.121744", "event": "H-6_degenerate_argmax", "update": 271, "streak": 18}
+{"time": "2026-09-21T08:19:34.092436", "gate": "G-3'", "phase": "released", "update": 271, "before_median": 0.00017070588380241182, "judge_at": 274, "retries": 1}
+{"time": "2026-09-21T08:25:40.116431", "event": "H-6_degenerate_argmax", "update": 272, "streak": 19}
+{"time": "2026-09-21T08:25:47.000769", "gate": "G-3'", "phase": "released", "update": 272, "before_median": 0.0001804349922325929, "judge_at": 275, "retries": 1}
+{"time": "2026-09-21T08:31:55.133422", "event": "H-6_degenerate_argmax", "update": 273, "streak": 20}
+{"time": "2026-09-21T08:32:01.892696", "gate": "G-3'", "phase": "released", "update": 273, "before_median": 0.000252142016871416, "judge_at": 276, "retries": 1}
+{"time": "2026-09-21T08:38:09.642465", "event": "H-6_degenerate_argmax", "update": 274, "streak": 21}
+{"time": "2026-09-21T08:38:16.473546", "gate": "G-3'", "phase": "released", "update": 274, "before_median": 0.0003370077896495761, "judge_at": 277, "retries": 1}
+{"time": "2026-09-21T08:44:26.193005", "event": "H-6_degenerate_argmax", "update": 275, "streak": 22}
+{"time": "2026-09-21T08:44:33.036181", "gate": "G-3'", "phase": "released", "update": 275, "before_median": 0.00040843015922548554, "judge_at": 278, "retries": 1}
+{"time": "2026-09-21T08:50:44.434328", "event": "H-6_degenerate_argmax", "update": 276, "streak": 23}
+{"time": "2026-09-21T08:50:51.269605", "gate": "G-3'", "phase": "released", "update": 276, "before_median": 0.0005483321813898628, "judge_at": 279, "retries": 1}
+{"time": "2026-09-21T08:56:59.777237", "event": "H-6_degenerate_argmax", "update": 277, "streak": 24}
+{"time": "2026-09-21T08:57:06.696589", "gate": "G-3'", "phase": "released", "update": 277, "before_median": 0.000601829057063219, "judge_at": 280, "retries": 1}
+{"time": "2026-09-21T09:03:19.483011", "event": "H-6_degenerate_argmax", "update": 278, "streak": 25}
+{"time": "2026-09-21T09:03:23.356907", "gate": "G-3'", "phase": "released", "update": 278, "before_median": 0.0007392112465944968, "judge_at": 281, "retries": 1}
+{"time": "2026-09-21T09:09:39.824456", "event": "H-6_degenerate_argmax", "update": 279, "streak": 26}
+{"time": "2026-09-21T09:09:44.665839", "gate": "G-3'", "phase": "released", "update": 279, "before_median": 0.0009938775890762164, "judge_at": 282, "retries": 1}
+{"time": "2026-09-21T09:16:01.723776", "event": "H-6_degenerate_argmax", "update": 280, "streak": 27}
+{"time": "2026-09-21T09:16:05.572418", "gate": "G-3'", "phase": "released", "update": 280, "before_median": 0.0025456085568804285, "judge_at": 283, "retries": 1}
+{"time": "2026-09-21T09:22:28.970006", "event": "H-6_degenerate_argmax", "update": 281, "streak": 28}
+{"time": "2026-09-21T09:22:32.651260", "gate": "G-3'", "phase": "released", "update": 281, "before_median": 0.005013971771496495, "judge_at": 284, "retries": 1}
+{"time": "2026-09-21T09:28:59.504532", "event": "H-6_degenerate_argmax", "update": 282, "streak": 29}
+{"time": "2026-09-21T09:29:03.459294", "gate": "G-3'", "phase": "released", "update": 282, "before_median": 0.011828803474723095, "judge_at": 285, "retries": 1}
+{"time": "2026-09-21T09:35:37.708760", "gate": "G-3'", "phase": "released", "update": 283, "before_median": 0.01835228355677111, "judge_at": 286, "retries": 1}
+{"time": "2026-09-21T09:42:10.993309", "gate": "G-3'", "phase": "released", "update": 284, "before_median": 0.04662462246549319, "judge_at": 287, "retries": 1}
+{"time": "2026-09-21T09:48:47.803595", "gate": "G-3'", "phase": "released", "update": 285, "before_median": 0.05731523275859752, "judge_at": 288, "retries": 1}
+{"time": "2026-09-21T09:55:26.706186", "gate": "G-3'", "phase": "released", "update": 286, "before_median": 0.09919582899337517, "judge_at": 289, "retries": 1}
+{"time": "2026-09-21T10:02:05.340295", "gate": "G-3'", "phase": "released", "update": 287, "before_median": 0.15501720370401664, "judge_at": 290, "retries": 1}
+{"time": "2026-09-21T10:08:42.789797", "gate": "G-3'", "phase": "released", "update": 288, "before_median": 0.19171217697712392, "judge_at": 291, "retries": 1}
+{"time": "2026-09-21T10:15:19.686981", "gate": "G-3'", "phase": "released", "update": 289, "before_median": 0.19171217697712392, "judge_at": 292, "retries": 1}
+{"time": "2026-09-21T10:21:52.300613", "gate": "G-3'", "phase": "released", "update": 290, "before_median": 0.1777946568381704, "judge_at": 293, "retries": 1}
+{"time": "2026-09-21T10:28:26.293322", "gate": "G-3'", "phase": "released", "update": 291, "before_median": 0.15265654493837413, "judge_at": 294, "retries": 1}
+{"time": "2026-09-21T10:34:58.888123", "gate": "G-3'", "phase": "released", "update": 292, "before_median": 0.1285797730381416, "judge_at": 295, "retries": 1}
+{"time": "2026-09-21T10:41:37.602443", "gate": "G-3'", "phase": "released", "update": 293, "before_median": 0.1285797730381416, "judge_at": 296, "retries": 1}
+{"time": "2026-09-21T10:48:13.398345", "gate": "G-3'", "phase": "released", "update": 294, "before_median": 0.19266651141194482, "judge_at": 297, "retries": 1}
+{"time": "2026-09-21T10:55:08.583390", "gate": "G-3'", "phase": "released", "update": 295, "before_median": 0.2329002604923916, "judge_at": 298, "retries": 1}
+{"time": "2026-09-21T11:02:08.754974", "gate": "G-3'", "phase": "released", "update": 296, "before_median": 0.2329002604923916, "judge_at": 299, "retries": 1}
+{"time": "2026-09-21T11:08:50.463849", "gate": "G-3'", "phase": "released", "update": 297, "before_median": 0.21430333003747254, "judge_at": 300, "retries": 1}
+{"time": "2026-09-21T11:15:35.525804", "gate": "G-3'", "phase": "released", "update": 298, "before_median": 0.20856795360551086, "judge_at": 301, "retries": 1}
+{"time": "2026-09-21T11:22:15.401319", "gate": "G-3'", "phase": "released", "update": 299, "before_median": 0.21430333003747254, "judge_at": 302, "retries": 1}
+{"time": "2026-09-21T11:30:50.897045", "event": "harvest_replay", "harvested_at_update": 16, "slot_harvested": 5, "replay_slot": 6, "stage_converted_1_to_2": true, "saved_E": 6.5337451171875, "saved_DR": 0.1905442774295807, "saved_E_hex": "0x1.a228e147ae148p+2", "saved_DR_hex": "0x1.863c140000000p-3", "replay_E": 6.5337451171875, "replay_DR": 0.1905442774295807, "replay_E_hex": "0x1.a228e147ae148p+2", "replay_DR_hex": "0x1.863c140000000p-3", "replay_eci_official": 0.40345078695398967, "replay_eci_smooth": 0.40345078695398967, "E_hex_match": true, "DR_hex_match": true}

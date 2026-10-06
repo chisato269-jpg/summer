@@ -1,0 +1,454 @@
+{
+  "moved_at": "2026-10-03T14:07:04.553334",
+  "local_root": "C:\\Users\\chisa\\rl_local",
+  "replicas": [
+    {
+      "from": "Shizuku2_slot0",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot0",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot1",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot1",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot10",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot10",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot11",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot11",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot12",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot12",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot13",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot13",
+      "mb": 64.7
+    },
+    {
+      "from": "Shizuku2_slot14",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot14",
+      "mb": 64.7
+    },
+    {
+      "from": "Shizuku2_slot15",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot15",
+      "mb": 64.7
+    },
+    {
+      "from": "Shizuku2_slot2",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot2",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot3",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot3",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot4",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot4",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot5",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot5",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot6",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot6",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot7",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot7",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot8",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot8",
+      "mb": 64.6
+    },
+    {
+      "from": "Shizuku2_slot9",
+      "to": "C:\\Users\\chisa\\rl_local\\emulators\\Shizuku2_slot9",
+      "mb": 64.6
+    }
+  ],
+  "csv_dirs": [
+    {
+      "from": "runs/diag/V6S/slot_output",
+      "to": "C:\\Users\\chisa\\rl_local\\diag_csv\\V6S\\slot_output",
+      "n_files": 42,
+      "mb": 115.8,
+      "files": {
+        "k11_a\\result.txt": {
+          "size": 373,
+          "sha256": "3d0e7d8e94fb14b007cb0a0c2717b238e0185092ce5244a759f3da7f559e0a3c"
+        },
+        "k11_a\\vent.csv": {
+          "size": 397062,
+          "sha256": "6f34ad6eb90d956379b9b80b36e0234d6d344dc089a213ec02df32284590e9db"
+        },
+        "k11_a\\vrf.csv": {
+          "size": 8282146,
+          "sha256": "5c7bff51b8b637394c0367c4c3a398d1134ca494ab6edd5e715dba603a3a396a"
+        },
+        "k11_b\\result.txt": {
+          "size": 374,
+          "sha256": "b1c2b4a76d84a980da60106c0edc720b95ab313d378692dd92ea3f8a4f802a16"
+        },
+        "k11_b\\vent.csv": {
+          "size": 393272,
+          "sha256": "9c9684e66fe404368fcff10541c7c758e2df9f881170b788ad7c3cc0450ec444"
+        },
+        "k11_b\\vrf.csv": {
+          "size": 8281794,
+          "sha256": "0f70e63ac3ecc4d81a7ad97bb4d77025ae9d60ccffdbcab95e9ef5e4b68a5a3a"
+        },
+        "k11_c\\result.txt": {
+          "size": 374,
+          "sha256": "30dd7f7e62d6a61c24179573fed43b7a31faa7a74881f1f45fdc20f04de7af00"
+        },
+        "k11_c\\vent.csv": {
+          "size": 393272,
+          "sha256": "1b5e5fe6e264510bc3dab83ba6e6e4fd86b3c4d8adb323f2d1b05965bb148f6b"
+        },
+        "k11_c\\vrf.csv": {
+          "size": 8281807,
+          "sha256": "aa0ffa8ff4aa48088670439d706a482d5b8dc881d5ff0540259173013a304f77"
+        },
+        "k11_d\\result.txt": {
+          "size": 375,
+          "sha256": "0a899f6fbcf14231849896e4bec68b5b330938f2ebf7e37dd83357903be34713"
+        },
+        "k11_d\\vent.csv": {
+          "size": 393272,
+          "sha256": "c2fb8e9649e3f442a9d4053d9f86d99629e87fde196dbe2c2504d114ca812845"
+        },
+        "k11_d\\vrf.csv": {
+          "size": 8281669,
+          "sha256": "5db3dff412ec1dcca018e50fde947ad8da4bb91e6df95fdc4ee14c060bff1208"
+        },
+        "k12_a\\result.txt": {
+          "size": 375,
+          "sha256": "423786a0e45238263fb33657ac0583e4df2efc806e139e1dab98de50111267a5"
+        },
+        "k12_a\\vent.csv": {
+          "size": 393274,
+          "sha256": "f81115f00dcd5228153150cd4036eaf9597b581232f6fd2bf8f0b32a4cc6c24e"
+        },
+        "k12_a\\vrf.csv": {
+          "size": 8279417,
+          "sha256": "9b0e569bebbdb3fac430915dbc6816c5edb01468f4a71085b1e4b0c68cb0e214"
+        },
+        "k12_b\\result.txt": {
+          "size": 375,
+          "sha256": "360dd561b51edf5925c3985eded02f721dbb1c8779960e1b04014de0aea722aa"
+        },
+        "k12_b\\vent.csv": {
+          "size": 393274,
+          "sha256": "9d1fa7f4e706f9956918027730206d7dc27b2d916b93c2033e3373569cd797e9"
+        },
+        "k12_b\\vrf.csv": {
+          "size": 8276669,
+          "sha256": "8f75631009d48e4b073c0cf3b636404be399f6785f2618e1ecad8d06f8015a89"
+        },
+        "k12_c\\result.txt": {
+          "size": 375,
+          "sha256": "ca889e3e73a16d8cc60b5b8b759c973a23cccb0e7924a01d5aba532702fdc6a9"
+        },
+        "k12_c\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "k12_c\\vrf.csv": {
+          "size": 8262878,
+          "sha256": "915d942d186dcee47f549701d808c44070005d385ab11210c79a20f174ec3fc0"
+        },
+        "z1_slot0\\result.txt": {
+          "size": 375,
+          "sha256": "0b726b9254341e1289aa8c22264df826d9015eb208c81da853366f7bfb31528b"
+        },
+        "z1_slot0\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "z1_slot0\\vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        },
+        "z1_slot1\\result.txt": {
+          "size": 375,
+          "sha256": "307daa5832c5aad96f100b876048a00a324becd9b31cb6fab0f193f7589527a7"
+        },
+        "z1_slot1\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "z1_slot1\\vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        },
+        "z1_slot2\\result.txt": {
+          "size": 375,
+          "sha256": "bc8ccca10684a7e1a12b81cacd316bd25fd6ca6dd142310ffe53e5db4da00e7f"
+        },
+        "z1_slot2\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "z1_slot2\\vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        },
+        "z1_slot3\\result.txt": {
+          "size": 375,
+          "sha256": "daa4ac005bc0266c283bb475b655bb7605e506a9dc8a319756a9f15339c8db0f"
+        },
+        "z1_slot3\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "z1_slot3\\vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        },
+        "z1_slot4\\result.txt": {
+          "size": 375,
+          "sha256": "a15e22f277d09d9595ad8e0ffa7f48c933f8c75563ff9c2c92a178fb622e07ac"
+        },
+        "z1_slot4\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "z1_slot4\\vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        },
+        "z1_slot5\\result.txt": {
+          "size": 375,
+          "sha256": "f72ac24d2e979056cb1e37836f3bf7e3e5d241910e50680f7a83ca2ac0bdc778"
+        },
+        "z1_slot5\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "z1_slot5\\vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        },
+        "z1_slot6\\result.txt": {
+          "size": 375,
+          "sha256": "85c713661b4f189064edcb9b4a4fb65c17e520c1441379521287b8bc45530263"
+        },
+        "z1_slot6\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "z1_slot6\\vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        }
+      }
+    },
+    {
+      "from": "runs/diag/V6S/K10/source",
+      "to": "C:\\Users\\chisa\\rl_local\\diag_csv\\V6S\\K10\\source",
+      "n_files": 21,
+      "mb": 57.9,
+      "files": {
+        "slot0\\result.txt": {
+          "size": 376,
+          "sha256": "4b6e2b9eae33131d441677cf5fe5d04d9cc6983a48cb3da29ead65ed6ff3cc67"
+        },
+        "slot0\\vent.csv": {
+          "size": 393272,
+          "sha256": "4dec5fad0500911f2ae1dd0e5649d2fabf71a1e8190397861aeb6f72b57b1e07"
+        },
+        "slot0\\vrf.csv": {
+          "size": 8272674,
+          "sha256": "a568f03bb7d7e748767cba4735fda24f2920a75c1e8ad5523d545d246f4a51a3"
+        },
+        "slot1\\result.txt": {
+          "size": 373,
+          "sha256": "abeeb200409f0887cbdb862528d377a0548e6d38b5bcfbba90eb28d00e0a0c9a"
+        },
+        "slot1\\vent.csv": {
+          "size": 393272,
+          "sha256": "2a83ca93a987687e5fa85d6396d704290079f273c3d00b070890211b3b4b9f6e"
+        },
+        "slot1\\vrf.csv": {
+          "size": 8274097,
+          "sha256": "23ae9036d31aa610b43b8682077e2a1ab8257ba65d0b5e00188de9405883c2fb"
+        },
+        "slot2\\result.txt": {
+          "size": 374,
+          "sha256": "8d6e28d51214ba257e937d585e735cf780def29871905dbbd3d0e71b54a2a047"
+        },
+        "slot2\\vent.csv": {
+          "size": 393272,
+          "sha256": "60a6b2ad74e017fbd1f411b5d57de0dda17599f350d85cbc3235d656deea35f4"
+        },
+        "slot2\\vrf.csv": {
+          "size": 8275023,
+          "sha256": "21d68ab6ef946a1df31c4e0a0d85a87aded582e87c4fd09f6397895488a4543f"
+        },
+        "slot3\\result.txt": {
+          "size": 374,
+          "sha256": "da39b14085d7b4c2b99d6ff8eeb5e786566269e4f5578d264c44dd9138750e68"
+        },
+        "slot3\\vent.csv": {
+          "size": 393272,
+          "sha256": "fbd56d21e539b4d2175d622e66f825926c93452da8bbcb597173a41f67cedb56"
+        },
+        "slot3\\vrf.csv": {
+          "size": 8272197,
+          "sha256": "d3c81a0f7094b0f6d775ee67df680237ed699a93dc4117403a71879679a4fd37"
+        },
+        "slot4\\result.txt": {
+          "size": 375,
+          "sha256": "aa9b798e7d0d8dc9cd95f395fe2cfa79bd43bc541a35e3beae1f247427697e84"
+        },
+        "slot4\\vent.csv": {
+          "size": 393272,
+          "sha256": "0c55794239c5c18ff545245da351f463e4e2a92e3650f7dc4f2c4299116f2eb9"
+        },
+        "slot4\\vrf.csv": {
+          "size": 8273303,
+          "sha256": "bfe81479ceac116d8dc565943b168f880b750ffa8065ff816e155c6bc2da0418"
+        },
+        "slot5\\result.txt": {
+          "size": 373,
+          "sha256": "f5171f30037e75ff9a19beec1fc5aa0b8c76ace523b33c27832dae89900bf041"
+        },
+        "slot5\\vent.csv": {
+          "size": 393352,
+          "sha256": "4e6524ca1d5159ae23b7b06af2187aad9fddba63ce674f9ce5bc9de71f6b3d91"
+        },
+        "slot5\\vrf.csv": {
+          "size": 8273614,
+          "sha256": "e51e058784c950d6fa55358ce6e1ccdd3e6948ab664bd5fe8426a87f6be29622"
+        },
+        "slot6\\result.txt": {
+          "size": 375,
+          "sha256": "b4960bfa73dfcb66dd048c705eb85f0175c7cb8ae1754aefb1a83d0f175d2bd2"
+        },
+        "slot6\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "slot6\\vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        }
+      }
+    },
+    {
+      "from": "runs/diag/V61S/slot_output",
+      "to": "C:\\Users\\chisa\\rl_local\\diag_csv\\V61S\\slot_output",
+      "n_files": 9,
+      "mb": 24.8,
+      "files": {
+        "K13_a_rewrite\\result.txt": {
+          "size": 374,
+          "sha256": "60589346154dd56af14f35422a9f3ab7e3d2e4a95658d2ff1e45059c3ffa9c77"
+        },
+        "K13_a_rewrite\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "K13_a_rewrite\\vrf.csv": {
+          "size": 8282938,
+          "sha256": "45f56876eecf4b0d27d8e8ed63039b3b5cdf811b51c7e5f1be16432f0ec54bf7"
+        },
+        "K13_b_remote_prohibited\\result.txt": {
+          "size": 374,
+          "sha256": "3d0909b8da9b92cd0b720f934a08b7342421821ea7e9ec36385f58461ca7af73"
+        },
+        "K13_b_remote_prohibited\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "K13_b_remote_prohibited\\vrf.csv": {
+          "size": 8285348,
+          "sha256": "2c8adb99d4e46648dc387b5cddda10ddfef3f1ffd27638b32611961393cbf304"
+        },
+        "Z1_baseline\\result.txt": {
+          "size": 375,
+          "sha256": "7bd85514c18cbcc17237fd4902fd9b4046d232aeb938559e6d7ab39d0af0a25d"
+        },
+        "Z1_baseline\\vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "Z1_baseline\\vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        }
+      }
+    },
+    {
+      "from": "runs/diag/V63S/R8_baseline_output",
+      "to": "C:\\Users\\chisa\\rl_local\\diag_csv\\V63S\\R8_baseline_output",
+      "n_files": 7,
+      "mb": 21.2,
+      "files": {
+        "dissatisfaction.csv": {
+          "size": 3480062,
+          "sha256": "3c8ec2f4d46f70be48abf84331fe3cd9524906646c12aabf4a9c6ba91c6479d9"
+        },
+        "general.csv": {
+          "size": 946278,
+          "sha256": "264eb046a06b954abd76a5c44e6498a01007d6f114b64a9806145b7699a611bb"
+        },
+        "occupant.csv": {
+          "size": 2935493,
+          "sha256": "1d4548e69ee764f24b89eb45eeb3a0fd4e7bb3069d84e6f09d965436cc069c78"
+        },
+        "result.txt": {
+          "size": 375,
+          "sha256": "7c0b1df7e46df0132522272d2142bd2056fa8c0d3bd19489d734d9d4ed883261"
+        },
+        "vent.csv": {
+          "size": 393274,
+          "sha256": "1919b0b8fdba1405fe375f7c58c37b6be892cc33374ee367b575629242c8e5a3"
+        },
+        "vrf.csv": {
+          "size": 8282377,
+          "sha256": "e1ef6df2311c52067b89a3098b70da42fb269a7c604a20cb581e5843833912f3"
+        },
+        "zone.csv": {
+          "size": 6243398,
+          "sha256": "1e7504bb12402e3f80c934da3d3e17f61ebf7f9fd0e9a3159e072eba2b7cccee"
+        }
+      }
+    }
+  ],
+  "replica_verify": {
+    "0": "error.log を退避して原本に戻し、照合 ok",
+    "1": "error.log を退避して原本に戻し、照合 ok",
+    "10": "error.log を退避して原本に戻し、照合 ok",
+    "11": "error.log を退避して原本に戻し、照合 ok",
+    "12": "error.log を退避して原本に戻し、照合 ok",
+    "13": "ok",
+    "14": "ok",
+    "15": "ok",
+    "2": "error.log を退避して原本に戻し、照合 ok",
+    "3": "error.log を退避して原本に戻し、照合 ok",
+    "4": "error.log を退避して原本に戻し、照合 ok",
+    "5": "error.log を退避して原本に戻し、照合 ok",
+    "6": "error.log を退避して原本に戻し、照合 ok",
+    "7": "error.log を退避して原本に戻し、照合 ok",
+    "8": "error.log を退避して原本に戻し、照合 ok",
+    "9": "error.log を退避して原本に戻し、照合 ok"
+  }
+}

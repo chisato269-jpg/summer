@@ -1,0 +1,14 @@
+System.Exception: Newton's method iteration error
+Newton iteration failed. pressure=4533.070231534475, temperature=341.01779871640434, density=653.5494847084311
+   at Popolo.ThermophysicalProperty.Refrigerant.getDensityFromPressureAndTemperature(Double pressure, Double temperature, Double& density) in C:\Users\etoga\マイドライブ\熱環境計算技法\Popolo\Popolo\ThermophysicalProperty\Refrigerant.cs:line 333
+   at Popolo.ThermophysicalProperty.Refrigerant.getGibbsEnergyDifference(Double temperature, Double pressure, Double& liquidDensity, Double& vaporDensity) in C:\Users\etoga\マイドライブ\熱環境計算技法\Popolo\Popolo\ThermophysicalProperty\Refrigerant.cs:line 405
+   at Popolo.ThermophysicalProperty.Refrigerant.<>c__DisplayClass45_0.<GetSaturatedPropertyFromTemperature>b__0(Double pres) in C:\Users\etoga\マイドライブ\熱環境計算技法\Popolo\Popolo\ThermophysicalProperty\Refrigerant.cs:line 378
+   at Popolo.Numerics.Roots.Newton(ErrorFunction eFnc, Double x, Double delta, Double errorTolerance, Double collectionTolerance, Int32 maxIteration) in C:\Users\etoga\マイドライブ\熱環境計算技法\Popolo\Popolo\Numerics\Roots.cs:line 209
+   at Popolo.ThermophysicalProperty.Refrigerant.GetSaturatedPropertyFromTemperature(Double temperature, Double& saturatedLiquidDensity, Double& saturatedVaporDensity, Double& saturatedPressure) in C:\Users\etoga\マイドライブ\熱環境計算技法\Popolo\Popolo\ThermophysicalProperty\Refrigerant.cs:line 384
+   at Popolo.HVAC.MultiplePackagedHeatPump.VRFSystem.calcEvaporatingTemperatureError(Double evaporatingTemperature, Boolean controlIndoorUnits, Double& evaporatingPressure) in C:\Users\etoga\マイドライブ\熱環境計算技法\Popolo\Popolo\HVAC\MultiplePackagedHeatPump\VRFSystem.cs:line 836
+   at Popolo.HVAC.MultiplePackagedHeatPump.VRFSystem.<>c__DisplayClass223_0.<updateState_Cooling_NoControl>b__1(Double evpT) in C:\Users\etoga\マイドライブ\熱環境計算技法\Popolo\Popolo\HVAC\MultiplePackagedHeatPump\VRFSystem.cs:line 1355
+   at Popolo.HVAC.MultiplePackagedHeatPump.VRFSystem.updateState_Cooling_NoControl() in C:\Users\etoga\マイドライブ\熱環境計算技法\Popolo\Popolo\HVAC\MultiplePackagedHeatPump\VRFSystem.cs:line 1363
+   at Popolo.HVAC.MultiplePackagedHeatPump.VRFSystem.UpdateState(Boolean controlHeatload) in C:\Users\etoga\マイドライブ\熱環境計算技法\Popolo\Popolo\HVAC\MultiplePackagedHeatPump\VRFSystem.cs:line 725
+   at Shizuku2.ExVRFSystem.UpdateState()
+   at Shizuku2.Program.run(WeatherLoader wetLoader, Sun sun, StringBuilder& summary)
+   at Shizuku2.Program.Main(String[] args)

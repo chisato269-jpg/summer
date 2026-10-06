@@ -1,0 +1,13 @@
+{
+  "result": "B",
+  "time": "2026-09-24T15:19:53.915158",
+  "onoff_mismatch_frac": 0.0,
+  "onoff_mismatch_energy_frac": 0.0,
+  "setpoint_mismatch_energy_frac": 0.5522144452422137,
+  "thresholds": {
+    "onoff_mismatch_frac": 0.01,
+    "onoff_energy_frac": 0.05,
+    "setpoint_energy_frac": 0.1
+  },
+  "implementation": "O-3、A-6 を加える"
+}

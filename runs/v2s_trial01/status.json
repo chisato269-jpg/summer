@@ -1,0 +1,30 @@
+{
+  "status": "stopped",
+  "stop_reason": "S-4: 勾配ノルム比 0.00017074891441083232 が範囲 [0.005, 0.2] の外（方策 1.3765843807760507、エントロピー 0.0002350502886124185）",
+  "finished_at": "2026-09-16T13:12:47.678534",
+  "updates_this_run": 1,
+  "update_index": 1,
+  "stage": 1,
+  "m5_enabled": true,
+  "m5_state": {
+    "released": false,
+    "retries": 0,
+    "retry_at": null
+  },
+  "best_smooth": {
+    "update": 0,
+    "stage": 1,
+    "E": 1.20951025390625,
+    "DR": 0.7970554828643799,
+    "eci_smooth": 6.557358522899341e-06,
+    "eci_official": 0.0
+  },
+  "best_official": {
+    "update": 0,
+    "stage": 1,
+    "E": 1.20951025390625,
+    "DR": 0.7970554828643799,
+    "eci_smooth": 6.557358522899341e-06,
+    "eci_official": 0.0
+  }
+}

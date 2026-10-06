@@ -1,0 +1,35 @@
+{
+  "records": {
+    "passed": true,
+    "n_updates": 20,
+    "missing": {}
+  },
+  "kl_cutoff": {
+    "passed": true,
+    "cutoff_rate_11_20": 0.0
+  },
+  "harvest_max": {
+    "passed": true,
+    "max_1_20": 0.612774057047961,
+    "threshold": 0.5
+  },
+  "harvest_median_kept": {
+    "passed": true,
+    "median_1_10": 0.5999413740213407,
+    "median_11_20": 0.6011502757673239,
+    "allowed_drop": 0.01
+  },
+  "time": {
+    "passed": true,
+    "median_update_seconds": 416.6093782186508
+  },
+  "H-6": {
+    "report": false,
+    "max_streak": 0
+  },
+  "H-9": {
+    "report": false,
+    "max_streak": 0
+  },
+  "all_passed": true
+}

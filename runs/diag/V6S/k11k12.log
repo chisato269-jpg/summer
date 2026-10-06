@@ -1,0 +1,14 @@
+[v6s_diag] k12_c: ok
+[v6s_diag] k12_b: ok
+[v6s_diag] k11_d: ok
+[v6s_diag] k11_a: ok
+[v6s_diag] k11_c: ok
+[v6s_diag] k12_a: ok
+[v6s_diag] k11_b: ok
+k11_a  E=5.4061 dE=-1.1277 DR=0.54217 dDR=+0.35163 ECI=0.0000 hex=0.1397 GJ
+k11_b  E=5.8028 dE=-0.7310 DR=0.19184 dDR=+0.00130 ECI=0.4807 hex=0.4785 GJ
+k11_c  E=5.7620 dE=-0.7717 DR=0.19170 dDR=+0.00116 ECI=0.4860 hex=0.4504 GJ
+k11_d  E=7.0589 dE=+0.5252 DR=0.19306 dDR=+0.00251 ECI=0.3308 hex=1.6563 GJ
+k12_a  E=5.7603 dE=-0.7734 DR=0.19505 dDR=+0.00451 ECI=0.4657 hex=0.8793 GJ
+k12_b  E=6.0157 dE=-0.5181 DR=0.19271 dDR=+0.00216 ECI=0.4519 hex=1.1450 GJ
+k12_c  E=5.4478 dE=-1.0860 DR=0.22558 dDR=+0.03504 ECI=0.0000 hex=1.2154 GJ

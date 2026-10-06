@@ -1,0 +1,29 @@
+{
+  "time": "2026-09-25T18:32:39.175787",
+  "pid": 33840,
+  "slots": [
+    6
+  ],
+  "log_dir": "runs\\diag\\V64S\\UT_live_v6\\launch",
+  "slot_limit": {
+    "n_slots": 1,
+    "limit": 7,
+    "slots": [
+      6
+    ]
+  },
+  "memory": {
+    "free_gb": 6.602756500244141,
+    "min_free_gb": 2.0
+  },
+  "cleanup": [
+    {
+      "slot": 6,
+      "lock": null,
+      "lock_released": false,
+      "killed": [],
+      "residual_after": []
+    }
+  ],
+  "passed": true
+}

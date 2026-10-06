@@ -1,0 +1,281 @@
+{
+  "started_at": "2026-09-25T19:04:15.212188",
+  "argv": [
+    "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\rlkit\\train_summer.py",
+    "--config",
+    "rlkit/config_summer_v64.json",
+    "--updates",
+    "20"
+  ],
+  "config": {
+    "run_dir": "runs/v2s_trial07",
+    "seed": 19800614,
+    "train_slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "eval_slot": 6,
+    "eval_concurrent": true,
+    "max_collection_retries": 4,
+    "max_eval_retries": 4,
+    "m9_enabled": true,
+    "k9_result": "B",
+    "include_indoor_unit_power": true,
+    "zone_step_energy_norm_gj": 0.02,
+    "planned_updates": 1500
+  },
+  "factory": "real",
+  "max_updates_total": 20,
+  "resume": false,
+  "k9_result": "B",
+  "tenant_remote_enabled": false,
+  "credit_levels": {
+    "S": "building",
+    "P": "building",
+    "V": "tenant"
+  },
+  "lambda_hour": 0.99,
+  "r8p_branch": "R8'-A",
+  "r8p_delta_min": -1,
+  "preflight": {
+    "time": "2026-09-25T19:04:15.477242",
+    "pid": 37860,
+    "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "log_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\runs/v2s_trial07\\launch",
+    "slot_limit": {
+      "n_slots": 7,
+      "limit": 7,
+      "slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "memory": {
+      "free_gb": 6.387199401855469,
+      "min_free_gb": 2.0
+    },
+    "cleanup": [
+      {
+        "slot": 0,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 1,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 2,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 3,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 4,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 5,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      },
+      {
+        "slot": 6,
+        "lock": null,
+        "lock_released": false,
+        "killed": [],
+        "residual_after": []
+      }
+    ],
+    "passed": true
+  },
+  "replica_checks": [
+    {
+      "slot": 0,
+      "replica_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot0",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [],
+      "ipadd_value": "127.0.0.1",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 1,
+      "replica_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot1",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.2",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 2,
+      "replica_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot2",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.3",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 3,
+      "replica_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot3",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.4",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 4,
+      "replica_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot4",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.5",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 5,
+      "replica_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot5",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.6",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    },
+    {
+      "slot": 6,
+      "replica_dir": "C:\\Users\\chisa\\OneDrive - Kogakuin University\\修士研究\\修士研究_開発\\21\\21(s)_Shizuku2-RL-kit\\Shizuku2_slot6",
+      "n_files_compared": 82,
+      "setting_ini_diff_line_indices": [
+        8
+      ],
+      "ipadd_value": "127.0.0.7",
+      "excluded_from_comparison": [
+        "data\\dissatisfaction.csv",
+        "data\\general.csv",
+        "data\\occupant.csv",
+        "data\\result.szk",
+        "data\\result.txt",
+        "data\\vent.csv",
+        "data\\vrf.csv",
+        "data\\zone.csv",
+        "slot.lock",
+        "slot_manifest.json"
+      ],
+      "created_now": false
+    }
+  ]
+}

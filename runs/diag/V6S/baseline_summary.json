@@ -1,0 +1,39 @@
+{
+  "E": 6.5337451171875,
+  "DR": 0.1905442774295807,
+  "E_hex": "0x1.a228e147ae148p+2",
+  "DR_hex": "0x1.863c140000000p-3",
+  "eci_official": 0.40345078695398967,
+  "eci_smooth": 0.40345078695398967,
+  "raw_resid_rel": -0.006099795305442789,
+  "dr_components": {
+    "thermal": 0.15488877960555034,
+    "draft": 0.03992817788395744,
+    "vtmp": 0.003469599683203403,
+    "co2": 1.6027502606605685e-05,
+    "combined": 0.1918084500025725
+  },
+  "elapsed_s": 193.23783493041992,
+  "slot": 6,
+  "hex_energy_gj_from_vent_csv": 1.2153879999999995,
+  "hex_energy_gj_by_tenant": {
+    "South": 0.6096479999999997,
+    "North": 0.60574
+  },
+  "co2": {
+    "South": {
+      "mean_all": 501.8352345997421,
+      "max_all": 937.0,
+      "mean_occupied": 581.4810443490701,
+      "minutes_over_1000_occupied": 0
+    },
+    "North": {
+      "mean_all": 516.8738220414641,
+      "max_all": 1004.0,
+      "mean_occupied": 612.905550500455,
+      "minutes_over_1000_occupied": 2
+    }
+  },
+  "hex_tenant_kw_by_level": {},
+  "vent_level_hours": {}
+}

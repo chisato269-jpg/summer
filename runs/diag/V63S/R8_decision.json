@@ -1,0 +1,25 @@
+{
+  "W_exogenous": 159497.0,
+  "minutes": 10081,
+  "column_decimals": {
+    "dissatisfaction.csv": 3,
+    "general.csv(All)": 4,
+    "general.csv(Averaged)": 4,
+    "vent.csv(CO2)": 0
+  },
+  "R8A_sum_n": 0.19061102142882155,
+  "R8A_rel_diff": 0.0003502807858689498,
+  "R8A_negative": false,
+  "R8B_sum_n": 0.19054423029900247,
+  "R8B_rel_diff": 2.473471198070608e-07,
+  "general_averaged_last": 0.1905,
+  "general_averaged_last_rel_diff": 0.00023237344190013467,
+  "official_DR": 0.1905442774295807,
+  "replay_E_hex": "0x1.a228e147ae148p+2",
+  "replay_DR_hex": "0x1.863c140000000p-3",
+  "hex_match": true,
+  "endpoint_sum_n": 0.19180845000257238,
+  "endpoint_rel_diff": 0.006634534450707338,
+  "elapsed_s": 119.5871856212616,
+  "branch": "R8-C"
+}

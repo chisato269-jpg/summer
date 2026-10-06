@@ -1,0 +1,2 @@
+{"time": "2026-09-17T16:05:55.285788", "event": "initial_reference", "E_star": 1.5749937744140625, "DR_star": 0.7792901396751404, "alpha": 8.31336359319036e-08, "beta": 0.00011751661949824291, "eci_smooth": 8.369180005235736e-06, "eci_official": 0.0}
+{"time": "2026-09-17T21:23:16.606338", "event": "resumed", "update_index": 20, "stage": 1, "planned_updates": 4000, "m5_enabled": true}

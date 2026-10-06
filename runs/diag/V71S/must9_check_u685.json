@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "items": {
+    "1_update_number": {
+      "passed": true,
+      "last_update": 685,
+      "rows": 685
+    },
+    "2_ratio_rule": {
+      "passed": true,
+      "rho_u684": 74.07672983654277,
+      "rho_used_u685": 74.07672983654277,
+      "rho_after_u685": 74.07672983654277,
+      "rho_expected_by_R7": 74.07672983654277,
+      "rho_raw_at_reference": 74.07672983654277,
+      "reference_changed": false
+    },
+    "3_reference_point_hex": {
+      "passed": true,
+      "E_ref_used_hex": "0x1.266872b020c4ap+2",
+      "DR_ref_used_hex": "0x1.73ac600000000p-3",
+      "E_ref_after_hex": "0x1.266872b020c4ap+2",
+      "DR_ref_after_hex": "0x1.73ac600000000p-3",
+      "expected": [
+        "0x1.266872b020c4ap+2",
+        "0x1.73ac600000000p-3"
+      ]
+    },
+    "4_policy_lr_rule": {
+      "passed": true,
+      "lr_u684": 0.001,
+      "lr_before_u685": 0.001,
+      "approx_kl_after": 0.05128196254372597,
+      "lr_expected_by_L2": 0.001,
+      "lr_after_u685": 0.001
+    },
+    "5_harvest_best": {
+      "passed": true,
+      "update": 330,
+      "ECI": 0.6712562046627591,
+      "E_hex": "0x1.266872b020c4ap+2",
+      "DR_hex": "0x1.73ac600000000p-3",
+      "this_update_harvest_ECI": 0.6628650563996579
+    },
+    "6_entropy_coefficient": {
+      "passed": true,
+      "entropy_c0_recorded": 0.002,
+      "expected_constant_section": 0.002,
+      "constant_until_update": 900.0
+    }
+  },
+  "update_seconds": 186.5970458984375,
+  "c13": 0
+}

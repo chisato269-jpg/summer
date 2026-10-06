@@ -1,0 +1,161 @@
+{
+  "label": "rpm1",
+  "slot": 6,
+  "single_reads": {
+    "n": 394,
+    "wall_s": 0.19811140000001615,
+    "cpu_s": 0.171875,
+    "n_failed": 0
+  },
+  "groups": {
+    "id74@127.0.0.7:47812": 44,
+    "id75@127.0.0.7:47813": 254,
+    "id72@127.0.0.7:47810": 94,
+    "id73@127.0.0.7:47814": 2
+  },
+  "rpm": [
+    {
+      "device_id": 74,
+      "addr": "127.0.0.7:47812",
+      "chunk": 1,
+      "wall_s": 0.004217099999550555,
+      "cpu_s": 0.0,
+      "n_returned": 1,
+      "n_same_as_single": 1
+    },
+    {
+      "device_id": 74,
+      "addr": "127.0.0.7:47812",
+      "chunk": 5,
+      "wall_s": 0.0011156999999002437,
+      "cpu_s": 0.0,
+      "n_returned": 5,
+      "n_same_as_single": 5
+    },
+    {
+      "device_id": 74,
+      "addr": "127.0.0.7:47812",
+      "chunk": 20,
+      "wall_s": 0.002441700000417768,
+      "cpu_s": 0.0,
+      "n_returned": 20,
+      "n_same_as_single": 20
+    },
+    {
+      "device_id": 74,
+      "addr": "127.0.0.7:47812",
+      "chunk": 40,
+      "wall_s": 0.004165900000771217,
+      "cpu_s": 0.0,
+      "n_returned": 40,
+      "n_same_as_single": 40
+    },
+    {
+      "device_id": 75,
+      "addr": "127.0.0.7:47813",
+      "chunk": 1,
+      "wall_s": 0.000713999999788939,
+      "cpu_s": 0.0,
+      "n_returned": 1,
+      "n_same_as_single": 1
+    },
+    {
+      "device_id": 75,
+      "addr": "127.0.0.7:47813",
+      "chunk": 5,
+      "wall_s": 0.0009631000002627843,
+      "cpu_s": 0.0,
+      "n_returned": 5,
+      "n_same_as_single": 5
+    },
+    {
+      "device_id": 75,
+      "addr": "127.0.0.7:47813",
+      "chunk": 20,
+      "wall_s": 0.002163000000109605,
+      "cpu_s": 0.0,
+      "n_returned": 20,
+      "n_same_as_single": 20
+    },
+    {
+      "device_id": 75,
+      "addr": "127.0.0.7:47813",
+      "chunk": 40,
+      "wall_s": 0.00414100000034523,
+      "cpu_s": 0.015625,
+      "n_returned": 40,
+      "n_same_as_single": 40
+    },
+    {
+      "device_id": 75,
+      "addr": "127.0.0.7:47813",
+      "chunk": 50,
+      "wall_s": 0.0052622999992308905,
+      "cpu_s": 0.0,
+      "n_returned": 50,
+      "n_same_as_single": 50
+    },
+    {
+      "device_id": 75,
+      "addr": "127.0.0.7:47813",
+      "chunk": 100,
+      "error": "TimeoutError: ",
+      "wall_s": 5.012557000000015
+    },
+    {
+      "device_id": 72,
+      "addr": "127.0.0.7:47810",
+      "chunk": 1,
+      "wall_s": 0.0015188999996098573,
+      "cpu_s": 0.0,
+      "n_returned": 1,
+      "n_same_as_single": 1
+    },
+    {
+      "device_id": 72,
+      "addr": "127.0.0.7:47810",
+      "chunk": 5,
+      "wall_s": 0.0020456000002013752,
+      "cpu_s": 0.0,
+      "n_returned": 5,
+      "n_same_as_single": 5
+    },
+    {
+      "device_id": 72,
+      "addr": "127.0.0.7:47810",
+      "chunk": 20,
+      "wall_s": 0.002761099999588623,
+      "cpu_s": 0.0,
+      "n_returned": 20,
+      "n_same_as_single": 20
+    },
+    {
+      "device_id": 72,
+      "addr": "127.0.0.7:47810",
+      "chunk": 40,
+      "wall_s": 0.004395299999487179,
+      "cpu_s": 0.0,
+      "n_returned": 40,
+      "n_same_as_single": 40
+    },
+    {
+      "device_id": 72,
+      "addr": "127.0.0.7:47810",
+      "chunk": 50,
+      "wall_s": 0.004602299999532988,
+      "cpu_s": 0.015625,
+      "n_returned": 50,
+      "n_same_as_single": 50
+    },
+    {
+      "device_id": 73,
+      "addr": "127.0.0.7:47814",
+      "chunk": 1,
+      "wall_s": 0.0005860999999640626,
+      "cpu_s": 0.0,
+      "n_returned": 1,
+      "n_same_as_single": 1
+    }
+  ],
+  "max_ok_chunk": 50
+}

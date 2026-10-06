@@ -1,0 +1,117 @@
+{
+ "chosen": "K-3",
+ "loss": "k3",
+ "reason": "成功の本数の差が 2 本以内の候補 ['K-1', 'K-3'] の中で、成功した教師の実時間の中央値が最小",
+ "similar": [
+  "K-1",
+  "K-3"
+ ],
+ "success_rate": 0.9761904761904762,
+ "stop": false,
+ "n_teachers": 42,
+ "summary": {
+  "K-1": {
+   "n": 42,
+   "n_success": 42,
+   "success_rate": 1.0,
+   "epochs_success": {
+    "median": 538.5,
+    "p10": 326.5,
+    "p90": 754.5999999999999,
+    "max": 879.0
+   },
+   "seconds_success": {
+    "median": 50.949424147605896,
+    "p10": 32.09994621276856,
+    "p90": 78.16701052188873,
+    "max": 91.78649139404297
+   },
+   "broken_max": {
+    "median": 322.0,
+    "mean": 329.3333333333333,
+    "max": 473.0
+   },
+   "min_margin_after_success": {
+    "min": 0.0012302398681640625,
+    "median": 0.0038777589797973633
+   },
+   "failed_teachers": []
+  },
+  "K-3": {
+   "n": 42,
+   "n_success": 41,
+   "success_rate": 0.9761904761904762,
+   "epochs_success": {
+    "median": 325.0,
+    "p10": 53.0,
+    "p90": 623.0,
+    "max": 753.0
+   },
+   "seconds_success": {
+    "median": 27.179455041885376,
+    "p10": 4.899099111557007,
+    "p90": 64.15538191795349,
+    "max": 74.16649079322815
+   },
+   "broken_max": {
+    "median": 366.0,
+    "mean": 425.8095238095238,
+    "max": 1532.0
+   },
+   "min_margin_after_success": {
+    "min": 0.0011966824531555176,
+    "median": 0.011854022741317749
+   },
+   "failed_teachers": [
+    "trial02_u14_s1"
+   ]
+  },
+  "K-4": {
+   "n": 42,
+   "n_success": 25,
+   "success_rate": 0.5952380952380952,
+   "epochs_success": {
+    "median": 671.0,
+    "p10": 435.0,
+    "p90": 923.0,
+    "max": 997.0
+   },
+   "seconds_success": {
+    "median": 70.68420743942261,
+    "p10": 39.05632343292237,
+    "p90": 86.94491367340088,
+    "max": 97.91926670074463
+   },
+   "broken_max": {
+    "median": 630.5,
+    "mean": 735.2619047619048,
+    "max": 2413.0
+   },
+   "min_margin_after_success": {
+    "min": 0.0010309219360351562,
+    "median": 0.0029990673065185547
+   },
+   "failed_teachers": [
+    "trial02_u11_s4",
+    "trial02_u11_s8",
+    "trial02_u12_s7",
+    "trial02_u14_s1",
+    "trial02_u14_s3",
+    "trial02_u15_s10",
+    "trial02_u16_s0",
+    "trial02_u15_s7",
+    "trial02_u16_s2",
+    "trial02_u18_s6",
+    "trial02_u19_s9",
+    "trial02_u5_s10",
+    "trial02_u6_s11",
+    "trial02_u8_s7",
+    "trial02_u9_s0",
+    "trial02_u9_s2",
+    "g0r_trial01_u22"
+   ]
+  }
+ },
+ "lr": 0.003,
+ "max_epochs": 1000
+}

@@ -1,0 +1,49 @@
+{
+  "status": "stopped",
+  "stop_reason": "S-3: 更新 20 の H-1〜H-5 に不合格がある（judgment_u20.json）",
+  "finished_at": "2026-09-24T23:16:11.109371",
+  "updates_this_run": 20,
+  "update_index": 20,
+  "stage": 1,
+  "best_smooth": {
+    "update": 0,
+    "stage": 1,
+    "E": 7.90298779296875,
+    "DR": 0.19065715372562408,
+    "E_hex": "0x1.f9ca8d4fdf3b6p+2",
+    "DR_hex": "0x1.8677420000000p-3",
+    "eci_smooth": 0.24663159205362034,
+    "eci_official": 0.0,
+    "J": -8.432477277538405
+  },
+  "best_official": {
+    "update": 0,
+    "stage": 1,
+    "E": 7.90298779296875,
+    "DR": 0.19065715372562408,
+    "E_hex": "0x1.f9ca8d4fdf3b6p+2",
+    "DR_hex": "0x1.8677420000000p-3",
+    "eci_smooth": 0.24663159205362034,
+    "eci_official": 0.0,
+    "J": -8.432477277538405
+  },
+  "best_harvest": {
+    "update": 9,
+    "slot": 2,
+    "step_in_collection": 377,
+    "stage": 1,
+    "E": 7.10799853515625,
+    "DR": 0.2018880844116211,
+    "eci_official": 0.28807027695304904,
+    "eci_smooth": 0.28807027695304904,
+    "J": -1.5816932521651472,
+    "E_hex": "0x1.c6e972b020c4ap+2",
+    "DR_hex": "0x1.9d77800000000p-3"
+  },
+  "harvest_replay": null,
+  "sil_enabled": false,
+  "sil_guard": null,
+  "judgments": {
+    "H": false
+  }
+}

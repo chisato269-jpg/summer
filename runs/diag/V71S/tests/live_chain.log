@@ -1,0 +1,4 @@
+test_v6_live EXIT 0
+test_v64_live EXIT 1
+test_v7_live EXIT 0
+CHAIN_END

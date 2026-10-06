@@ -1,0 +1,518 @@
+{
+  "time": "2026-10-01T14:20:26",
+  "base_run": "runs\\v2s_trial08",
+  "base_meta": {
+    "update": 330,
+    "slot": 4,
+    "step_in_collection": 377,
+    "stage": 1,
+    "E": 4.600125,
+    "DR": 0.18148112297058105,
+    "eci_official": 0.6712562046627591,
+    "eci_smooth": 0.6712562046627591,
+    "ECI": 0.6712562046627591,
+    "P_E": 0.6981222297081999,
+    "P_DR": 0.6454240720662725,
+    "J": null,
+    "E_hex": "0x1.266872b020c4ap+2",
+    "DR_hex": "0x1.73ac600000000p-3"
+  },
+  "saved_hex": [
+    "0x1.266872b020c4ap+2",
+    "0x1.73ac600000000p-3"
+  ],
+  "episode_seconds": 138.61941003799438,
+  "W": 159497.0,
+  "rows": [
+    {
+      "cf": 0,
+      "description": "変更なし（更新 330 の収穫と 16 進一致するはず）",
+      "changed_zone_steps": {
+        "setpoint": 0,
+        "fan": 0,
+        "cooling_zone_steps": 3386
+      },
+      "E": 4.600125,
+      "DR": 0.18148112297058105,
+      "E_hex": "0x1.266872b020c4ap+2",
+      "DR_hex": "0x1.73ac600000000p-3",
+      "P_E": 0.6981222297081999,
+      "P_DR": 0.6454240720662725,
+      "ECI": 0.6712562046627591,
+      "n_sum": 0.181978709691376,
+      "n_by_component_alone_sum": {
+        "thermal": 0.14354134734722537,
+        "draft": 0.04142440332028639,
+        "vtmp": 0.0034229615202432755,
+        "co2": 4.8132039528381625e-05
+      },
+      "energy_est_gj": {
+        "outdoor": 3.7962013587994115,
+        "indoor": 0.4474232529268548,
+        "hex": 0.3413393750000014,
+        "sum": 4.584963986726268
+      },
+      "hex_energy_gj_env": 0.3413393750000014,
+      "setpoint_override_count": 2319,
+      "setpoint_override_opportunities": 3386,
+      "setpoint_override_rate": 0.6848789131718842,
+      "cooling_zone_steps": 3386,
+      "setpoint_hist_c": {
+        "22.0": 1657,
+        "23.0": 10,
+        "24.0": 149,
+        "25.0": 36,
+        "26.0": 1524,
+        "27.0": 6,
+        "28.0": 4
+      },
+      "fan_hist": {
+        "Middle": 139,
+        "Low": 15,
+        "High": 3232
+      },
+      "raw_resid_rel": 0.0032957828914935896,
+      "raw_resid_sum_gj": 0.015161013273731946,
+      "energy_identity_rel": 1.9307701849408992e-16,
+      "diss_identity_rel": 0.0,
+      "dE": 0.0,
+      "dDR": 0.0,
+      "dECI": 0.0,
+      "hex_match_saved": true
+    },
+    {
+      "cf": 1,
+      "description": "冷房中で 22 ℃を選んだゾーン・ステップだけ 23 ℃へ",
+      "changed_zone_steps": {
+        "setpoint": 1657,
+        "fan": 0,
+        "cooling_zone_steps": 3386
+      },
+      "E": 4.5980048828125,
+      "DR": 0.18166495859622955,
+      "E_hex": "0x1.2645b645a1cacp+2",
+      "DR_hex": "0x1.740cc20000000p-3",
+      "P_E": 0.6985214686954924,
+      "P_DR": 0.6430515432829851,
+      "ECI": 0.6702128829416321,
+      "n_sum": 0.18212514594870163,
+      "n_by_component_alone_sum": {
+        "thermal": 0.14393075346794487,
+        "draft": 0.0411700792872413,
+        "vtmp": 0.003421327703748888,
+        "co2": 4.8132039528381625e-05
+      },
+      "energy_est_gj": {
+        "outdoor": 3.7947626596543933,
+        "indoor": 0.447318225423288,
+        "hex": 0.3413393750000014,
+        "sum": 4.583420260077682
+      },
+      "hex_energy_gj_env": 0.3413393750000014,
+      "setpoint_override_count": 2332,
+      "setpoint_override_opportunities": 3386,
+      "setpoint_override_rate": 0.6887182516243355,
+      "cooling_zone_steps": 3386,
+      "setpoint_hist_c": {
+        "23.0": 1667,
+        "24.0": 149,
+        "25.0": 36,
+        "26.0": 1524,
+        "27.0": 6,
+        "28.0": 4
+      },
+      "fan_hist": {
+        "Middle": 139,
+        "Low": 15,
+        "High": 3232
+      },
+      "raw_resid_rel": 0.0031719458996956897,
+      "raw_resid_sum_gj": 0.014584622734817879,
+      "energy_identity_rel": 0.0,
+      "diss_identity_rel": 0.0,
+      "dE": -0.00212011718750027,
+      "dDR": 0.00018383562564849854,
+      "dECI": -0.0010433217211270884
+    },
+    {
+      "cf": 2,
+      "description": "同 22 ℃ → 24 ℃",
+      "changed_zone_steps": {
+        "setpoint": 1657,
+        "fan": 0,
+        "cooling_zone_steps": 3386
+      },
+      "E": 4.5929326171875,
+      "DR": 0.1818387508392334,
+      "E_hex": "0x1.25f29ba5e353fp+2",
+      "DR_hex": "0x1.7467e00000000p-3",
+      "P_E": 0.6994757593137576,
+      "P_DR": 0.6408067086183229,
+      "ECI": 0.66949888654437,
+      "n_sum": 0.18228906418062576,
+      "n_by_component_alone_sum": {
+        "thermal": 0.14431037682135855,
+        "draft": 0.04095269780184629,
+        "vtmp": 0.0034168254497374735,
+        "co2": 4.8132039528381625e-05
+      },
+      "energy_est_gj": {
+        "outdoor": 3.791125803304835,
+        "indoor": 0.4443286055519846,
+        "hex": 0.3413393750000014,
+        "sum": 4.576793783856821
+      },
+      "hex_energy_gj_env": 0.3413393750000014,
+      "setpoint_override_count": 2564,
+      "setpoint_override_opportunities": 3386,
+      "setpoint_override_rate": 0.757235676314235,
+      "cooling_zone_steps": 3386,
+      "setpoint_hist_c": {
+        "23.0": 10,
+        "24.0": 1806,
+        "25.0": 36,
+        "26.0": 1524,
+        "27.0": 6,
+        "28.0": 4
+      },
+      "fan_hist": {
+        "Middle": 139,
+        "Low": 15,
+        "High": 3232
+      },
+      "raw_resid_rel": 0.0035138406494980515,
+      "raw_resid_sum_gj": 0.0161388333306789,
+      "energy_identity_rel": 1.9337937081341404e-16,
+      "diss_identity_rel": 0.0,
+      "dE": -0.007192382812500675,
+      "dDR": 0.00035762786865234375,
+      "dECI": -0.001757318118389195
+    },
+    {
+      "cf": 3,
+      "description": "同 22 ℃ → 26 ℃",
+      "changed_zone_steps": {
+        "setpoint": 1657,
+        "fan": 0,
+        "cooling_zone_steps": 3386
+      },
+      "E": 4.560341796875,
+      "DR": 0.18352524936199188,
+      "E_hex": "0x1.23dca3d70a3d7p+2",
+      "DR_hex": "0x1.77dc160000000p-3",
+      "P_E": 0.7055778386608726,
+      "P_DR": 0.61894245078679,
+      "ECI": 0.6608419453103797,
+      "n_sum": 0.18399261815488582,
+      "n_by_component_alone_sum": {
+        "thermal": 0.1472945934379121,
+        "draft": 0.039610423235346984,
+        "vtmp": 0.0034122889477816607,
+        "co2": 4.8132039528381625e-05
+      },
+      "energy_est_gj": {
+        "outdoor": 3.7371065642843395,
+        "indoor": 0.44710817041615436,
+        "hex": 0.3413393750000014,
+        "sum": 4.525554109700495
+      },
+      "hex_energy_gj_env": 0.3413393750000014,
+      "setpoint_override_count": 2637,
+      "setpoint_override_opportunities": 3386,
+      "setpoint_override_rate": 0.7787950383933845,
+      "cooling_zone_steps": 3386,
+      "setpoint_hist_c": {
+        "23.0": 10,
+        "24.0": 149,
+        "25.0": 36,
+        "26.0": 3181,
+        "27.0": 6,
+        "28.0": 4
+      },
+      "fan_hist": {
+        "Middle": 139,
+        "Low": 15,
+        "High": 3232
+      },
+      "raw_resid_rel": 0.007628306983117837,
+      "raw_resid_sum_gj": 0.034787687174505685,
+      "energy_identity_rel": 0.0,
+      "diss_identity_rel": 0.0,
+      "dE": -0.03978320312500028,
+      "dDR": 0.0020441263914108276,
+      "dECI": -0.010414259352379496
+    },
+    {
+      "cf": 4,
+      "description": "冷房中の全ゾーン・ステップを 26 ℃へ",
+      "changed_zone_steps": {
+        "setpoint": 1862,
+        "fan": 0,
+        "cooling_zone_steps": 3386
+      },
+      "E": 4.6030517578125,
+      "DR": 0.18147063255310059,
+      "E_hex": "0x1.2698666666666p+2",
+      "DR_hex": "0x1.73a6e00000000p-3",
+      "P_E": 0.697570742352603,
+      "P_DR": 0.6455593932663367,
+      "ECI": 0.6710613572494653,
+      "n_sum": 0.1820051132356292,
+      "n_by_component_alone_sum": {
+        "thermal": 0.14357123010913567,
+        "draft": 0.04143693727115792,
+        "vtmp": 0.003416968531603391,
+        "co2": 4.8132039528381625e-05
+      },
+      "energy_est_gj": {
+        "outdoor": 3.793227247082069,
+        "indoor": 0.44443363305555145,
+        "hex": 0.3413393750000014,
+        "sum": 4.579000255137622
+      },
+      "hex_energy_gj_env": 0.3413393750000014,
+      "setpoint_override_count": 3205,
+      "setpoint_override_opportunities": 3386,
+      "setpoint_override_rate": 0.9465445953927939,
+      "cooling_zone_steps": 3386,
+      "setpoint_hist_c": {
+        "26.0": 3386
+      },
+      "fan_hist": {
+        "Middle": 139,
+        "Low": 15,
+        "High": 3232
+      },
+      "raw_resid_rel": 0.005225121058883919,
+      "raw_resid_sum_gj": 0.024051502674878725,
+      "energy_identity_rel": 3.8590850871605794e-16,
+      "diss_identity_rel": 0.0,
+      "dE": 0.002926757812499403,
+      "dDR": -1.049041748046875e-05,
+      "dECI": -0.0001948474132938971
+    },
+    {
+      "cf": 5,
+      "description": "冷房中の High を Middle へ（全ゾーン・ステップ）",
+      "changed_zone_steps": {
+        "setpoint": 0,
+        "fan": 3232,
+        "cooling_zone_steps": 3386
+      },
+      "E": 4.4140029296875,
+      "DR": 0.19037100672721863,
+      "E_hex": "0x1.1a7f0624dd2f2p+2",
+      "DR_hex": "0x1.85e13c0000000p-3",
+      "P_E": 0.732314368669281,
+      "P_DR": 0.5299936230251788,
+      "ECI": 0.6229943382121773,
+      "n_sum": 0.19085936453577673,
+      "n_by_component_alone_sum": {
+        "thermal": 0.15843330145919365,
+        "draft": 0.03502294484792792,
+        "vtmp": 0.0034419372850626475,
+        "co2": 4.8132039528381625e-05
+      },
+      "energy_est_gj": {
+        "outdoor": 3.712478264918552,
+        "indoor": 0.33946841627664365,
+        "hex": 0.3413393750000014,
+        "sum": 4.393286056195197
+      },
+      "hex_energy_gj_env": 0.3413393750000014,
+      "setpoint_override_count": 2419,
+      "setpoint_override_opportunities": 3386,
+      "setpoint_override_rate": 0.7144122858830478,
+      "cooling_zone_steps": 3386,
+      "setpoint_hist_c": {
+        "22.0": 1657,
+        "23.0": 10,
+        "24.0": 149,
+        "25.0": 36,
+        "26.0": 1524,
+        "27.0": 6,
+        "28.0": 4
+      },
+      "fan_hist": {
+        "Middle": 3371,
+        "Low": 15
+      },
+      "raw_resid_rel": 0.004693443530127427,
+      "raw_resid_sum_gj": 0.02071687349230529,
+      "energy_identity_rel": 0.0,
+      "diss_identity_rel": 0.0,
+      "dE": -0.18612207031249994,
+      "dDR": 0.008889883756637573,
+      "dECI": -0.048261866450581836
+    },
+    {
+      "cf": 6,
+      "description": "冷房中の High を Low へ（全ゾーン・ステップ）",
+      "changed_zone_steps": {
+        "setpoint": 0,
+        "fan": 3232,
+        "cooling_zone_steps": 3386
+      },
+      "E": 4.13643701171875,
+      "DR": 0.21822556853294373,
+      "E_hex": "0x1.08bb624dd2f1bp+2",
+      "DR_hex": "0x1.beed0c0000000p-3",
+      "P_E": 0.7797169662211487,
+      "P_DR": 0.2291772143860638,
+      "ECI": 0.4227213767106124,
+      "n_sum": 0.2183010050192697,
+      "n_by_component_alone_sum": {
+        "thermal": 0.19620879746936284,
+        "draft": 0.02389811287902632,
+        "vtmp": 0.0034715478853992636,
+        "co2": 4.8132039528381625e-05
+      },
+      "energy_est_gj": {
+        "outdoor": 3.5481908829974387,
+        "indoor": 0.2317773719535253,
+        "hex": 0.3413393750000014,
+        "sum": 4.121307629950966
+      },
+      "hex_energy_gj_env": 0.3413393750000014,
+      "setpoint_override_count": 2527,
+      "setpoint_override_opportunities": 3386,
+      "setpoint_override_rate": 0.7463083284111045,
+      "cooling_zone_steps": 3386,
+      "setpoint_hist_c": {
+        "22.0": 1657,
+        "23.0": 10,
+        "24.0": 149,
+        "25.0": 36,
+        "26.0": 1524,
+        "27.0": 6,
+        "28.0": 4
+      },
+      "fan_hist": {
+        "Middle": 139,
+        "Low": 3247
+      },
+      "raw_resid_rel": 0.00365758785276407,
+      "raw_resid_sum_gj": 0.015129381767786202,
+      "energy_identity_rel": 2.147206441640156e-16,
+      "diss_identity_rel": 0.0,
+      "dE": -0.4636879882812499,
+      "dDR": 0.03674444556236267,
+      "dECI": -0.24853482795214676
+    },
+    {
+      "cf": 7,
+      "description": "CF-2 と CF-5 の合成",
+      "changed_zone_steps": {
+        "setpoint": 1657,
+        "fan": 3232,
+        "cooling_zone_steps": 3386
+      },
+      "E": 4.40913916015625,
+      "DR": 0.1907089352607727,
+      "E_hex": "0x1.1a2f560418937p+2",
+      "DR_hex": "0x1.8692680000000p-3",
+      "P_E": 0.733183482254851,
+      "P_DR": 0.5256466109387892,
+      "ECI": 0.6208022331174093,
+      "n_sum": 0.19118407532544107,
+      "n_by_component_alone_sum": {
+        "thermal": 0.1589675987049901,
+        "draft": 0.034817009621280814,
+        "vtmp": 0.0034383288696249806,
+        "co2": 4.8132039528381625e-05
+      },
+      "energy_est_gj": {
+        "outdoor": 3.7102405288628493,
+        "indoor": 0.33762188622874645,
+        "hex": 0.3413393750000014,
+        "sum": 4.389201790091597
+      },
+      "hex_energy_gj_env": 0.3413393750000014,
+      "setpoint_override_count": 2616,
+      "setpoint_override_opportunities": 3386,
+      "setpoint_override_rate": 0.7725930301240401,
+      "cooling_zone_steps": 3386,
+      "setpoint_hist_c": {
+        "23.0": 10,
+        "24.0": 1806,
+        "25.0": 36,
+        "26.0": 1524,
+        "27.0": 6,
+        "28.0": 4
+      },
+      "fan_hist": {
+        "Middle": 3371,
+        "Low": 15
+      },
+      "raw_resid_rel": 0.004521828261811517,
+      "raw_resid_sum_gj": 0.019937370064654444,
+      "energy_identity_rel": 2.0144032370905017e-16,
+      "diss_identity_rel": 1.4553893648284666e-16,
+      "dE": -0.1909858398437505,
+      "dDR": 0.00922781229019165,
+      "dECI": -0.05045397154534981
+    },
+    {
+      "cf": 8,
+      "description": "CF-3 と CF-6 の合成",
+      "changed_zone_steps": {
+        "setpoint": 1657,
+        "fan": 3232,
+        "cooling_zone_steps": 3386
+      },
+      "E": 4.1315439453125,
+      "DR": 0.2189488261938095,
+      "E_hex": "0x1.086b374bc6a7fp+2",
+      "DR_hex": "0x1.c0683e0000000p-3",
+      "P_E": 0.7805105388297267,
+      "P_DR": 0.22340188374758022,
+      "ECI": 0.41757337637761316,
+      "n_sum": 0.21901022674516438,
+      "n_by_component_alone_sum": {
+        "thermal": 0.1972048062797017,
+        "draft": 0.02359686772503341,
+        "vtmp": 0.003469832074438468,
+        "co2": 4.8132039528381625e-05
+      },
+      "energy_est_gj": {
+        "outdoor": 3.545239805271176,
+        "indoor": 0.2317773719535253,
+        "hex": 0.3413393750000014,
+        "sum": 4.118356552224703
+      },
+      "hex_energy_gj_env": 0.3413393750000014,
+      "setpoint_override_count": 2715,
+      "setpoint_override_opportunities": 3386,
+      "setpoint_override_rate": 0.8018310691080921,
+      "cooling_zone_steps": 3386,
+      "setpoint_hist_c": {
+        "23.0": 10,
+        "24.0": 149,
+        "25.0": 36,
+        "26.0": 3181,
+        "27.0": 6,
+        "28.0": 4
+      },
+      "fan_hist": {
+        "Middle": 139,
+        "Low": 3247
+      },
+      "raw_resid_rel": 0.003191880145135079,
+      "raw_resid_sum_gj": 0.013187393087796023,
+      "energy_identity_rel": 2.149749419240282e-16,
+      "diss_identity_rel": 0.0,
+      "dE": -0.4685810546875002,
+      "dDR": 0.037467703223228455,
+      "dECI": -0.253682828285146
+    }
+  ],
+  "setpoint_grid_c": [
+    22.0,
+    23.0,
+    24.0,
+    25.0,
+    26.0,
+    27.0,
+    28.0
+  ]
+}

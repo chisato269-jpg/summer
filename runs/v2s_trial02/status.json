@@ -1,0 +1,30 @@
+{
+  "status": "stopped",
+  "stop_reason": "この起動の上限 180 更新に達した",
+  "finished_at": "2026-09-18T16:48:49.000217",
+  "updates_this_run": 180,
+  "update_index": 200,
+  "stage": 1,
+  "m5_enabled": true,
+  "m5_state": {
+    "released": false,
+    "retries": 0,
+    "retry_at": null
+  },
+  "best_smooth": {
+    "update": 171,
+    "stage": 1,
+    "E": 6.41829150390625,
+    "DR": 0.18356439471244812,
+    "eci_smooth": 0.45155492155878674,
+    "eci_official": 0.45155492155878674
+  },
+  "best_official": {
+    "update": 171,
+    "stage": 1,
+    "E": 6.41829150390625,
+    "DR": 0.18356439471244812,
+    "eci_smooth": 0.45155492155878674,
+    "eci_official": 0.45155492155878674
+  }
+}

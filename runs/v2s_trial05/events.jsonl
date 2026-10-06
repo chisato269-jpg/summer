@@ -1,0 +1,12 @@
+{"time": "2026-09-24T20:47:51.378883", "event": "initial_reference", "E_star": 7.90298779296875, "DR_star": 0.19065715372562408, "alpha": 10.414993518328608, "beta": 12.222579271146936, "rho": 1.1735561092416704, "eci_smooth": 0.24663159205362034, "eci_official": 0.0}
+{"time": "2026-09-24T22:10:28.365666", "event": "H-6_degenerate_argmax", "update": 11, "streak": 10}
+{"time": "2026-09-24T22:17:55.949959", "event": "H-6_degenerate_argmax", "update": 12, "streak": 11}
+{"time": "2026-09-24T22:25:16.060646", "event": "H-6_degenerate_argmax", "update": 13, "streak": 12}
+{"time": "2026-09-24T22:32:31.024729", "event": "H-6_degenerate_argmax", "update": 14, "streak": 13}
+{"time": "2026-09-24T22:39:51.255241", "event": "H-6_degenerate_argmax", "update": 15, "streak": 14}
+{"time": "2026-09-24T22:47:05.816937", "event": "H-6_degenerate_argmax", "update": 16, "streak": 15}
+{"time": "2026-09-24T22:54:24.295747", "event": "H-6_degenerate_argmax", "update": 17, "streak": 16}
+{"time": "2026-09-24T23:01:39.267230", "event": "H-6_degenerate_argmax", "update": 18, "streak": 17}
+{"time": "2026-09-24T23:08:52.129194", "event": "H-6_degenerate_argmax", "update": 19, "streak": 18}
+{"time": "2026-09-24T23:16:02.374780", "event": "H-6_degenerate_argmax", "update": 20, "streak": 19}
+{"time": "2026-09-24T23:16:09.188607", "event": "H_checks", "update": 20, "all_passed": false}

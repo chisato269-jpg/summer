@@ -1,0 +1,21 @@
+Energy consumption[GJ]:6.534098635745203
+Average dissatisfied rate[-]:0.19054427543250022
+Version:1.1.1
+userid:0
+period:0
+rseed_o:19800614
+rseed_w:19800614
+ipadd:127.0.0.14
+accelerationRate:60000
+use_rso:1
+use_rsw:1
+rseed_oprm:1
+timestep:60
+scheduler:0
+controller:0
+weather:3
+outputSpan:60
+oneday:0
+small_vrf:0
+userpass:guest
+DateTime:2026/10/01 11:51:37

@@ -1,0 +1,17 @@
+{
+  "sum_delta_E_gj": 4.587348144531255,
+  "raw_resid_sum_gj": -0.03213083839118473,
+  "raw_resid_rel": -0.007004229323533919,
+  "raw_resid_rel_v2s_C4_end_of_step": -0.007004229323533928,
+  "raw_resid_rel_900s_steps": -0.007004229323533909,
+  "raw_resid_rel_3600s_steps": 0.0,
+  "sum_zone_energy_gj": 4.586690612792973,
+  "sum_header_energy_gj": 0.00065753173828125,
+  "header_energy_fraction": 0.00014333591381441533,
+  "identity_residual_gj": 8.881784197001252e-16,
+  "delta_E_vs_E_rep_rel": 1.1616887034296136e-15,
+  "zone_step_energy_max_gj": 0.0024855505035300154,
+  "zone_step_energy_norm_gj": 0.0075,
+  "raw_resid_target_abs": 0.01,
+  "finished_at": "2026-09-17T16:03:03.781227"
+}

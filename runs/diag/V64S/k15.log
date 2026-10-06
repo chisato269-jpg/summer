@@ -1,0 +1,101 @@
+runs\diag\V64S\K15: 8 本（未実行 8 本）
+  K15_u15: E 5.609526 DR 0.294968 (196 秒)
+  K15_u9: E 5.604594 DR 0.284872 (199 秒)
+  K15_u5: E 5.935679 DR 0.287648 (200 秒)
+  K15_u4: E 6.096883 DR 0.282285 (202 秒)
+  K15_u3: E 6.405769 DR 0.278048 (203 秒)
+  K15_u2: E 6.639930 DR 0.259518 (205 秒)
+  K15_u1: E 6.883049 DR 0.281597 (207 秒)
+  K15_u14: E 5.495431 DR 0.302377 (143 秒)
+{
+ "level_used": "building",
+ "r8p_branch": "R8'-A",
+ "delta": -1,
+ "reference": {
+  "rho": 72.30374355857349,
+  "E_ref": 6.63993017578125,
+  "DR_ref": 0.2595181465148926
+ },
+ "replay_checks": [
+  {
+   "update": 2,
+   "E_match": true,
+   "DR_match": true,
+   "e_match": true,
+   "sum_n_rel": 0.0
+  },
+  {
+   "update": 9,
+   "E_match": true,
+   "DR_match": true,
+   "e_match": true,
+   "sum_n_rel": 0.0
+  },
+  {
+   "update": 3,
+   "E_match": true,
+   "DR_match": true,
+   "e_match": true,
+   "sum_n_rel": 0.0
+  },
+  {
+   "update": 4,
+   "E_match": true,
+   "DR_match": true,
+   "e_match": true,
+   "sum_n_rel": 0.0
+  },
+  {
+   "update": 5,
+   "E_match": true,
+   "DR_match": true,
+   "e_match": true,
+   "sum_n_rel": 0.0
+  },
+  {
+   "update": 15,
+   "E_match": true,
+   "DR_match": true,
+   "e_match": true,
+   "sum_n_rel": 0.0
+  },
+  {
+   "update": 1,
+   "E_match": true,
+   "DR_match": true,
+   "e_match": true,
+   "sum_n_rel": 0.0
+  },
+  {
+   "update": 14,
+   "E_match": true,
+   "DR_match": true,
+   "e_match": true,
+   "sum_n_rel": 0.0
+  }
+ ],
+ "results": {
+  "0.95": {
+   "D": 0.0018640142775041557,
+   "n_off_occupied": 20979,
+   "n_on_occupied": 11125,
+   "norm_mean": 11.090694807557915,
+   "norm_std": 15.336235315869894
+  },
+  "0.99": {
+   "D": -0.049673748003160684,
+   "n_off_occupied": 20979,
+   "n_on_occupied": 11125,
+   "norm_mean": 30.08477296728623,
+   "norm_std": 20.272090838670884
+  },
+  "1.0": {
+   "D": -0.13623939659012677,
+   "n_off_occupied": 20979,
+   "n_on_occupied": 11125,
+   "norm_mean": 58.62284841570694,
+   "norm_std": 20.379013838061223
+  }
+ },
+ "lambda_hour": 0.99
+}

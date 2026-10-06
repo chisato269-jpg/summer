@@ -1,0 +1,64 @@
+{
+  "status": "stopped",
+  "stop_reason": "通算 300 更新に達した（--updates は通算。指示書 V4-S W-3）",
+  "finished_at": "2026-09-21T11:30:52.626085",
+  "updates_this_run": 280,
+  "update_index": 300,
+  "stage": 2,
+  "m5_enabled": false,
+  "m5_state": {
+    "released": false,
+    "retries": 1,
+    "retry_at": 253,
+    "pending_since": 299,
+    "before_median": 0.21430333003747254
+  },
+  "best_smooth": {
+    "update": 221,
+    "stage": 2,
+    "E": 6.723962890625,
+    "DR": 0.18713000416755676,
+    "eci_smooth": 0.3964896930108061,
+    "eci_official": 0.3964896930108061
+  },
+  "best_official": {
+    "update": 221,
+    "stage": 2,
+    "E": 6.723962890625,
+    "DR": 0.18713000416755676,
+    "eci_smooth": 0.3964896930108061,
+    "eci_official": 0.3964896930108061
+  },
+  "best_harvest": {
+    "update": 16,
+    "slot": 5,
+    "step_in_collection": 755,
+    "stage": 1,
+    "E": 6.5337451171875,
+    "DR": 0.1905442774295807,
+    "eci_official": 0.40345078695398967,
+    "eci_smooth": 0.40345078695398967,
+    "E_hex": "0x1.a228e147ae148p+2",
+    "DR_hex": "0x1.863c140000000p-3"
+  },
+  "harvest_replay": {
+    "time": "2026-09-21T11:30:50.897045",
+    "harvested_at_update": 16,
+    "slot_harvested": 5,
+    "replay_slot": 6,
+    "stage_converted_1_to_2": true,
+    "saved_E": 6.5337451171875,
+    "saved_DR": 0.1905442774295807,
+    "saved_E_hex": "0x1.a228e147ae148p+2",
+    "saved_DR_hex": "0x1.863c140000000p-3",
+    "replay_E": 6.5337451171875,
+    "replay_DR": 0.1905442774295807,
+    "replay_E_hex": "0x1.a228e147ae148p+2",
+    "replay_DR_hex": "0x1.863c140000000p-3",
+    "replay_eci_official": 0.40345078695398967,
+    "replay_eci_smooth": 0.40345078695398967,
+    "E_hex_match": true,
+    "DR_hex_match": true
+  },
+  "inside_rate_recent20": 0.15
+}

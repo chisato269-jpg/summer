@@ -1,0 +1,15 @@
+{
+  "candidate": "runs\\v2s_trial08\\best\\best_official.pt",
+  "update_of_weights": 1461,
+  "recorded_E_hex": "0x1.1e374dd2f1aa0p+2",
+  "recorded_DR_hex": "0x1.6b6d400000000p-3",
+  "replay_E": 4.47212548828125,
+  "replay_DR": 0.17745447158813477,
+  "replay_E_hex": "0x1.1e374dd2f1aa0p+2",
+  "replay_DR_hex": "0x1.6b6d400000000p-3",
+  "replay_ECI": 0.70913700374106,
+  "recorded_eci_smooth": 0.70913700374106,
+  "E_hex_match": true,
+  "DR_hex_match": true,
+  "matched": true
+}

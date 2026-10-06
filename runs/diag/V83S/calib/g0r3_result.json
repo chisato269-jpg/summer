@@ -1,0 +1,52 @@
+{
+  "start_expected_E_hex": "0x1.1ac98b4395810p+2",
+  "start_expected_DR_hex": "0x1.6bec4c0000000p-3",
+  "start_harvest": {
+    "update": 5,
+    "slot": 3,
+    "role": "sibling",
+    "E": 4.41855126953125,
+    "DR": 0.17769679427146912,
+    "ECI": 0.7123151322712822,
+    "P_E": 0.7315004455029875,
+    "P_DR": 0.6936329988340137,
+    "E_hex": "0x1.1ac98b4395810p+2",
+    "DR_hex": "0x1.6bec4c0000000p-3"
+  },
+  "selected": {
+    "chosen": "K-3",
+    "loss": "k3",
+    "lr": 0.003,
+    "max_epochs": 1000
+  },
+  "pre_weights": "C:\\Users\\chisa\\rl_models\\v8s_trial02\\g0r_policy.pt",
+  "replay_E_hex": "0x1.1ac98b4395810p+2",
+  "replay_DR_hex": "0x1.6bec4c0000000p-3",
+  "replay_matches_start": true,
+  "fit": {
+    "adopted": true,
+    "epochs": 49,
+    "seconds": 2.9106266498565674,
+    "broken_max": 497,
+    "n_effective": 20682,
+    "n_mismatch_before": 3,
+    "n_margin_fail_before": 3,
+    "min_margin_before": -8.247303009033203,
+    "n_mismatch_after": 0,
+    "n_margin_fail_after": 0,
+    "min_margin_after": 0.020621299743652344
+  },
+  "base_E_hex": "0x1.1ac98b4395810p+2",
+  "base_DR_hex": "0x1.6bec4c0000000p-3",
+  "base_matches_start": true,
+  "base_actions_equal_teacher_on_effective": true,
+  "base_n_action_diffs_all_dims": 292,
+  "start_point": {
+    "E_hex": "0x1.1ac98b4395810p+2",
+    "DR_hex": "0x1.6bec4c0000000p-3",
+    "source": "G-0R3 で再現した始点（trial02 更新 5 の兄弟の軌跡）",
+    "ECI": 0.7123151322712822
+  },
+  "G0R3_reproduced": true,
+  "policy_path": "C:\\Users\\chisa\\rl_models\\v8s_trial03\\g0r3_policy.pt"
+}
